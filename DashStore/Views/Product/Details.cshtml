@@ -1,0 +1,42 @@
+﻿@model DashStore.ViewModels.ProductViewModel
+
+
+
+
+
+    
+<div>
+
+    <img src="@Model.product.ImageUrl" class="" alt="Product Image">
+</div>
+
+    @* <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image Here</text></svg> *@
+    <div class="card-body">
+        <h5 class="card-title">@Model.product.Title</h5>
+        <p class="card-text">@Model.product.Description</p>
+
+
+        <p>
+
+        @foreach(var specs in @Model.product.Specifications)
+        {
+                <span class="badge bg-primary me-1">@specs.Key</span>
+            @foreach (var val in specs.Value)
+            {
+                <span class="badge bg-secondary me-1">@val</span>
+
+            }
+            <br />
+        }
+        </p>
+
+
+        <h6 class="card-subtitle mb-2 text-body-secondary">@Model.product.Category.Name</h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">$ @Model.product.Price</h6>
+         
+        <button  class="btn btn-primary BuyNow" asp-controller="Product"
+                asp-action="index"
+                asp-route-id="@Model.product.Id" id="@Model.product.Id">
+            Buy Now
+        </button>
+    </div>

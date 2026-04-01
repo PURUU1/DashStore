@@ -1,0 +1,647 @@
+[
+  {
+    "Id": 1,
+    "Title": "Galaxy S24 Ultra",
+    "Description": "Titanium frame and flat display.",
+    "Price": 124999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Titanium Black", "Titanium Gray" ],
+      "RAM": [ "12GB" ],
+      "Storage": [ "256GB", "512GB" ]
+    }
+  },
+  {
+    "Id": 2,
+    "Title": "iPhone 15 Pro Max",
+    "Description": "Forged in titanium.",
+    "Price": 159900,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Natural Titanium", "Blue Titanium" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "256GB", "1TB" ]
+    }
+  },
+  {
+    "Id": 3,
+    "Title": "Pixel 8 Pro",
+    "Description": "Google AI integrated smartphone.",
+    "Price": 106999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Obsidian", "Porcelain", "Bay" ],
+      "RAM": [ "12GB" ],
+      "Storage": [ "128GB", "256GB" ]
+    }
+  },
+  {
+    "Id": 4,
+    "Title": "OnePlus 12",
+    "Description": "Smooth beyond belief.",
+    "Price": 64999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Flowy Emerald", "Silky Black" ],
+      "RAM": [ "12GB", "16GB" ],
+      "Storage": [ "256GB", "512GB" ]
+    }
+  },
+  {
+    "Id": 5,
+    "Title": "Galaxy Z Fold 5",
+    "Description": "The ultimate foldable.",
+    "Price": 154999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1662955562095-8854bc8d7b38?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Phantom Black", "Icy Blue" ],
+      "RAM": [ "12GB" ],
+      "Storage": [ "512GB", "1TB" ]
+    }
+  },
+  {
+    "Id": 6,
+    "Title": "iPhone 15",
+    "Description": "Dynamic Island comes to standard models.",
+    "Price": 79900,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Pink", "Yellow", "Green" ],
+      "RAM": [ "6GB" ],
+      "Storage": [ "128GB", "256GB" ]
+    }
+  },
+  {
+    "Id": 7,
+    "Title": "Galaxy S23 FE",
+    "Description": "Fan edition premium phone.",
+    "Price": 54999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Mint", "Graphite" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "128GB" ]
+    }
+  },
+  {
+    "Id": 8,
+    "Title": "Pixel 7a",
+    "Description": "Incredible camera, affordable price.",
+    "Price": 43999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Charcoal", "Snow", "Sea" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "128GB" ]
+    }
+  },
+  {
+    "Id": 9,
+    "Title": "Nothing Phone (2)",
+    "Description": "Come to the bright side.",
+    "Price": 44999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Dark Grey", "White" ],
+      "RAM": [ "8GB", "12GB" ],
+      "Storage": [ "256GB" ]
+    }
+  },
+  {
+    "Id": 10,
+    "Title": "Moto Edge 40",
+    "Description": "Ultra-slim curved display.",
+    "Price": 29999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Eclipse Black", "Nebula Green" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "256GB" ]
+    }
+  },
+  {
+    "Id": 11,
+    "Title": "Apple Watch Series 9",
+    "Description": "A brighter mind.",
+    "Price": 41900,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?q=80&w=800",
+    "Specifications": {
+      "Size": [ "41mm", "45mm" ],
+      "Connectivity": [ "GPS", "Cellular" ]
+    }
+  },
+  {
+    "Id": 12,
+    "Title": "Galaxy Watch 6 Classic",
+    "Description": "The rotating bezel is back.",
+    "Price": 36999,
+    "CategoryId": 1,
+    "ImageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800",
+    "Specifications": {
+      "Size": [ "43mm", "47mm" ],
+      "Color": [ "Black", "Silver" ]
+    }
+  },
+  {
+    "Id": 13,
+    "Title": "MacBook Pro 16\" M3 Max",
+    "Description": "Mind-blowing performance.",
+    "Price": 349900,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "M3 Max" ],
+      "RAM": [ "36GB", "64GB" ],
+      "Storage": [ "1TB SSD", "2TB SSD" ]
+    }
+  },
+  {
+    "Id": 14,
+    "Title": "Dell XPS 15",
+    "Description": "High performance creator laptop.",
+    "Price": 185000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "Intel i7-13700H", "Intel i9-13900H" ],
+      "RAM": [ "16GB", "32GB" ],
+      "GPU": [ "RTX 4060" ]
+    }
+  },
+  {
+    "Id": 15,
+    "Title": "ASUS ROG Zephyrus G14",
+    "Description": "Ultra-portable gaming laptop.",
+    "Price": 145000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "Ryzen 9 7940HS" ],
+      "RAM": [ "16GB" ],
+      "GPU": [ "RTX 4060", "RTX 4070" ]
+    }
+  },
+  {
+    "Id": 16,
+    "Title": "MacBook Air 15\" M2",
+    "Description": "Supercharged by M2.",
+    "Price": 134900,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "M2" ],
+      "RAM": [ "8GB", "16GB" ],
+      "Storage": [ "256GB SSD", "512GB SSD" ]
+    }
+  },
+  {
+    "Id": 17,
+    "Title": "Lenovo ThinkPad X1 Carbon",
+    "Description": "The ultimate business laptop.",
+    "Price": 165000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "Intel i7-1355U" ],
+      "RAM": [ "16GB", "32GB" ],
+      "Display": [ "14 inch OLED" ]
+    }
+  },
+  {
+    "Id": 18,
+    "Title": "HP Spectre x360",
+    "Description": "Premium 2-in-1 convertible.",
+    "Price": 139999,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "Intel i7-1355U" ],
+      "RAM": [ "16GB" ],
+      "Color": [ "Nightfall Black" ]
+    }
+  },
+  {
+    "Id": 19,
+    "Title": "Acer Predator Helios 16",
+    "Description": "Desktop-level gaming performance.",
+    "Price": 175000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "Intel i7-13700HX" ],
+      "RAM": [ "16GB" ],
+      "GPU": [ "RTX 4070" ]
+    }
+  },
+  {
+    "Id": 20,
+    "Title": "LG Gram 17",
+    "Description": "Ultra-lightweight large screen laptop.",
+    "Price": 125000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=800",
+    "Specifications": {
+      "Weight": [ "1.35 kg" ],
+      "Processor": [ "Intel i7" ],
+      "RAM": [ "16GB" ]
+    }
+  },
+  {
+    "Id": 21,
+    "Title": "Mac Studio M2 Ultra",
+    "Description": "Empower your creativity.",
+    "Price": 419900,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "M2 Ultra" ],
+      "RAM": [ "64GB", "128GB" ],
+      "Storage": [ "1TB", "2TB" ]
+    }
+  },
+  {
+    "Id": 22,
+    "Title": "Alienware Aurora R15",
+    "Description": "High performance gaming desktop.",
+    "Price": 245000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=800",
+    "Specifications": {
+      "Processor": [ "Intel i9-13900KF" ],
+      "GPU": [ "RTX 4080", "RTX 4090" ],
+      "RAM": [ "32GB" ]
+    }
+  },
+  {
+    "Id": 23,
+    "Title": "LG OLED evo C3 65\"",
+    "Description": "Brilliant picture, incredible design.",
+    "Price": 210000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=800",
+    "Specifications": {
+      "Panel": [ "OLED" ],
+      "Resolution": [ "4K UHD" ],
+      "Refresh Rate": [ "120Hz" ]
+    }
+  },
+  {
+    "Id": 24,
+    "Title": "Samsung Neo QLED 8K 75\"",
+    "Description": "Absolute detail and pure light.",
+    "Price": 450000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=800",
+    "Specifications": {
+      "Panel": [ "Mini LED" ],
+      "Resolution": [ "8K UHD" ],
+      "Refresh Rate": [ "144Hz" ]
+    }
+  },
+  {
+    "Id": 25,
+    "Title": "Sony Bravia XR A95L 55\"",
+    "Description": "Master Series QD-OLED.",
+    "Price": 280000,
+    "CategoryId": 2,
+    "ImageUrl": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=800",
+    "Specifications": {
+      "Panel": [ "QD-OLED" ],
+      "Resolution": [ "4K" ],
+      "Features": [ "Cognitive Processor XR" ]
+    }
+  },
+  {
+    "Id": 26,
+    "Title": "Sony WH-1000XM5",
+    "Description": "Industry-leading noise cancellation.",
+    "Price": 29990,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Black", "Silver", "Midnight Blue" ],
+      "Battery Life": [ "30 Hours" ],
+      "Features": [ "ANC", "Multipoint Connection" ]
+    }
+  },
+  {
+    "Id": 27,
+    "Title": "Bose QuietComfort Ultra",
+    "Description": "World-class noise cancellation.",
+    "Price": 35900,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Black", "White Smoke" ],
+      "Battery Life": [ "24 Hours" ],
+      "Features": [ "Immersive Audio" ]
+    }
+  },
+  {
+    "Id": 28,
+    "Title": "AirPods Pro (2nd Gen)",
+    "Description": "Magical audio experience.",
+    "Price": 24900,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=800",
+    "Specifications": {
+      "Color": [ "White" ],
+      "Charging": [ "USB-C", "MagSafe" ],
+      "Features": [ "ANC", "Transparency" ]
+    }
+  },
+  {
+    "Id": 29,
+    "Title": "JBL Flip 6",
+    "Description": "Bold sound for every adventure.",
+    "Price": 11999,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Black", "Blue", "Red" ],
+      "Battery Life": [ "12 Hours" ],
+      "Water Resistance": [ "IP67" ]
+    }
+  },
+  {
+    "Id": 30,
+    "Title": "Sonos Era 300",
+    "Description": "Next-level spatial audio.",
+    "Price": 44999,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Black", "White" ],
+      "Connectivity": [ "Wi-Fi", "Bluetooth", "Line-in" ]
+    }
+  },
+  {
+    "Id": 31,
+    "Title": "Sennheiser Momentum 4",
+    "Description": "Superior sound quality.",
+    "Price": 34990,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=800",
+    "Specifications": {
+      "Battery Life": [ "60 Hours" ],
+      "Color": [ "Black", "White" ],
+      "Driver": [ "42mm Transducer" ]
+    }
+  },
+  {
+    "Id": 32,
+    "Title": "Marshall Emberton II",
+    "Description": "Heavyweight sound in a compact frame.",
+    "Price": 14999,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=800",
+    "Specifications": {
+      "Battery Life": [ "30+ Hours" ],
+      "Color": [ "Black and Brass", "Cream" ],
+      "Water Resistance": [ "IP67" ]
+    }
+  },
+  {
+    "Id": 33,
+    "Title": "Samsung Galaxy Buds 2 Pro",
+    "Description": "24-bit Hi-Fi audio.",
+    "Price": 16999,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Graphite", "White", "Bora Purple" ],
+      "Features": [ "Active Noise Canceling" ]
+    }
+  },
+  {
+    "Id": 34,
+    "Title": "Sennheiser IE 200",
+    "Description": "Audiophile wired earbuds.",
+    "Price": 12990,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=800",
+    "Specifications": {
+      "Connection": [ "3.5mm Wired" ],
+      "Transducer": [ "7mm TrueResponse" ],
+      "Impedance": [ "18 Ohms" ]
+    }
+  },
+  {
+    "Id": 35,
+    "Title": "Sony MDR-7506",
+    "Description": "Professional large diaphragm headphones.",
+    "Price": 8500,
+    "CategoryId": 3,
+    "ImageUrl": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=800",
+    "Specifications": {
+      "Design": [ "Closed-Back", "Wired" ],
+      "Cable Type": [ "Coiled" ],
+      "Driver Size": [ "40mm" ]
+    }
+  },
+  {
+    "Id": 36,
+    "Title": "Logitech G Pro X Superlight",
+    "Description": "Zero opposition gaming mouse.",
+    "Price": 12995,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Specifications": {
+      "Color": [ "Black", "White", "Red" ],
+      "Weight": [ "< 63 grams" ],
+      "Sensor": [ "HERO 25K" ]
+    }
+  },
+  {
+    "Id": 37,
+    "Title": "Razer DeathAdder V3 Pro",
+    "Description": "For the Pro gamers.",
+    "Price": 13499,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Specifications": {
+      "Weight": [ "63g" ],
+      "Sensor": [ "Focus Pro 30K Optical" ],
+      "Polling Rate": [ "Up to 4000 Hz" ]
+    }
+  },
+  {
+    "Id": 38,
+    "Title": "Wooting 60HE",
+    "Description": "Analog mechanical keyboard.",
+    "Price": 18500,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Specifications": {
+      "Switches": [ "Lekker Magnetic Switches" ],
+      "Size": [ "60% Layout" ],
+      "Features": [ "Rapid Trigger" ]
+    }
+  },
+  {
+    "Id": 39,
+    "Title": "Corsair K70 RGB PRO",
+    "Description": "Legendary mechanical gaming keyboard.",
+    "Price": 14999,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Specifications": {
+      "Switches": [ "Cherry MX Red", "Cherry MX Speed" ],
+      "Size": [ "Full Size" ],
+      "Polling Rate": [ "8000Hz AXON" ]
+    }
+  },
+  {
+    "Id": 40,
+    "Title": "DualSense Edge Wireless Controller",
+    "Description": "Built with high performance and personalization in mind.",
+    "Price": 18990,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=800",
+    "Specifications": {
+      "Compatibility": [ "PS5", "PC" ],
+      "Features": [ "Swappable Stick Modules", "Back Buttons" ]
+    }
+  },
+  {
+    "Id": 41,
+    "Title": "Xbox Elite Wireless Controller Series 2",
+    "Description": "Play like a pro.",
+    "Price": 15990,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=800",
+    "Specifications": {
+      "Compatibility": [ "Xbox", "PC", "Mobile" ],
+      "Battery Life": [ "Up to 40 Hours" ],
+      "Customization": [ "Adjustable-tension thumbsticks" ]
+    }
+  },
+  {
+    "Id": 42,
+    "Title": "ASUS ROG Swift OLED PG27AQDM",
+    "Description": "Endgame 1440p gaming monitor.",
+    "Price": 95000,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800",
+    "Specifications": {
+      "Resolution": [ "2560 x 1440" ],
+      "Refresh Rate": [ "240Hz" ],
+      "Panel": [ "OLED" ],
+      "Response Time": [ "0.03ms" ]
+    }
+  },
+  {
+    "Id": 43,
+    "Title": "LG UltraGear 27GR95QE-B",
+    "Description": "OLED Gaming Monitor.",
+    "Price": 85000,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800",
+    "Specifications": {
+      "Resolution": [ "2560 x 1440" ],
+      "Refresh Rate": [ "240Hz" ],
+      "Response Time": [ "0.03ms" ]
+    }
+  },
+  {
+    "Id": 44,
+    "Title": "SteelSeries Arctis Nova Pro Wireless",
+    "Description": "Almighty Audio experience.",
+    "Price": 32999,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=800",
+    "Specifications": {
+      "Compatibility": [ "PC", "PS5", "Xbox" ],
+      "Features": [ "Active Noise Cancellation", "Hot-swap Batteries" ]
+    }
+  },
+  {
+    "Id": 45,
+    "Title": "HyperX Cloud III Wireless",
+    "Description": "A legend reborn.",
+    "Price": 14990,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=800",
+    "Specifications": {
+      "Battery Life": [ "Up to 120 Hours" ],
+      "Audio": [ "DTS Headphone:X Spatial" ],
+      "Microphone": [ "Detachable with LED indicator" ]
+    }
+  },
+  {
+    "Id": 46,
+    "Title": "Razer BlackShark V2 Pro",
+    "Description": "The definitive esports gaming headset.",
+    "Price": 16999,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=800",
+    "Specifications": {
+      "Microphone": [ "HyperClear Super Wideband" ],
+      "Drivers": [ "Triforce Titanium 50mm" ],
+      "Connection": [ "2.4GHz Wireless" ]
+    }
+  },
+  {
+    "Id": 47,
+    "Title": "Keychron Q1 Pro",
+    "Description": "Custom mechanical keyboard.",
+    "Price": 18000,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Specifications": {
+      "Layout": [ "75%" ],
+      "Body": [ "Full CNC Aluminum" ],
+      "Connectivity": [ "Bluetooth 5.1", "Wired Type-C" ]
+    }
+  },
+  {
+    "Id": 48,
+    "Title": "Logitech G502 X PLUS",
+    "Description": "Iconic design, reimagined.",
+    "Price": 13995,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Specifications": {
+      "Switches": [ "Lightforce Hybrid Optical-Mechanical" ],
+      "RGB": [ "8-zone array" ],
+      "Sensor": [ "HERO 25K" ]
+    }
+  },
+  {
+    "Id": 49,
+    "Title": "Samsung Odyssey G9",
+    "Description": "49-inch curved gaming monitor.",
+    "Price": 135000,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800",
+    "Specifications": {
+      "Resolution": [ "5120 x 1440" ],
+      "Curve": [ "1000R" ],
+      "Refresh Rate": [ "240Hz" ]
+    }
+  },
+  {
+    "Id": 50,
+    "Title": "Elgato Stream Deck MK.2",
+    "Description": "Studio control at your fingertips.",
+    "Price": 14999,
+    "CategoryId": 4,
+    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Specifications": {
+      "Keys": [ "15 Customizable LCD Keys" ],
+      "Connection": [ "USB-C" ],
+      "Compatibility": [ "Windows", "macOS" ]
+    }
+  }
+]
