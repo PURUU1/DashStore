@@ -26,13 +26,14 @@ namespace DashStore.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewData["ShowSubNav"] = true;
             var currentUser = await _userManager.GetUserAsync(User);
 
 
             //var products = _productServices.GetAllProducts();
             var products = _productServices.GetAllProducts();
-            
-            
+            //HttpContext.Session.Remove("SessionCart");
+
             var categoryList = _productServices.GetCategories().ToList();
             if (currentUser != null)
             {
@@ -42,7 +43,8 @@ namespace DashStore.Controllers
             {
                 User = currentUser,
                 Products = products,
-                Categories = categoryList 
+                Categories = categoryList ,
+                ProductsInCategory = _productServices.GetProductsInCategory().Cast<CategoryList>()
             };
 
             

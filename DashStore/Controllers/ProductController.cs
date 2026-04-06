@@ -26,14 +26,30 @@ namespace DashStore.Controllers
         {
             return View();
         }
+        public IActionResult Categories()
+        {
+            return View();
+        }
+
+
+
+
+        public IActionResult Buy(int id)
+        {
+
+
+            return Json(new { });
+        }
         public IActionResult Details(int id)
         {
             if(id is not 0)
             {
                 var product = _productServices.GetProduct(id);
+                var Suuggetions = _productServices.GetSuggetions(product.CategoryId);
             var ProductViewModel = new ProductViewModel()
             {
                 product = product,
+                SuggestedProducts = Suuggetions,
             };
                 return View( ProductViewModel);
 

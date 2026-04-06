@@ -11,6 +11,7 @@ namespace DashStore.ViewModels
      
         [Required]
         public Product product { get; set; }
+        public List<Product>? SuggestedProducts { get; set; }
 
 
     }

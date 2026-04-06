@@ -34,9 +34,134 @@
         <h6 class="card-subtitle mb-2 text-body-secondary">@Model.product.Category.Name</h6>
     <h6 class="card-subtitle mb-2 text-body-secondary">$ @Model.product.Price</h6>
          
-        <button  class="btn btn-primary BuyNow" asp-controller="Product"
-                asp-action="index"
-                asp-route-id="@Model.product.Id" id="@Model.product.Id">
+
+            <button id="Minus">-</button>
+        <button  class="btn btn-primary Quatity" id="">
+            Quatity
+        </button>
+            <button id="Add">+</button>
+            &ensp;
+            &ensp;
+            &ensp;
+        <button  class="btn btn-primary BuyNow" data-buyNow="false"  id="@Model.product.Id">
+            Add To Cart
+        </button>
+    <button class="btn btn-primary BuyNow" data-buyNow="True" id="@Model.product.Id">
             Buy Now
         </button>
+
+
+
     </div>
+
+
+
+
+
+
+
+    <div class="m-3">
+    <h5>  See More Like this </h5>
+    <div class="row row-cols-5 ">
+    @foreach(var suggetions in Model.SuggestedProducts)
+    {
+        <div class="col m-1">
+
+        <div class="card m-2" style="width: 18rem;">
+            <img src="@suggetions.ImageUrl" class="card-img-top" alt="Product Image">
+            @* <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image Here</text></svg> *@
+            <div class="card-body">
+                <h5 class="card-title">@suggetions.Title</h5>
+                <p class="card-text">@suggetions.Description</p>
+
+                <h6 class="card-subtitle mb-2 text-body-secondary">@suggetions.Category.Name</h6>
+                @* <a href="#" class="btn btn-primary">$ @Product.Price</a> *@
+                <button class="btn btn-primary goto " id="@suggetions.Id">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+        </div>
+
+    }
+    </div>
+</div>
+
+
+ @section Scripts {
+    <script>
+
+
+        $(document).ready(function () {
+
+                    $('.goto').click(function () {
+                         var btn = $(this)
+                    var id = btn.attr("id")
+
+                    window.location.href = `/Product/Details/${id}`;
+                    })
+
+            var quatity = 0;
+                    $('#Add').click(function () {
+                        var quatityDiv = $(".Quatity");
+                        if(quatity < 5){
+                            quatity++;
+                            quatityDiv.html(quatity)
+
+                        }
+
+                    })
+                    $('#Minus').click(function () {
+                          var quatityDiv = $(".Quatity");
+                        if(quatity  > 0){
+                            quatity--;
+                            quatityDiv.html(quatity)
+
+                        }
+
+                    })
+                $('.BuyNow').click(function () {
+                    var btn = $(this)
+                    var id = btn.attr("id")
+                    console.log(id)
+                    var quatityDiv = $(".Quatity");
+                    if(quatity == 0){
+                    quatity++
+
+                    }
+                    quatityDiv.html(quatity)
+
+                    if(quatity != 0){
+                        var count = quatity
+                    }
+
+                    var isBuyNow = btn.data("buynow");
+                    
+                   $.ajax({
+                        url: `/Cart/AddToCart/${id}`,
+                        type: 'Post',                        
+                        data: {
+                            id: id,
+                            quatity:count
+
+                        },
+                        success: function (response) {
+                            
+                            // alert("Success: " + response.message);
+                            console.log(response);
+                            if(isBuyNow){
+                                window.location.href = '/Cart/Index';
+                    }
+
+                        },
+                        error: function (xhr, status, error) {
+                            
+                            console.error("Error occurred: " + error);
+                        }
+                    });
+                
+               
+            });
+        });
+    </script>
+} 

@@ -2,71 +2,137 @@
 
 @{
     ViewData["Title"] = "Home Page";
+
 }
-
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <main class="container my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Premium Electronics</h1>
+            <p class="text-muted">Browse our collection of 50+ unique products.</p>
+        </div>
+
+        <h5>@ViewBag.Name</h5>
+
+        <h5 class="text-center  display-6">All Products</h5>
+        <div class=" d-flex " id="All">
 
 
-   <h5>@ViewBag.Name</h5>
-        <form method="get">
+            <div class="carousel-wrapper">
+                <!-- Navigation -->
+                <button class="nav-btn prev-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
+                <button class="nav-btn next-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></button>
 
-   <div class="row gx-2 ">
+                <!-- Carousel Content -->
+                <div class="product-carousel" id="carousel">
 
-    @foreach(var Product in Model.Products)
-    {
+                    @foreach (var Product in Model.Products)
+                    {
 
-        <div class="card m-2" style="width: 18rem;">
-            <img src="@Product.ImageUrl" class="card-img-top" alt="Product Image">
-            @* <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image Here</text></svg> *@
-            <div class="card-body">
-                <h5 class="card-title">@Product.Title</h5>
-                <p class="card-text">@Product.Description</p>
-               
-                <h6 class="card-subtitle mb-2 text-body-secondary">@Product.Category.Name</h6>
-                @* <a href="#" class="btn btn-primary">$ @Product.Price</a> *@
-                    <button  class="btn btn-primary BuyNow" asp-controller="Product"
-                       asp-action="Details"
-                       asp-route-id="@Product.Id"  id="@Product.Id">Buy Now</button>
+
+
+
+
+                        <!-- Product Card HTML -->
+                        <div class="product-card m-2">
+                            <!-- Wishlist Icon -->
+                            @* <div class="wishlist-btn">
+                            <i class="bi bi-heart"></i>
+                        </div> *@
+
+                            <!-- Image -->
+                            <div class="product-img-container">
+                                <img src="@Product.ImageUrl" alt="@Product.Title">
+                            </div>
+
+                            <!-- Content -->
+                            <div class="text-center">
+                                <h5 class="product-title">
+                                    @Product.Title
+                                </h5>
+
+                                <div class="price-tag">@Product.Price</div>
+                                <form method="get">
+                                    <button class="btn-buy BuyNow buyBtn" asp-controller="Product"
+                                            asp-action="Details"
+                                            asp-route-id="@Product.Id" id="@Product.Id">
+                                        Buy Now
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    }
+                </div>
             </div>
         </div>
-   
-    }
-   </div>
-
-        </form>
 
 
 
-@* @section Scripts {
-    <script>
-        $(document).ready(function () {
-            // Your jQuery code goes here
-                $('.BuyNow').click(function () {
-                    var btn = $(this)
-                    var ProductId = btn.attr("id")
-                    console.log(ProductId)
-                   $.ajax({
-                        url: `/Product/${ProductId}`, 
-                        type: 'Post',                        
-                        data: {
-                            id: ProductId,                           
+
+
+
+      
+
+                    @foreach (var category in Model.ProductsInCategory)
+                    {
+
+            <h5 class="text-center  display-6">@category.Name</h5>
+            <div class=" d-flex ">
+
+
+                <div class="carousel-wrapper" id="@category.Name">
+                    <!-- Navigation -->
+                    <button class="nav-btn prev-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
+                    <button class="nav-btn next-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+
+                    <!-- Carousel Content -->
+                    <div class="product-carousel" id="carousel" >
+                        @foreach (var Product in category.ProductsByCategory)
+                        {
                             
-                        },
-                        success: function (response) {
-                            
-                            alert("Success: " + response.message);
-                            console.log(response);
-                        },
-                        error: function (xhr, status, error) {
-                            
-                            console.error("Error occurred: " + error);
+
+                        
+
+                        <!-- Product Card HTML -->
+                        <div class="product-card m-2">
+                            <!-- Wishlist Icon -->
+                            @* <div class="wishlist-btn">
+                            <i class="bi bi-heart"></i>
+                        </div> *@
+
+                            <!-- Image -->
+                            <div class="product-img-container">
+                                <img src="@Product.ImageUrl" alt="@Product.Title">
+                            </div>
+
+                            <!-- Content -->
+                            <div class="text-center">
+                                <h5 class="product-title">
+                                    @Product.Title
+                                </h5>
+
+                                <div class="price-tag">@Product.Price</div>
+                                <form method="get">
+                                    <button class="btn-buy BuyNow buyBtn" asp-controller="Product"
+                                            asp-action="Details"
+                                            asp-route-id="@Product.Id" id="@Product.Id">
+                                        Buy Now
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
                         }
-                    });
-                
-               
-            });
-        });
-    </script>
-} *@
+
+                </div>
+            </div>
+        </div>
+
+
+                    }
+
+
+
+

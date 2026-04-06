@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@using System.Text.Json
+@using DashStore.ViewModels
+@using DashStore.Models
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,16 +16,42 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DashStore.styles.css" asp-append-version="true" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow ">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DashStore</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    @* <img src="assets/DarkLogo.png" alt="Alternate Text" width="50%" /> *@
+
+                </a>
+                <div class="me-lg-4">
+                    <a href="/" class="text-decoration-none d-flex align-items-center">
+                        <span class="h3 mb-0 fw-bolder text-primary tracking-tighter">DASH</span>
+                        <span class="h3 mb-0 fw-bolder text-dark tracking-tighter">STORE</span>
+                    </a>
+                </div>
+
+                <div class="d-none d-md-flex flex-grow-1 mx-4">
+                    <form class="input-group" action="/Home/Index" method="get">
+                        <input type="text" name="searchString" class="form-control  " placeholder="Search products..." aria-label="Search">
+                        @* <button class="btn btn-outline-secondary border-start-0 bg-white text-muted" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button> *@
+                    </form>
+
+
+
+
+
+                </div>
+
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -26,14 +60,88 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="cart" asp-action="Index">Cart</a>
+                        </li>
                     </ul>
-                    <partial name="_LoginPartial" />
+                    @* <partial name="_LoginPartial" /> *@
+
+
+
                 </div>
+                <div class="d-flex align-items-center gap-1 gap-md-2">
+                    <!-- Mobile Search Icon -->
+                    <a href="#" class="nav-icon-btn d-md-none">
+                        <i class="bi bi-search"></i>
+                    </a>
+
+                    <a href="#" class="nav-icon-btn">
+                        <i class="bi bi-person"></i>
+                    </a>
+
+                    <a href="#" class="nav-icon-btn d-none d-sm-flex">
+                        <i class="bi bi-heart"></i>
+                    </a>
+
+                    <a href="#" class="nav-icon-btn" id="cartTrigger">
+                        <i class="bi bi-bag"></i>
+
+                        @{
+                            var cartJson = HttpContextAccessor.HttpContext.Session.GetString("SessionCart");
+                            int cartCount = 0;
+                            if (!string.IsNullOrEmpty(cartJson))
+                            {
+                                var cart = JsonSerializer.Deserialize<List<CartItem>>(cartJson);
+                                cartCount = cart.Sum(u => u.Count);
+                            }
+                        }
+                        <span class="cart-badge" id="cartCount">@cartCount</span>
+                    </a>
+
+                    <button class="btn d-lg-none nav-icon-btn border-0 shadow-none">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+              
             </div>
+
         </nav>
+
+        @if (ViewData["ShowSubNav"] != null && (bool)ViewData["ShowSubNav"])
+        {
+           
+    <div class="category-nav shadow-sm">
+        <div class="container text-center">
+                      <a href="#All" class="category-link active">All Products</a>
+                    <a href="#Smartphones" class="category-link">Smartphones</a>
+                    <a href="#Laptops & PCs" class="category-link">Laptops</a>
+                    <a href="#Audio & Sound" class="category-link">Audio</a>
+                    <a href="#Gaming" class="category-link">Gaming</a>
+                    <a href="#Wearables" class="category-link">Wearables</a>
+        </div>
+    </div>
+      
+        }
+
+        
     </header>
+
+
+
     <div class="container">
+
         <main role="main" class="pb-3">
+
             @RenderBody()
         </main>
     </div>
@@ -46,6 +154,64 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function() {
+            // Simulate Add to Cart / Buy Now logic
+            $('.buy-btn').click(function() {
+                let badge = $('#cartCount');
+                let count = parseInt(badge.text());
+                badge.text(count + 1);
+
+                // Quick visual feedback
+                badge.animate({fontSize: '0.9rem'}, 100).animate({fontSize: '0.65rem'}, 100);
+            });
+
+            // Active category toggle
+            // $('.category-link').click(function(e) {
+            //     e.preventDefault();
+            //     $('.category-link').removeClass('active');
+            //     $(this).addClass('active');
+            // });
+
+
+
+
+
+
+
+              
+            const carousel = $('#carousel');
+            const scrollAmount = 320; // width of card + gap
+
+            $('#nextBtn').click(function() {
+                carousel.scrollLeft(carousel.scrollLeft() + scrollAmount);
+            });
+
+            $('#prevBtn').click(function() {
+                carousel.scrollLeft(carousel.scrollLeft() - scrollAmount);
+            });
+
+            $('.btn-buy').click(function() {
+                $(this).text("Adding...");
+                setTimeout(() => { $(this).text("Buy Now"); }, 800);
+            });
+
+            $('.wishlist-btn').click(function() {
+                $(this).find('i').toggleClass('bi-heart bi-heart-fill');
+                $(this).toggleClass('text-danger');
+            });
+      
+
+
+
+
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+
+
+

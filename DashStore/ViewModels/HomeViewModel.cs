@@ -12,6 +12,17 @@ namespace DashStore.ViewModels
         public IEnumerable<Product>? Products { get; set; }
         public IEnumerable<Category>? Categories { get; set; }
 
+        public IEnumerable<CategoryList>? ProductsInCategory { get; set; }
 
+
+    }
+
+    public class CategoryList
+    {
+        [Required]
+        public string Name { get; set; }
+        // Key = Category Name (string)
+// Value = List of Products belonging to that category
+public  IEnumerable<Product>? ProductsByCategory { get; set; } 
     }
 }
