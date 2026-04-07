@@ -1,5 +1,6 @@
 ﻿using DashStore.Data;
 using DashStore.Models;
+using DashStore.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using System.Text.Json;
@@ -15,10 +16,34 @@ namespace DashStore.Controllers
         {
             // Retrieve cart from session
             var cartJson = HttpContext.Session.GetString("SessionCart");
-            List<CartItem> cart = string.IsNullOrEmpty(cartJson)
+            List<CartItem> cartItems = string.IsNullOrEmpty(cartJson)
                 ? new List<CartItem>()
                 : JsonSerializer.Deserialize<List<CartItem>>(cartJson);
+            var Total = 0.0;
+            foreach(var ItemInCart in cartItems)
+            {
+                if(ItemInCart.Count > 1)
+                {
+                    Total += ItemInCart.Price * ItemInCart.Count-1;
+                    
+                }
+                else
+                {
+                Total += ItemInCart.Price;
 
+                }
+            }
+
+
+            var cart = new CartViewModel()
+            {
+                CartItems = cartItems,
+                SubTotal = Total,
+                EstimatedTax = 50 ,
+                EstimatedShippingAndHandling = 29,
+                Total=Total + 50 + 29
+                
+            };
 
 
             return View(cart);
@@ -72,7 +97,7 @@ namespace DashStore.Controllers
                     ProductName = product.Title,
                     Price = product.Price,
                     Count = quatity ,
-                    ImageUrl = product.ImageUrl.Split(',')[0] // Get first image from your comma list
+                    ImageUrl = product.ImageUrl // Get first image from your comma list
                 });
                 success = true;
             }
@@ -96,6 +121,8 @@ namespace DashStore.Controllers
 
             List<CartItem> cart;
 
+            
+
             if (string.IsNullOrEmpty(cartJson))
             {
                 // If session is empty, create a brand new list
@@ -106,6 +133,11 @@ namespace DashStore.Controllers
             {
                 // If session has data, "melt" the JSON string back into a List
                 cart = JsonSerializer.Deserialize<List<CartItem>>(cartJson);
+            }
+
+            if (cart.Count.Equals(0))
+            {
+                return Json(new { success, RemoveFromCartUi, count = cart.Count });
             }
             var existingItem = cart.FirstOrDefault(u => u.ProductId == ProductId);
                 var CartProduct = cart.FirstOrDefault(x => x.ProductId.Equals(ProductId));
@@ -134,6 +166,35 @@ namespace DashStore.Controllers
 
 
             return Json(new { success , RemoveFromCartUi , count = existingItem.Count });
+        }
+        
+
+        [HttpPost]
+        public IActionResult RemoveFromCartTotally(int Id )
+        {
+            var ProductId = Id;
+
+            var success = false;
+            var RemoveFromCartUi = false;
+
+            var cartJson = HttpContext.Session.GetString("SessionCart");
+
+            List<CartItem> cart;
+
+            
+
+            
+                cart = JsonSerializer.Deserialize<List<CartItem>>(cartJson);
+
+                var CartProduct = cart.FirstOrDefault(x => x.ProductId.Equals(ProductId));
+            if (CartProduct != null)
+            {
+                cart.Remove(CartProduct);
+                success = true;
+                RemoveFromCartUi = true;
+              }
+            HttpContext.Session.SetString("SessionCart", JsonSerializer.Serialize(cart));
+            return Json(new { success , RemoveFromCartUi  });
         }
         }
 }

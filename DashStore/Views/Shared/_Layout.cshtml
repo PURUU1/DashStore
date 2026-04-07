@@ -39,10 +39,18 @@
 
                 <div class="d-none d-md-flex flex-grow-1 mx-4">
                     <form class="input-group" action="/Home/Index" method="get">
-                        <input type="text" name="searchString" class="form-control  " placeholder="Search products..." aria-label="Search">
-                        @* <button class="btn btn-outline-secondary border-start-0 bg-white text-muted" type="submit">
+
+
+                        
+
+
+                        <input type="text" class="form-control  " id="Search" placeholder="Search products..." aria-label="Search">
+                        <button class="btn btn-outline-secondary  bg-white text-muted " id="Sbtn" type="submit">
                             <i class="bi bi-search"></i>
-                        </button> *@
+                        </button>
+                        <div id="search-results">
+                            <!-- Items will be injected here via JS -->
+                        </div>
                     </form>
 
 
@@ -63,11 +71,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
-                        <li class="nav-item">
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="cart" asp-action="Index">Cart</a>
-                        </li>
+                        </li> *@
                     </ul>
-                    @* <partial name="_LoginPartial" /> *@
 
 
 
@@ -78,16 +85,17 @@
                         <i class="bi bi-search"></i>
                     </a>
 
-                    <a href="#" class="nav-icon-btn">
+                    <a href="#" class="nav-icon-btn" onclick="location.href='/Identity/Account/Manage'">
                         <i class="bi bi-person"></i>
+                        @* <partial name="_LoginPartial" />  *@
                     </a>
 
-                    <a href="#" class="nav-icon-btn d-none d-sm-flex">
+                    @* <a href="#" class="nav-icon-btn d-none d-sm-flex">
                         <i class="bi bi-heart"></i>
-                    </a>
+                    </a> *@
 
-                    <a href="#" class="nav-icon-btn" id="cartTrigger">
-                        <i class="bi bi-bag"></i>
+                    <a href="#" class="nav-icon-btn" id="cartTrigger" onclick="location.href='/Cart/'">
+                        <i class="bi bi-cart"></i>
 
                         @{
                             var cartJson = HttpContextAccessor.HttpContext.Session.GetString("SessionCart");
@@ -112,33 +120,33 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-              
+
             </div>
 
         </nav>
 
         @if (ViewData["ShowSubNav"] != null && (bool)ViewData["ShowSubNav"])
         {
-           
-    <div class="category-nav shadow-sm">
-        <div class="container text-center">
-                      <a href="#All" class="category-link active">All Products</a>
+
+            <div class="category-nav shadow-sm">
+                <div class="container text-center">
+                    <a href="#All" class="category-link active">All Products</a>
                     <a href="#Smartphones" class="category-link">Smartphones</a>
                     <a href="#Laptops & PCs" class="category-link">Laptops</a>
                     <a href="#Audio & Sound" class="category-link">Audio</a>
                     <a href="#Gaming" class="category-link">Gaming</a>
-                    <a href="#Wearables" class="category-link">Wearables</a>
-        </div>
-    </div>
-      
+                    @* <a href="#Wearables" class="category-link">Wearables</a> *@
+                </div>
+            </div>
+
         }
 
-        
+
     </header>
 
 
 
-    <div class="container">
+    <div class="">
 
         <main role="main" class="pb-3">
 
@@ -155,7 +163,11 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
+
+
         $(document).ready(function() {
+            
+        $("#Sbtn").hide()
             // Simulate Add to Cart / Buy Now logic
             $('.buy-btn').click(function() {
                 let badge = $('#cartCount');
@@ -165,6 +177,65 @@
                 // Quick visual feedback
                 badge.animate({fontSize: '0.9rem'}, 100).animate({fontSize: '0.65rem'}, 100);
             });
+            $('#Search').click(function() {
+                $("#Sbtn").toggle()
+
+            });
+              $('body').click(function() {
+                  $('#search-results').css("display","None")
+              })
+
+                $("#Sbtn").click(function(e){
+                    e.preventDefault()
+                    var txt =  $('#Search').val()
+                      $.ajax({
+                        url: `/Product/Search/`,
+                        type: 'Get',
+                        data: {
+                        text: txt
+
+                        },
+                        success: function (response) {
+
+                            console.log(response);
+
+                            if(response.succ == false){
+         $('#search-results').css("display","None")
+                            }
+
+                             var results = response.searchResult;
+                        var $resultsDiv = $('#search-results');
+                        $resultsDiv.empty();
+
+                        if (results && results.length > 0) {
+                            $.each(results, function(i, item) {
+                                // Extract first image if it's a comma-separated string
+                                var imgUrl = item.imageUrl ? item.imageUrl.split(',')[0] : '/images/no-image.png';
+
+                                var html = `
+                                    <a href="/Product/Details/${item.id}" class="result-item">
+                                        <img src="${imgUrl}" class="result-img">
+                                        <div class="result-info">
+                                            <p class="result-title">${item.title}</p>
+                                            <span class="result-price">₹${item.price}</span>
+                                        </div>
+                                    </a>`;
+                                $resultsDiv.append(html);
+                            });
+                            $resultsDiv.show();
+                        } else {
+                            $resultsDiv.html('<div class="p-3 text-muted text-center small">No items found</div>').show();
+                        }
+
+
+                        },
+                        error: function (xhr, status, error) {
+
+                            console.error("Error occurred: " + error);
+                        }
+                    });
+
+                })
 
             // Active category toggle
             // $('.category-link').click(function(e) {
@@ -179,7 +250,7 @@
 
 
 
-              
+
             const carousel = $('#carousel');
             const scrollAmount = 320; // width of card + gap
 
@@ -200,7 +271,7 @@
                 $(this).find('i').toggleClass('bi-heart bi-heart-fill');
                 $(this).toggleClass('text-danger');
             });
-      
+
 
 
 

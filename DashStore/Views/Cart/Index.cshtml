@@ -1,71 +1,152 @@
-﻿@model List<CartItem>
-<h1> Cart</h1>
+﻿@model DashStore.ViewModels.CartViewModel
 
-<form >
-<div class="row">
 
-@foreach(var item in Model)
-{
-    <div class="card m-2" style="width: 18rem;">
-        <img src="@item.ImageUrl" class="card-img-top" alt="Product Image">
-        @* <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image Here</text></svg> *@
-        <div class="card-body">
-            <h5 class="card-title">@item.ProductName</h5>
-            <p class="card-text"> $ @item.Price</p>
 
-                <h6 class="card-subtitle mb-2 text-body-secondary ">Count - <span class="count"> @item.Count</span></h6>
-             <a href="#" id="@item.ProductId" class="btn btn-primary Remove"> Remove</a> 
-            
+
+
+
+<div class="container cart-section">
+    <div class="row gx-lg-5">
+
+        <!-- LEFT COLUMN: Cart Items -->
+        <div class="col-lg-7 cart-column mb-5 mb-lg-0">
+            <h3 class="fw-bold mb-4">Shopping Cart</h3>
+
+            <!-- Item 1 -->
+            @foreach (var CartItem in Model.CartItems)
+            {
+
+                <div class="cart-item">
+                    <div class="cart-img-box">
+                        <img src="@CartItem.ImageUrl" alt="@CartItem.ProductName">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="item-title">@CartItem.ProductName</h6>
+                        @* <p class="item-spec">@CartItem.</p> *@
+                        <p class="item-id">@CartItem.ProductId</p>
+                    </div>
+                    <div class="qty-price-group d-flex align-items-center">
+                        <div class="qty-wrapper me-4">
+                            <button class="qty-btn Remove" id="@CartItem.ProductId" onclick="updateQty(this, -1)"><i class="bi bi-dash"></i></button>
+                            <input type="number" class="qty-input" value="@CartItem.Count" min="1">
+                            <button class="qty-btn Add" id="@CartItem.ProductId" onclick="updateQty(this, 1) "><i class="bi bi-plus"></i></button>
+                        </div>
+                        <div class="item-price">$@CartItem.Price</div>
+
+                        <button class="remove-btn cut" id="@CartItem.ProductId"><i class="bi bi-x"></i></button>
+                    </div>
+                </div>
+            }
+
+            <!-- Item 2 -->
+
         </div>
-    </div>
-}
 
+        <!-- RIGHT COLUMN: Order Summary -->
+        @if (@Model.CartItems.Count <= 0)
+        {
+            <div class="container-fluid">
+                <h1 class="display-1">Cart Is Empty</h1>
+            </div>
+        }
+        else
+        {
+
+        <div class="col-lg-5 summary-column">
+            <h4 class="summary-title pt-1">Order Summary</h4>
+
+            <!-- Promo Code -->
+            <div class="mb-4">
+                <label class="summary-label">Discount code / Promo code</label>
+                <input type="text" class="form-control custom-input" placeholder="Code">
+            </div>
+
+            <!-- Bonus Card -->
+            <div class="mb-5">
+                <label class="summary-label">Your bonus card number</label>
+                <div class="position-relative">
+                    <input type="text" class="form-control custom-input pe-5" placeholder="Enter Card Number">
+                    <button class="apply-btn">Apply</button>
+                </div>
+            </div>
+
+            <!-- Cost Breakdown -->
+            <div class="summary-row">
+                <span class="text-dark">Subtotal</span>
+                <span class="text-dark fw-bold">$@Model.SubTotal</span>
+            </div>
+
+            <div class="summary-row text-muted">
+                <span>Estimated Tax</span>
+                <span class="text-dark fw-bold">$@Model.EstimatedTax</span>
+            </div>
+
+            <div class="summary-row text-muted">
+                <span>Estimated shipping & Handling</span>
+                <span class="text-dark fw-bold">$@Model.EstimatedShippingAndHandling</span>
+            </div>
+
+            <!-- Total -->
+            <div class="summary-row total">
+                <span>Total</span>
+                <span>$@Model.Total</span>
+            </div>
+
+            <!-- Checkout Button -->
+            <button class="checkout-btn">Checkout</button>
+
+        </div>
+        }
+    </div>
 </div>
-    </form>
+<form>
+    <div class="row">
+
+        @foreach (var item in Model.CartItems)
+        {
+            <div class="card m-2" style="width: 18rem;">
+                <img src="@item.ImageUrl" class="card-img-top" alt="Product Image">
+                @* <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image Here</text></svg> *@
+                <div class="card-body">
+                    <h5 class="card-title">@item.ProductName</h5>
+                    <p class="card-text"> $ @item.Price</p>
+
+                    <h6 class="card-subtitle mb-2 text-body-secondary ">Count - <span class="count"> @item.Count</span></h6>
+                    <a href="#" id="@item.ProductId" class="btn btn-primary Remove"> Remove</a>
+                    <p>@item.TotalPrice</p>
+                </div>
+            </div>
+        }
+
+    </div>
+</form>
 
 
 
 <div>
-
 </div>
-@if(@Model != null)
-{
-<div> 
 
-
-<button class="btn btn-dark">Checkout</button>
-    </div>
-
-}
-else
-{
-    <div>
-
-
-        <button class="btn btn-dark">Add Items</button>
-    </div>
-}
 
 
 @section Scripts {
     <script>
         $(document).ready(function () {
             // Your jQuery code goes here
-                $('.Remove').click(function () {
-                    var btn = $(this)
+                $('.cut').click(function () {
+                var btn = $(this)
                     var id = btn.attr("id")
                     console.log(id)
                    $.ajax({
-                        url: `/Cart/RemoveFromCart/${id}`,
+                        url: `/Cart/RemoveFromCartTotally/${id}`,
                         type: 'Post',
                         data: {
                             id: id,
-
+                            remove:true
                         },
                         success: function (response) {
                             console.log(response)
                             if(response.removeFromCartUi){
-                                        btn.closest('.card').fadeOut(300, function() {
+                                        btn.closest('.cart-item').fadeOut(300, function() {
             $(this).remove();
         });
                             }
@@ -82,7 +163,91 @@ else
                     });
 
 
+                })
+                $('.Remove').click(function () {
+                    var btn = $(this)
+                    var id = btn.attr("id")
+                    console.log(id)
+                   $.ajax({
+                        url: `/Cart/RemoveFromCart/${id}`,
+                        type: 'Post',
+                        data: {
+                            id: id,
+
+                        },
+                        success: function (response) {
+                            console.log(response)
+                            if(response.removeFromCartUi){
+                                        btn.closest('.cart-item').fadeOut(300, function() {
+            $(this).remove();
+        });
+                            }
+                            // alert("Success: " + response.message);
+                            console.log(response);
+                            var card =  btn.closest('.card');
+                            card.find(".count").html(response.count)
+                            $("#Item-Count").html(response.count)
+                            window.location.reload()
+                        },
+                        error: function (xhr, status, error) {
+
+                            console.error("Error occurred: " + error);
+                        }
+                    });
+
+
+            });
+                $('.Add').click(function () {
+                    var btn = $(this)
+                    var id = btn.attr("id")
+                    console.log(id)
+                    var count = 1
+                    // var count =$(".qty-input").val()
+                    // let count = parseInt(c, 10);
+                    
+                   $.ajax({
+                        url: `/Cart/AddToCart/${id}`,
+                        type: 'Post',
+                        data: {
+                            id: id,
+                             quatity:count
+
+                        },
+                        success: function (response) {
+                            console.log(response)
+                            if(response.removeFromCartUi){
+                                        btn.closest('.cart-item').fadeOut(300, function() {
+            $(this).remove();
+        });
+                            }
+                            // alert("Success: " + response.message);
+                            console.log(response);
+                            var card =  btn.closest('.card');
+                            card.find(".count").html(response.count)
+                            $("#Item-Count").html(response.count)
+                            window.location.reload()
+                        },
+                        error: function (xhr, status, error) {
+
+                            console.error("Error occurred: " + error);
+                        }
+                    });
+
+
             });
         });
+
+             function updateQty(btn, change) {
+            const input = $(btn).siblings('.qty-input');
+            let currentVal = parseInt(input.val());
+
+            if (!isNaN(currentVal)) {
+                let newVal = currentVal + change;
+                if (newVal >= 1) { // Prevents going below 1
+                    input.val(newVal);
+                    // Here you would typically also trigger an AJAX call to update the cart in the backend
+                }
+            }
+        }
     </script>
 }

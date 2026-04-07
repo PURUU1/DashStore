@@ -30,6 +30,26 @@ namespace DashStore.Services
             return products;
 
         }
+        public IEnumerable<Product> GetAllProducts(int quatity)
+        {
+            var products = _db.Products.ToList();
+            
+            foreach(var product in products)
+            {
+                //product.Category = _db.Categories.FirstOrDefault(x => x.Id.Equals(product.CategoryId)).Name.Cast<Category>();
+                // This finds the full Category object and stores it in the product
+                product.Category = _db.Categories.FirstOrDefault(x => x.Id == product.CategoryId);
+            }
+
+            var productByQuatity = new List<Product> ();
+            for(var i = 1;i <= 4; i++)
+            {
+                productByQuatity.Add(products.Where(x=>x.CategoryId == i).FirstOrDefault());
+            }
+
+            return productByQuatity;
+
+        }
         public IEnumerable<CategoryList> GetProductsInCategory()
         {
          var categories = _db.Categories.ToList();

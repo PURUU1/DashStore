@@ -23,6 +23,7 @@ namespace DashStore.Controllers
             _productServices = product;
             _Db = Db;
         }
+        Random rand = new Random();
 
         public async Task<IActionResult> Index()
         {
@@ -31,7 +32,7 @@ namespace DashStore.Controllers
 
 
             //var products = _productServices.GetAllProducts();
-            var products = _productServices.GetAllProducts();
+            var products = _productServices.GetAllProducts(8);
             //HttpContext.Session.Remove("SessionCart");
 
             var categoryList = _productServices.GetCategories().ToList();
@@ -61,5 +62,9 @@ namespace DashStore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
+
     }
 }

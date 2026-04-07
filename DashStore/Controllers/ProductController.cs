@@ -40,6 +40,21 @@ namespace DashStore.Controllers
 
             return Json(new { });
         }
+        [HttpGet]
+        public IActionResult Search([FromQuery]ProductSearchQuery query)
+        {
+
+            if( !string.IsNullOrEmpty(query.text))
+            {
+            Console.WriteLine(query);
+            var Products = _productServices.GetAllProducts();
+            var searchResult = Products.Where(x => x.Title.Contains(query.text,StringComparison.OrdinalIgnoreCase)).ToList();
+            return Json(new {succ="true", searchResult });
+
+            }
+            return Json(new { succ = "false" });
+        }
+
         public IActionResult Details(int id)
         {
             if(id is not 0)
