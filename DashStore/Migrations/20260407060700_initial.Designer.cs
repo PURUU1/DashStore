@@ -4,6 +4,7 @@ using DashStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DashStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260407060700_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,21 +68,7 @@ namespace DashStore.Migrations
                             Id = 3,
                             CreatedDateTime = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DisplayOrder = 3,
-                            Name = "Mobile Accesory  "
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDateTime = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DisplayOrder = 3,
-                            Name = "Audio & Sound  "
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDateTime = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DisplayOrder = 5,
-                            Name = "Storage"
+                            Name = "Audio & Sound"
                         },
                         new
                         {
@@ -87,13 +76,6 @@ namespace DashStore.Migrations
                             CreatedDateTime = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DisplayOrder = 6,
                             Name = "Wearables"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CreatedDateTime = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DisplayOrder = 7,
-                            Name = "Monitors"
                         });
                 });
 
@@ -348,7 +330,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/1.webp\",\"https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/2.webp\",\"https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/3.webp\"]",
                             Price = 1999.99,
-                            SpecificationsJson = "{\"Color\":[\"Space Grey\"],\"Processor\":[\"Apple M1 Pro\"],\"RAM\":[\"16GB\"],\"Storage\":[\"512GB SSD\"],\"Display\":[\"14.2-inch Liquid Retina XDR\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Apple MacBook Pro 14 Inch Space Grey"
                         },
                         new
@@ -359,7 +341,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/1.webp\",\"https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/2.webp\",\"https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/3.webp\"]",
                             Price = 1799.99,
-                            SpecificationsJson = "{\"Color\":[\"Celestial Blue\"],\"Processor\":[\"Intel Core i9\"],\"RAM\":[\"32GB\"],\"Storage\":[\"1TB NVMe SSD\"],\"Graphics\":[\"NVIDIA GeForce RTX 3060\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Asus Zenbook Pro Dual Screen Laptop"
                         },
                         new
@@ -370,7 +352,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp\",\"https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/2.webp\",\"https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/3.webp\"]",
                             Price = 1399.99,
-                            SpecificationsJson = "{\"Color\":[\"Emerald Green\"],\"Processor\":[\"Intel Core i7\"],\"RAM\":[\"16GB\"],\"Storage\":[\"512GB SSD\"],\"Display\":[\"13.9-inch 3K Touchscreen\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Huawei Matebook X Pro"
                         },
                         new
@@ -381,7 +363,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/1.webp\",\"https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/2.webp\",\"https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/3.webp\"]",
                             Price = 1099.99,
-                            SpecificationsJson = "{\"Color\":[\"Platinum\"],\"Processor\":[\"Intel Core i5\"],\"RAM\":[\"8GB\"],\"Storage\":[\"256GB SSD\"],\"Form Factor\":[\"2-in-1 Convertible\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Lenovo Yoga 920"
                         },
                         new
@@ -392,7 +374,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/1.webp\",\"https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/2.webp\",\"https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/3.webp\"]",
                             Price = 1499.99,
-                            SpecificationsJson = "{\"Color\":[\"Silver\"],\"Processor\":[\"Intel Core i7 10th Gen\"],\"RAM\":[\"16GB\"],\"Storage\":[\"512GB SSD\"],\"Display\":[\"13.4-inch FHD\\u002B InfinityEdge\"]}",
+                            SpecificationsJson = "{}",
                             Title = "New DELL XPS 13 9300 Laptop"
                         },
                         new
@@ -403,7 +385,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/3.webp\"]",
                             Price = 199.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Silver\"],\"RAM\":[\"1GB\"],\"Storage\":[\"16GB\"],\"Processor\":[\"Apple A7\"],\"Screen Size\":[\"4.0 inches\"]}",
+                            SpecificationsJson = "{}",
                             Title = "iPhone 5s"
                         },
                         new
@@ -414,7 +396,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/iphone-6/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/iphone-6/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/iphone-6/3.webp\"]",
                             Price = 299.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Space Gray\"],\"RAM\":[\"1GB\"],\"Storage\":[\"64GB\"],\"Processor\":[\"Apple A8\"],\"Screen Size\":[\"4.7 inches\"]}",
+                            SpecificationsJson = "{}",
                             Title = "iPhone 6"
                         },
                         new
@@ -425,7 +407,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/3.webp\"]",
                             Price = 1099.99,
-                            SpecificationsJson = "{\"Color\":[\"Sierra Blue\"],\"RAM\":[\"6GB\"],\"Storage\":[\"256GB\"],\"Processor\":[\"Apple A15 Bionic\"],\"Refresh Rate\":[\"120Hz ProMotion\"]}",
+                            SpecificationsJson = "{}",
                             Title = "iPhone 13 Pro"
                         },
                         new
@@ -436,7 +418,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/iphone-x/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/iphone-x/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/iphone-x/3.webp\"]",
                             Price = 899.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Silver\"],\"RAM\":[\"3GB\"],\"Storage\":[\"64GB\"],\"Processor\":[\"Apple A11 Bionic\"],\"Display\":[\"5.8-inch Super Retina OLED\"]}",
+                            SpecificationsJson = "{}",
                             Title = "iPhone X"
                         },
                         new
@@ -447,7 +429,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/3.webp\"]",
                             Price = 249.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Glowing Green\"],\"RAM\":[\"4GB\"],\"Storage\":[\"64GB\"],\"Battery\":[\"5000 mAh\"],\"Camera\":[\"13MP Dual Camera\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Oppo A57"
                         },
                         new
@@ -458,7 +440,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/3.webp\"]",
                             Price = 399.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Space Silver\"],\"RAM\":[\"8GB\"],\"Storage\":[\"128GB\"],\"Processor\":[\"MediaTek Dimensity 800U\"],\"Charging\":[\"50W Flash Charge\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Oppo F19 Pro Plus"
                         },
                         new
@@ -469,7 +451,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/3.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/4.webp\"]",
                             Price = 299.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Astral Blue\"],\"RAM\":[\"4GB\"],\"Storage\":[\"64GB\"],\"Processor\":[\"Snapdragon 660\"],\"Security\":[\"In-Display Fingerprint\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Oppo K1"
                         },
                         new
@@ -480,7 +462,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/realme-c35/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/realme-c35/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/realme-c35/3.webp\"]",
                             Price = 149.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Glowing Black\"],\"RAM\":[\"4GB\"],\"Storage\":[\"128GB\"],\"Display\":[\"6.6-inch FHD\\u002B\"],\"Camera\":[\"50MP AI Triple Camera\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Realme C35"
                         },
                         new
@@ -491,7 +473,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/realme-x/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/realme-x/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/realme-x/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/realme-x/3.webp\"]",
                             Price = 299.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Polar White\"],\"RAM\":[\"8GB\"],\"Storage\":[\"128GB\"],\"Processor\":[\"Snapdragon 710\"],\"Camera\":[\"Pop-up Selfie Camera\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Realme X"
                         },
                         new
@@ -502,7 +484,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/realme-xt/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/realme-xt/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/realme-xt/3.webp\"]",
                             Price = 349.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Pearl Blue\"],\"RAM\":[\"8GB\"],\"Storage\":[\"128GB\"],\"Processor\":[\"Snapdragon 712\"],\"Camera\":[\"64MP Quad Camera\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Realme XT"
                         },
                         new
@@ -513,7 +495,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/3.webp\"]",
                             Price = 299.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Black Onyx\"],\"RAM\":[\"4GB\"],\"Storage\":[\"32GB\"],\"Display\":[\"5.1-inch Super AMOLED\"],\"Durability\":[\"IP68 Water Resistant\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Samsung Galaxy S7"
                         },
                         new
@@ -524,7 +506,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/3.webp\"]",
                             Price = 499.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Midnight Black\"],\"RAM\":[\"4GB\"],\"Storage\":[\"64GB\"],\"Display\":[\"5.8-inch Infinity Display\"],\"Security\":[\"Iris Scanner\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Samsung Galaxy S8"
                         },
                         new
@@ -535,7 +517,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/3.webp\"]",
                             Price = 699.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Prism White\"],\"RAM\":[\"8GB\"],\"Storage\":[\"128GB\"],\"Display\":[\"6.1-inch Dynamic AMOLED\"],\"Security\":[\"Ultrasonic Fingerprint\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Samsung Galaxy S10"
                         },
                         new
@@ -546,7 +528,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/3.webp\"]",
                             Price = 249.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Skyline Blue\"],\"RAM\":[\"4GB\"],\"Storage\":[\"128GB\"],\"Battery\":[\"4500 mAh\"],\"Display\":[\"Super AMOLED\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Vivo S1"
                         },
                         new
@@ -557,7 +539,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/3.webp\"]",
                             Price = 299.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Pearl Black\"],\"RAM\":[\"4GB\"],\"Storage\":[\"64GB\"],\"Camera\":[\"24MP AI Selfie Camera\"],\"Display\":[\"6.3-inch FHD\\u002B\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Vivo V9"
                         },
                         new
@@ -568,7 +550,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/1.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/2.webp\",\"https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/3.webp\"]",
                             Price = 499.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Black\"],\"RAM\":[\"6GB\"],\"Storage\":[\"128GB\"],\"Processor\":[\"Snapdragon 660\"],\"Security\":[\"In-Display Fingerprint\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Vivo X21"
                         },
                         new
@@ -579,7 +561,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/1.webp\",\"https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/2.webp\",\"https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/3.webp\",\"https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/4.webp\"]",
                             Price = 499.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Starlight\"],\"Storage\":[\"64GB\"],\"Processor\":[\"A15 Bionic chip\"],\"Display\":[\"8.3-inch Liquid Retina\"],\"Connectivity\":[\"Wi-Fi\"]}",
+                            SpecificationsJson = "{}",
                             Title = "iPad Mini 2021 Starlight"
                         },
                         new
@@ -590,7 +572,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/1.webp\",\"https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/2.webp\",\"https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/3.webp\",\"https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/4.webp\"]",
                             Price = 599.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Graphite Grey\"],\"RAM\":[\"8GB\"],\"Storage\":[\"128GB\"],\"Display\":[\"12.4-inch Super AMOLED\"],\"Accessories\":[\"S Pen Included\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Samsung Galaxy Tab S8 Plus Grey"
                         },
                         new
@@ -601,40 +583,40 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/1.webp\",\"https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/2.webp\",\"https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/3.webp\",\"https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/4.webp\"]",
                             Price = 349.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"White\"],\"RAM\":[\"3GB\"],\"Storage\":[\"32GB\"],\"Display\":[\"10.1-inch TFT\"],\"Connectivity\":[\"Wi-Fi\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Samsung Galaxy Tab White"
                         },
                         new
                         {
                             Id = 99,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Description = "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/1.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/2.webp\"]",
                             Price = 99.989999999999995,
-                            SpecificationsJson = "{\"Color\":[\"Charcoal\"],\"Connectivity\":[\"Wi-Fi, Bluetooth\"],\"Smart Home Hub\":[\"Built-in Zigbee\"],\"Audio\":[\"Premium Dolby Sound\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Amazon Echo Plus"
                         },
                         new
                         {
                             Id = 100,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Description = "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/2.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/3.webp\"]",
                             Price = 129.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"White\"],\"Connectivity\":[\"Bluetooth\"],\"Battery Life\":[\"Up to 24 hours (with case)\"],\"Chip\":[\"H1 Headphone Chip\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Apple Airpods"
                         },
                         new
                         {
                             Id = 101,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Description = "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp\"]",
                             Price = 549.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Silver\"],\"Design\":[\"Over-Ear\"],\"Noise Cancellation\":[\"Active Noise Cancellation (ANC)\"],\"Battery Life\":[\"Up to 20 hours\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Apple AirPods Max Silver"
                         },
                         new
@@ -645,18 +627,18 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/1.webp\"]",
                             Price = 79.989999999999995,
-                            SpecificationsJson = "{\"Color\":[\"White\"],\"Output\":[\"15W Fast Charging\"],\"Compatibility\":[\"Qi-enabled Apple Devices\"],\"Type\":[\"Wireless Charging Mat\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Apple Airpower Wireless Charger"
                         },
                         new
                         {
                             Id = 103,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Description = "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/1.webp\"]",
                             Price = 99.989999999999995,
-                            SpecificationsJson = "{\"Color\":[\"Space Grey\"],\"Connectivity\":[\"Wi-Fi 802.11n\"],\"Audio\":[\"360-degree sound\"],\"Voice Assistant\":[\"Siri built-in\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Apple HomePod Mini Cosmic Grey"
                         },
                         new
@@ -667,7 +649,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/1.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/2.webp\"]",
                             Price = 19.989999999999998,
-                            SpecificationsJson = "{\"Color\":[\"White\"],\"Output\":[\"20W\"],\"Interface\":[\"USB-C\"],\"Type\":[\"Power Adapter\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Apple iPhone Charger"
                         },
                         new
@@ -678,7 +660,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/1.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/2.webp\"]",
                             Price = 99.989999999999995,
-                            SpecificationsJson = "{\"Color\":[\"White\"],\"Capacity\":[\"1460 mAh\"],\"Compatibility\":[\"iPhone 12 and newer\"],\"Connection\":[\"Magnetic Attachment\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Apple MagSafe Battery Pack"
                         },
                         new
@@ -689,7 +671,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/1.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/2.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/3.webp\"]",
                             Price = 349.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Gold\"],\"Size\":[\"44mm\"],\"Connectivity\":[\"GPS \\u002B Cellular\"],\"Material\":[\"Aluminum Case\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Apple Watch Series 4 Gold"
                         },
                         new
@@ -700,7 +682,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/1.webp\"]",
                             Price = 49.990000000000002,
-                            SpecificationsJson = "{\"Color\":[\"Beats Black\"],\"Connectivity\":[\"Bluetooth\"],\"Battery Life\":[\"Up to 12 hours\"],\"Charging\":[\"USB-C Fast Fuel\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Beats Flex Wireless Earphones"
                         },
                         new
@@ -711,7 +693,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/1.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/2.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/3.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/4.webp\"]",
                             Price = 29.989999999999998,
-                            SpecificationsJson = "{\"Color\":[\"Plum\"],\"Material\":[\"Silicone\"],\"Compatibility\":[\"iPhone 12 / 12 Pro\"],\"Features\":[\"Built-in MagSafe\"]}",
+                            SpecificationsJson = "{}",
                             Title = "iPhone 12 Silicone Case with MagSafe Plum"
                         },
                         new
@@ -722,7 +704,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/1.webp\",\"https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/2.webp\"]",
                             Price = 19.989999999999998,
-                            SpecificationsJson = "{\"Color\":[\"Black\"],\"Material\":[\"Aluminum\"],\"Max Height\":[\"60 inches\"],\"Mount Type\":[\"Standard 1/4-inch screw\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Monopod"
                         },
                         new
@@ -733,7 +715,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/1.webp\"]",
                             Price = 14.99,
-                            SpecificationsJson = "{\"Color\":[\"White\"],\"Light Levels\":[\"3 Brightness Levels\"],\"Connection\":[\"Clip-on\"],\"Power\":[\"Rechargeable USB\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Selfie Lamp with iPhone"
                         },
                         new
@@ -744,7 +726,7 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/1.webp\"]",
                             Price = 12.99,
-                            SpecificationsJson = "{\"Color\":[\"Black\"],\"Connectivity\":[\"Bluetooth Remote\"],\"Folded Length\":[\"7.5 inches\"],\"Compatibility\":[\"iOS \\u0026 Android\"]}",
+                            SpecificationsJson = "{}",
                             Title = "Selfie Stick Monopod"
                         },
                         new
@@ -755,184 +737,8 @@ namespace DashStore.Migrations
                             ImageUrl = "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/thumbnail.webp",
                             ImagesJson = "[\"https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/1.webp\"]",
                             Price = 499.99000000000001,
-                            SpecificationsJson = "{\"Color\":[\"Black\"],\"Material\":[\"Heavy-duty Aluminum\"],\"Max Load\":[\"66 lbs (30 kg)\"],\"Mobility\":[\"Locking Casters\"]}",
+                            SpecificationsJson = "{}",
                             Title = "TV Studio Camera Pedestal"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CategoryId = 5,
-                            Description = "USB 3.0 and USB 2.0 compatibility for fast data transfers and high capacity storage on the go.",
-                            ImageUrl = "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
-                            ImagesJson = "[\"https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png\"]",
-                            Price = 64.0,
-                            SpecificationsJson = "{\"Capacity\":[\"2TB\"],\"Interface\":[\"USB 3.0\",\"USB 2.0\"],\"Type\":[\"HDD\"],\"Color\":[\"Black\"]}",
-                            Title = "WD 2TB Elements Portable Hard Drive"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CategoryId = 5,
-                            Description = "Reliable and fast internal SSD for upgrading your PC performance and boot times.",
-                            ImageUrl = "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
-                            ImagesJson = "[\"https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png\"]",
-                            Price = 109.0,
-                            SpecificationsJson = "{\"Capacity\":[\"1TB\"],\"Interface\":[\"SATA III 6 Gb/s\"],\"Read Speed\":[\"535MB/s\"],\"Write Speed\":[\"450MB/s\"]}",
-                            Title = "SanDisk SSD PLUS 1TB Internal SSD"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            CategoryId = 5,
-                            Description = "Remarkable transfer speeds that enable faster bootup and improved overall system performance.",
-                            ImageUrl = "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
-                            ImagesJson = "[\"https://fakestoreapi.com/img/71kWymZ\\u002Bc\\u002BL._AC_SX679_t.png\"]",
-                            Price = 109.0,
-                            SpecificationsJson = "{\"Capacity\":[\"256GB\"],\"Technology\":[\"3D NAND\"],\"Form Factor\":[\"2.5 inch\"],\"Interface\":[\"SATA III\"]}",
-                            Title = "Silicon Power 256GB SSD 3D NAND"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            CategoryId = 5,
-                            Description = "High-capacity portable storage specifically designed for a seamless PlayStation 4 gaming experience.",
-                            ImageUrl = "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
-                            ImagesJson = "[\"https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png\"]",
-                            Price = 114.0,
-                            SpecificationsJson = "{\"Capacity\":[\"4TB\"],\"Compatibility\":[\"PS4\",\"PS4 Pro\"],\"Warranty\":[\"3 Years\"]}",
-                            Title = "WD 4TB Gaming Drive for PS4"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            CategoryId = 7,
-                            Description = "Ultra-thin widescreen IPS display with Radeon FreeSync technology for smooth visuals.",
-                            ImageUrl = "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
-                            ImagesJson = "[\"https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png\"]",
-                            Price = 599.0,
-                            SpecificationsJson = "{\"Screen Size\":[\"21.5 inches\"],\"Resolution\":[\"1920 x 1080\"],\"Panel Type\":[\"IPS\"],\"Refresh Rate\":[\"75Hz\"]}",
-                            Title = "Acer SB220Q 21.5-inch IPS Monitor"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            CategoryId = 7,
-                            Description = "Super Ultrawide 32:9 curved gaming monitor with QLED technology and HDR support.",
-                            ImageUrl = "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
-                            ImagesJson = "[\"https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png\"]",
-                            Price = 999.99000000000001,
-                            SpecificationsJson = "{\"Size\":[\"49 Inch\"],\"Refresh Rate\":[\"144Hz\"],\"Display Type\":[\"QLED\"],\"Response Time\":[\"1ms\"]}",
-                            Title = "Samsung 49-Inch Curved Gaming Monitor"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            CategoryId = 6,
-                            Description = "The most rugged and capable Apple Watch. Featuring a robust titanium case and dual-frequency GPS.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/81Scp0aak9L._SX679_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81Scp0aak9L._SX679_.jpg\"]",
-                            Price = 799.0,
-                            SpecificationsJson = "{\"Material\":[\"Titanium\"],\"Size\":[\"49mm\"],\"Battery\":[\"Up to 36 hours\"],\"Water Resistance\":[\"100m\"]}",
-                            Title = "Apple Watch Ultra 2 GPS + Cellular"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CategoryId = 6,
-                            Description = "The pinnacle of Samsung wearables with advanced AI-driven health tracking and extreme durability.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/81acmzia3+L._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81acmzia3\\u002BL._SL1500_.jpg\"]",
-                            Price = 649.99000000000001,
-                            SpecificationsJson = "{\"OS\":[\"Wear OS 5\"],\"Processor\":[\"Exynos W1000\"],\"Display\":[\"Sapphire Crystal\"],\"Sensors\":[\"BioActive Sensor\"]}",
-                            Title = "Samsung Galaxy Watch Ultra"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CategoryId = 6,
-                            Description = "Multisport GPS watch with solar charging lens and built-in LED flashlight for athletes.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/31j27NoU-vL._SY300_SX300_QL70_FMwebp_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/31j27NoU-vL._SY300_SX300_QL70_FMwebp_.jpg\"]",
-                            Price = 899.99000000000001,
-                            SpecificationsJson = "{\"Charging\":[\"Solar Powered\"],\"Maps\":[\"Preloaded TopoActive\"],\"Flashlight\":[\"Built-in LED\"],\"Battery\":[\"Up to 37 days (Smartwatch mode)\"]}",
-                            Title = "Garmin Fenix 7X Pro Solar"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CategoryId = 6,
-                            Description = "The best of Google and Fitbit combined. Sleek circular design with deep integration into the Pixel ecosystem.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/51i+zh+rQ0L._SX522_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/51i\\u002Bzh\\u002BrQ0L._SX522_.jpg\"]",
-                            Price = 349.0,
-                            SpecificationsJson = "{\"Display\":[\"Actua Display\"],\"Health\":[\"Daily Readiness Score\"],\"Safety\":[\"Fall Detection\"],\"Connectivity\":[\"Bluetooth/Wi-Fi\"]}",
-                            Title = "Google Pixel Watch 3"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            CategoryId = 6,
-                            Description = "Classic look with industry-first dual-band circularly-polarized GPS antenna technology.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/41Y9uYdxzjL._SY300_SX300_QL70_FMwebp_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/41Y9uYdxzjL._SY300_SX300_QL70_FMwebp_.jpg\"]",
-                            Price = 199.99000000000001,
-                            SpecificationsJson = "{\"Battery\":[\"14 Days\"],\"Sports Modes\":[\"150\\u002B\"],\"Display\":[\"1.43\\u0022 AMOLED\"],\"Assistant\":[\"Alexa Built-in\"]}",
-                            Title = "Amazfit GTR 4 Smart Watch"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            CategoryId = 7,
-                            Description = "The world's first 32-inch 4K OLED gaming monitor with a stunning 240Hz refresh rate.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/81djcVFS+rL._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81djcVFS\\u002BrL._SL1500_.jpg\"]",
-                            Price = 1299.0,
-                            SpecificationsJson = "{\"Resolution\":[\"3840 x 2160\"],\"Refresh Rate\":[\"240Hz\"],\"Panel\":[\"OLED\"],\"Response Time\":[\"0.03ms\"]}",
-                            Title = "ASUS ROG Swift 32\" 4K OLED"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            CategoryId = 7,
-                            Description = "High-performance gaming monitor with a built-in KVM switch to control multiple devices.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/81oosCN47KL._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81oosCN47KL._SL1500_.jpg\"]",
-                            Price = 299.99000000000001,
-                            SpecificationsJson = "{\"Panel\":[\"IPS\"],\"Refresh Rate\":[\"170Hz\"],\"Resolution\":[\"2560 x 1440\"],\"Special Feature\":[\"KVM Switch\"]}",
-                            Title = "Gigabyte M27Q 27\" QHD"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            CategoryId = 7,
-                            Description = "Immerse yourself in the action with a 1500R curvature and a 21:9 ultra-wide aspect ratio.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/71YsSgR-KpL._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71YsSgR-KpL._SL1500_.jpg\"]",
-                            Price = 450.0,
-                            SpecificationsJson = "{\"Curvature\":[\"1500R\"],\"Aspect Ratio\":[\"21:9\"],\"Resolution\":[\"UWQHD\"],\"Panel\":[\"VA\"]}",
-                            Title = "MSI Optix 34\" Curved Ultrawide"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            CategoryId = 7,
-                            Description = "Tailor-made for creative professionals with Mac-ready color precision and Thunderbolt 3.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/41G+WEORaDL._SX300_SY300_QL70_FMwebp_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/41G\\u002BWEORaDL._SX300_SY300_QL70_FMwebp_.jpg\"]",
-                            Price = 1099.0,
-                            SpecificationsJson = "{\"Color Space\":[\"100% sRGB\",\"95% P3\"],\"Connectivity\":[\"Thunderbolt 3\",\"USB-C\"],\"Display\":[\"4K UHD IPS\"],\"Feature\":[\"Hotkey Puck G2\"]}",
-                            Title = "BenQ PD3220U 32\" Designer Monitor"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            CategoryId = 7,
-                            Description = "Competitive esports monitor with ultra-fast 1ms response and G-Sync compatibility.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/71LiIjEK06L._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71LiIjEK06L._SL1500_.jpg\"]",
-                            Price = 229.0,
-                            SpecificationsJson = "{\"Size\":[\"24 inch\"],\"Refresh Rate\":[\"144Hz\"],\"Sync\":[\"NVIDIA G-Sync\"],\"Resolution\":[\"1080p FHD\"]}",
-                            Title = "ViewSonic ELITE 24\" 1080p"
                         });
                 });
 

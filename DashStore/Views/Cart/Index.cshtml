@@ -23,7 +23,7 @@
                     <div class="flex-grow-1">
                         <h6 class="item-title">@CartItem.ProductName</h6>
                         @* <p class="item-spec">@CartItem.</p> *@
-                        <p class="item-id">@CartItem.ProductId</p>
+                        <p class="item-id">#@CartItem.ProductId</p>
                     </div>
                     <div class="qty-price-group d-flex align-items-center">
                         <div class="qty-wrapper me-4">
@@ -99,27 +99,6 @@
         }
     </div>
 </div>
-<form>
-    <div class="row">
-
-        @foreach (var item in Model.CartItems)
-        {
-            <div class="card m-2" style="width: 18rem;">
-                <img src="@item.ImageUrl" class="card-img-top" alt="Product Image">
-                @* <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image Here</text></svg> *@
-                <div class="card-body">
-                    <h5 class="card-title">@item.ProductName</h5>
-                    <p class="card-text"> $ @item.Price</p>
-
-                    <h6 class="card-subtitle mb-2 text-body-secondary ">Count - <span class="count"> @item.Count</span></h6>
-                    <a href="#" id="@item.ProductId" class="btn btn-primary Remove"> Remove</a>
-                    <p>@item.TotalPrice</p>
-                </div>
-            </div>
-        }
-
-    </div>
-</form>
 
 
 
@@ -155,6 +134,7 @@
                             var card =  btn.closest('.card');
                             card.find(".count").html(response.count)
                             $("#Item-Count").html(response.count)
+                            window.location.reload()
                         },
                         error: function (xhr, status, error) {
 

@@ -109,9 +109,9 @@
                         <span class="cart-badge" id="cartCount">@cartCount</span>
                     </a>
 
-                    <button class="btn d-lg-none nav-icon-btn border-0 shadow-none">
+                    @* <button class="btn d-lg-none nav-icon-btn border-0 shadow-none">
                         <i class="bi bi-list"></i>
-                    </button>
+                    </button> *@
                 </div>
 
 
@@ -130,12 +130,18 @@
 
             <div class="category-nav shadow-sm">
                 <div class="container text-center">
+
+                    
+
+
                     <a href="#All" class="category-link active">All Products</a>
                     <a href="#Smartphones" class="category-link">Smartphones</a>
                     <a href="#Laptops & PCs" class="category-link">Laptops</a>
-                    <a href="#Audio & Sound" class="category-link">Audio</a>
-                    <a href="#Gaming" class="category-link">Gaming</a>
-                    @* <a href="#Wearables" class="category-link">Wearables</a> *@
+                    <a href="#carousel-MobileAccesory" class="category-link">Mobile Accesory</a>
+                    <a href="#carousel-AudioSound" class="category-link">Audio & Sound</a>
+                    <a href="#carousel-Storage" class="category-link">Storage</a>
+                    <a href="#carousel-Wearables" class="category-link">Wearables</a>
+                    <a href="#carousel-Monitors" class="category-link">Monitors</a>
                 </div>
             </div>
 
@@ -148,7 +154,7 @@
 
     <div class="">
 
-        <main role="main" class="pb-3">
+        <main role="main" class="">
 
             @RenderBody()
         </main>
@@ -217,14 +223,14 @@
                                         <img src="${imgUrl}" class="result-img">
                                         <div class="result-info">
                                             <p class="result-title">${item.title}</p>
-                                            <span class="result-price">₹${item.price}</span>
+                                            <span class="result-price">$${item.price}</span>
                                         </div>
                                     </a>`;
                                 $resultsDiv.append(html);
                             });
                             $resultsDiv.show();
                         } else {
-                            $resultsDiv.html('<div class="p-3 text-muted text-center small">No items found</div>').show();
+                            $resultsDiv.html('<div class="p-3  text-center small bg-dark text-white">No items found</div>').show();
                         }
 
 

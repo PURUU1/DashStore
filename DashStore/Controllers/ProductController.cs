@@ -60,7 +60,7 @@ namespace DashStore.Controllers
             if(id is not 0)
             {
                 var product = _productServices.GetProduct(id);
-                var Suuggetions = _productServices.GetSuggetions(product.CategoryId);
+                var Suuggetions = _productServices.GetSuggetionsForProduct(product.CategoryId);
             var ProductViewModel = new ProductViewModel()
             {
                 product = product,

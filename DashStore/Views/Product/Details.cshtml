@@ -4,31 +4,49 @@
 
 
 
-<div class="container">
-    <div class="row align-items-center m-5">
+
+<div class="container-fluid m-0 w-100 justify-content-center d-flex">
+
+    <div class="row container align-items-center m-5 w-100 d-flex ">
 
         <!-- LEFT COLUMN: Image Gallery -->
         <div class="col-lg-6 mb-5 mb-lg-0">
-            <div class="d-flex gap-4">
+            @* <div class="d-flex gap-4">
                 <!-- Thumbnails -->
-                @* <div class="thumbnail-list">
+                 <div class="thumbnail-list">
+                     @foreach(var images in Model.product.ImageList)
+                    {
+                        
                     <div class="thumbnail-box active">
-                        <img src="https://images.unsplash.com/photo-1696446701796-da61225697cc?q=80&w=200" alt="Thumb 1">
+                        <img src="@images.ToString()" alt="Thumb 1">
                     </div>
-                    <div class="thumbnail-box">
-                        <img src="https://images.unsplash.com/photo-1696446701796-da61225697cc?q=80&w=200" style="opacity: 0.6;" alt="Thumb 2">
-                    </div>
-                    <div class="thumbnail-box">
-                        <img src="https://images.unsplash.com/photo-1696446701796-da61225697cc?q=80&w=200" style="opacity: 0.4;" alt="Thumb 3">
-                    </div>
-                    <div class="thumbnail-box">
-                        <img src="https://images.unsplash.com/photo-1696446701796-da61225697cc?q=80&w=200" style="opacity: 0.2;" alt="Thumb 4">
-                    </div>
-                </div> *@
+                   
+                    } 
+                </div> 
 
                 <!-- Main Image -->
                 <div class="main-image-container">
                     <img src="@Model.product.ImageUrl" class="img-fluid" alt="iPhone 14 Pro Max">
+                </div>
+            </div> *@
+
+
+            <div class="container">
+                <div class="gallery-container">
+                    <!-- Thumbnails (Vertical) -->
+                    <div class="thumbnail-column">
+                        @foreach (var images in Model.product.ImageList)
+                        {
+                            <div class="thumb-item active" onclick="changeImage(this, '@images.ToString()')">
+                                <img src="@images.ToString()" alt="View 1">
+                            </div>
+
+                        }
+                            </div>
+                        <!-- Main Display -->
+                    <div class="main-display">
+                        <img id="mainImage" src="@Model.product.ImageUrl" class="main-img" alt="Product Main View">
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,7 +58,7 @@
             <div class="d-flex align-items-end gap-3 mb-4">
                 <h2 class="fw-bold mb-0" style="font-size: 2rem;"> $ @Model.product.Price</h2>
                 @{
-                    var unDiscount = @Model.product.Price + 1000;
+                    var unDiscount = @Model.product.Price + 100;
                 }
                 <h4 class="text-muted text-decoration-line-through mb-1">$ @unDiscount</h4>
             </div>
@@ -49,16 +67,14 @@
                 
             <!-- Color Selector -->
             <div class="d-flex align-items-center gap-3 mb-4">
-                <span class="text-secondary fw-medium">Select color :</span>
                 <div class="d-flex">
                         @foreach (var specs in @Model.product.Specifications)
                         {
                             @* <span class="badge bg-primary me-1">@specs.Key</span> *@
                             @if (specs.Key.Equals("Color"))
                             {
-                                <div class="row">
-
-                                </div>
+                <span class="text-secondary p-1  fw-medium"> Color :</span>
+                                
                             @foreach (var val in specs.Value)
                             {
                                 
@@ -228,28 +244,45 @@
 
 
 
-    <div class="m-3">
-    <h5>  See More Like this </h5>
-    <div class="row row-cols-5 ">
+    <div class="m-3 ">
+    <h5 class="display-5 text-center mb-4">  Related Products </h5>
+    <div class="row d-flex justify-content-evenly ">
     @foreach(var suggetions in Model.SuggestedProducts)
     {
-        <div class="col m-1">
 
-        <div class="card m-2" style="width: 18rem;">
-            <img src="@suggetions.ImageUrl" class="card-img-top" alt="Product Image">
-            @* <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image Here</text></svg> *@
-            <div class="card-body">
-                <h5 class="card-title">@suggetions.Title</h5>
-                <p class="card-text">@suggetions.Description</p>
 
-                <h6 class="card-subtitle mb-2 text-body-secondary">@suggetions.Category.Name</h6>
-                @* <a href="#" class="btn btn-primary">$ @Product.Price</a> *@
-                <button class="btn btn-primary goto " id="@suggetions.Id">
-                    Buy Now
-                </button>
+
+            <!-- Product Card HTML -->
+            <div class="product-card m-2 col-3" style="background-color:">
+                <!-- Wishlist Icon -->
+                @* <div class="wishlist-btn">
+                            <i class="bi bi-heart"></i>
+                        </div> *@
+
+                <!-- Image -->
+                <div class="product-img-container">
+                    <img src="@suggetions.ImageUrl" alt="@suggetions.Title">
+                </div>
+
+                <!-- Content -->
+                <div class="text-center">
+                    <h5 class="product-title">
+                        @suggetions.Title
+                    </h5>
+
+                    <div class="price-tag">@suggetions.Price</div>
+                    <form method="get">
+                        <button class="btn-buy  buyBtn  " asp-controller="Product"
+                                asp-action="Details"
+                                asp-route-id="@suggetions.Id" id="@suggetions.Id">
+                            Buy Now
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
-        </div>
+
+
+
 
     }
     </div>
@@ -328,8 +361,10 @@
                             console.log(response);
                             if(isBuyNow){
                                 window.location.href = '/Cart/Index';
-                    }
+                    }else{
 
+                    window.location.reload()
+                    }
                         },
                         error: function (xhr, status, error) {
                             
@@ -340,5 +375,24 @@
                
             });
         });
+
+
+                function changeImage(element, imageUrl) {
+            // 1. Change the main image source
+            const mainImage = document.getElementById('mainImage');
+
+            // Simple fade effect
+            mainImage.style.opacity = '0';
+
+            setTimeout(() => {
+                mainImage.src = imageUrl;
+                mainImage.style.opacity = '1';
+            }, 150);
+
+            // 2. Update active thumbnail styling
+            const thumbnails = document.querySelectorAll('.thumb-item');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
     </script>
 } 

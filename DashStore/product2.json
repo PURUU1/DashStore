@@ -1,903 +1,1013 @@
 [
   {
-    "Id": 1,
-    "Title": "iPhone 15 Pro Max",
-    "Description": "Forged in titanium with the revolutionary A17 Pro chip.",
-    "Price": 159900,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1696446701796-da61225697cc?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Natural Titanium", "Blue Titanium" ],
-      "Storage": [ "256GB", "1TB" ],
-      "RAM": [ "8GB" ]
-    }
-  },
-  {
-    "Id": 2,
-    "Title": "Samsung Galaxy S24 Ultra",
-    "Description": "Galaxy AI is here. Embedded S-Pen and titanium exterior.",
-    "Price": 129999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Titanium Black", "Titanium Gray" ],
-      "Storage": [ "256GB", "512GB" ],
-      "RAM": [ "12GB" ]
-    }
-  },
-  {
-    "Id": 3,
-    "Title": "Google Pixel 8 Pro",
-    "Description": "The pro-level Pixel with advanced AI camera features.",
-    "Price": 106999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1697525381593-9c869094fe26?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Obsidian", "Bay Blue" ],
-      "Storage": [ "128GB", "256GB" ],
-      "RAM": [ "12GB" ]
-    }
-  },
-  {
-    "Id": 4,
-    "Title": "OnePlus 12",
-    "Description": "Smooth beyond belief with Snapdragon 8 Gen 3.",
-    "Price": 64999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1715437803023-74b5c77742bc?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Flowy Emerald", "Silky Black" ],
-      "Storage": [ "256GB", "512GB" ],
-      "RAM": [ "12GB", "16GB" ]
-    }
-  },
-  {
-    "Id": 5,
-    "Title": "Samsung Galaxy Z Fold 5",
-    "Description": "Unfold a massive screen for immersive productivity.",
-    "Price": 154999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1691435424756-32d8493f663f?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Phantom Black", "Icy Blue" ],
-      "Storage": [ "512GB", "1TB" ],
-      "RAM": [ "12GB" ]
-    }
-  },
-  {
-    "Id": 6,
-    "Title": "Nothing Phone (2)",
-    "Description": "Come to the bright side with the Glyph Interface.",
-    "Price": 44999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1689254060377-5047b36f73d1?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Dark Grey", "White" ],
-      "Storage": [ "256GB", "512GB" ],
-      "RAM": [ "12GB" ]
-    }
-  },
-  {
-    "Id": 7,
-    "Title": "Xiaomi 14 Ultra",
-    "Description": "Photography reinvented with Leica optics.",
-    "Price": 99999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Black", "White" ],
-      "Storage": [ "512GB" ],
-      "RAM": [ "16GB" ]
-    }
-  },
-  {
-    "Id": 8,
-    "Title": "iPhone 15",
-    "Description": "Dynamic Island, 48MP Main camera, USB-C.",
-    "Price": 79900,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1696423602143-6c845b469493?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Pink", "Blue", "Black" ],
-      "Storage": [ "128GB", "256GB" ],
-      "RAM": [ "6GB" ]
-    }
-  },
-  {
-    "Id": 9,
-    "Title": "Asus ROG Phone 8 Pro",
-    "Description": "Beyond gaming. Unmatched performance and cooling.",
-    "Price": 94999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1715437803023-74b5c77742bc?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Phantom Black" ],
-      "Storage": [ "512GB" ],
-      "RAM": [ "16GB" ]
-    }
-  },
-  {
-    "Id": 10,
-    "Title": "Motorola Edge 50 Pro",
-    "Description": "AI-powered camera and ultra-fast charging.",
-    "Price": 31999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1592890288564-76628a30a657?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Black Beauty", "Luxe Lavender" ],
-      "Storage": [ "256GB" ],
-      "RAM": [ "8GB", "12GB" ]
-    }
-  },
-  {
-    "Id": 11,
-    "Title": "Google Pixel 7a",
-    "Description": "The essential Google phone at a great price.",
-    "Price": 43999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1683935293214-3d964f40f2f3?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Sea", "Charcoal", "Snow" ],
-      "Storage": [ "128GB" ],
-      "RAM": [ "8GB" ]
-    }
-  },
-  {
-    "Id": 12,
-    "Title": "Samsung Galaxy Z Flip 5",
-    "Description": "The ultimate pocket-sized self-expression tool.",
-    "Price": 99999,
-    "CategoryId": 1,
-    "ImageUrl": "https://images.unsplash.com/photo-1691435424756-32d8493f663f?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Mint", "Graphite" ],
-      "Storage": [ "256GB" ],
-      "RAM": [ "8GB" ]
-    }
-  },
-  {
-    "Id": 13,
-    "Title": "MacBook Pro 16\" M3 Max",
-    "Description": "Mind-blowing performance for the heaviest workflows.",
-    "Price": 349900,
+    "Id": 78,
+    "Title": "Apple MacBook Pro 14 Inch Space Grey",
+    "Description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
+    "Price": 1999.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
     "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800",
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/3.webp"
+    ],
     "Specifications": {
-      "Processor": [ "Apple M3 Max" ],
-      "RAM": [ "36GB", "64GB" ],
-      "Storage": [ "1TB SSD" ]
-    }
-  },
-  {
-    "Id": 14,
-    "Title": "Dell XPS 15",
-    "Description": "A perfect balance of power and portability for creators.",
-    "Price": 185000,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1593642632559-0c6d3fc72635?q=80&w=800",
-    "Specifications": {
-      "Processor": [ "Intel Core i7", "Intel Core i9" ],
-      "RAM": [ "16GB", "32GB" ],
-      "GPU": [ "RTX 4060" ]
-    }
-  },
-  {
-    "Id": 15,
-    "Title": "Lenovo ThinkPad X1 Carbon",
-    "Description": "The gold standard for premium business laptops.",
-    "Price": 165000,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1632733711679-5292d7763695?q=80&w=800",
-    "Specifications": {
-      "Processor": [ "Intel Core i7-1355U" ],
-      "RAM": [ "16GB", "32GB" ],
-      "Storage": [ "512GB SSD" ]
-    }
-  },
-  {
-    "Id": 16,
-    "Title": "ASUS ROG Zephyrus G14",
-    "Description": "Ultra-portable 14-inch gaming laptop with OLED display.",
-    "Price": 145000,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=800",
-    "Specifications": {
-      "Processor": [ "AMD Ryzen 9" ],
-      "RAM": [ "16GB", "32GB" ],
-      "GPU": [ "RTX 4070" ]
-    }
-  },
-  {
-    "Id": 17,
-    "Title": "MacBook Air 15\" M3",
-    "Description": "Lean. Mean. M3 machine.",
-    "Price": 134900,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1611186871348-b1ec696e5237?q=80&w=800",
-    "Specifications": {
-      "Processor": [ "Apple M3" ],
-      "RAM": [ "8GB", "16GB" ],
-      "Storage": [ "256GB SSD", "512GB SSD" ]
-    }
-  },
-  {
-    "Id": 18,
-    "Title": "HP Spectre x360 14",
-    "Description": "Stunning 2-in-1 design with an OLED touch display.",
-    "Price": 139999,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?q=80&w=800",
-    "Specifications": {
-      "Processor": [ "Intel Core Ultra 7" ],
+      "Color": [ "Space Grey" ],
+      "Processor": [ "Apple M1 Pro" ],
       "RAM": [ "16GB" ],
-      "Storage": [ "1TB SSD" ]
+      "Storage": [ "512GB SSD" ],
+      "Display": [ "14.2-inch Liquid Retina XDR" ]
     }
   },
   {
-    "Id": 19,
-    "Title": "Apple Mac Studio",
-    "Description": "Empower your studio with the M2 Ultra chip.",
-    "Price": 419900,
+    "Id": 79,
+    "Title": "Asus Zenbook Pro Dual Screen Laptop",
+    "Description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
+    "Price": 1799.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/thumbnail.webp",
     "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1629131726692-1accd0c93ce0?q=80&w=800",
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/3.webp"
+    ],
     "Specifications": {
-      "Processor": [ "Apple M2 Ultra" ],
-      "RAM": [ "64GB", "128GB" ],
-      "Storage": [ "1TB SSD" ]
-    }
-  },
-  {
-    "Id": 20,
-    "Title": "Alienware Aurora R16",
-    "Description": "Redesigned high-performance liquid-cooled gaming desktop.",
-    "Price": 245000,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=800",
-    "Specifications": {
-      "Processor": [ "Intel Core i9-14900KF" ],
-      "GPU": [ "RTX 4080", "RTX 4090" ],
-      "RAM": [ "32GB" ]
-    }
-  },
-  {
-    "Id": 21,
-    "Title": "LG Gram 17",
-    "Description": "A massive 17-inch screen in an impossibly light chassis.",
-    "Price": 125000,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=800",
-    "Specifications": {
-      "Weight": [ "1.35 kg" ],
-      "Processor": [ "Intel Core i7" ],
-      "RAM": [ "16GB" ]
-    }
-  },
-  {
-    "Id": 22,
-    "Title": "Razer Blade 16",
-    "Description": "The world's first dual-mode mini-LED gaming display.",
-    "Price": 320000,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=800",
-    "Specifications": {
-      "Processor": [ "Intel Core i9-14900HX" ],
-      "GPU": [ "RTX 4090" ],
-      "RAM": [ "32GB" ]
-    }
-  },
-  {
-    "Id": 23,
-    "Title": "Microsoft Surface Laptop 6",
-    "Description": "Built for business, with AI-powered features.",
-    "Price": 145000,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=800",
-    "Specifications": {
-      "Processor": [ "Intel Core Ultra 5", "Intel Core Ultra 7" ],
-      "RAM": [ "16GB" ],
-      "Storage": [ "512GB SSD" ]
-    }
-  },
-  {
-    "Id": 24,
-    "Title": "Corsair One i500",
-    "Description": "Compact, quiet, and exceptionally powerful PC.",
-    "Price": 350000,
-    "CategoryId": 2,
-    "ImageUrl": "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=800",
-    "Specifications": {
+      "Color": [ "Celestial Blue" ],
       "Processor": [ "Intel Core i9" ],
-      "GPU": [ "RTX 4090" ],
-      "RAM": [ "64GB DDR5" ]
+      "RAM": [ "32GB" ],
+      "Storage": [ "1TB NVMe SSD" ],
+      "Graphics": [ "NVIDIA GeForce RTX 3060" ]
     }
   },
   {
-    "Id": 25,
-    "Title": "Sony WH-1000XM5",
-    "Description": "Industry-leading noise cancellation headphones.",
-    "Price": 29990,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1644794106430-22d74189d704?q=80&w=800",
+    "Id": 80,
+    "Title": "Huawei Matebook X Pro",
+    "Description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
+    "Price": 1399.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/thumbnail.webp",
+    "CategoryId": 2,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/3.webp"
+    ],
     "Specifications": {
-      "Color": [ "Black", "Silver", "Midnight Blue" ],
-      "Battery Life": [ "30 Hours" ],
-      "Features": [ "ANC" ]
+      "Color": [ "Emerald Green" ],
+      "Processor": [ "Intel Core i7" ],
+      "RAM": [ "16GB" ],
+      "Storage": [ "512GB SSD" ],
+      "Display": [ "13.9-inch 3K Touchscreen" ]
     }
   },
   {
-    "Id": 26,
-    "Title": "Apple AirPods Pro 2",
-    "Description": "Magical audio experience with adaptive transparency.",
-    "Price": 24900,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1627989580309-bfaf3e58af6f?q=80&w=800",
+    "Id": 81,
+    "Title": "Lenovo Yoga 920",
+    "Description": "The Lenovo Yoga 920 is a 2-in-1 convertible laptop with a flexible hinge, allowing you to use it as a laptop or tablet, offering versatility and portability.",
+    "Price": 1099.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp",
+    "CategoryId": 2,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/3.webp"
+    ],
     "Specifications": {
-      "Color": [ "White" ],
-      "Charging": [ "USB-C" ],
-      "Features": [ "ANC", "Spatial Audio" ]
+      "Color": [ "Platinum" ],
+      "Processor": [ "Intel Core i5" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "256GB SSD" ],
+      "Form Factor": [ "2-in-1 Convertible" ]
     }
   },
   {
-    "Id": 27,
-    "Title": "Bose QuietComfort Ultra",
-    "Description": "World-class noise cancellation with spatial audio.",
-    "Price": 35900,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800",
+    "Id": 82,
+    "Title": "New DELL XPS 13 9300 Laptop",
+    "Description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
+    "Price": 1499.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/thumbnail.webp",
+    "CategoryId": 2,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/3.webp"
+    ],
     "Specifications": {
-      "Color": [ "Black", "White Smoke" ],
-      "Battery Life": [ "24 Hours" ],
-      "Features": [ "Immersive Audio" ]
+      "Color": [ "Silver" ],
+      "Processor": [ "Intel Core i7 10th Gen" ],
+      "RAM": [ "16GB" ],
+      "Storage": [ "512GB SSD" ],
+      "Display": [ "13.4-inch FHD+ InfinityEdge" ]
     }
   },
   {
-    "Id": 28,
-    "Title": "Sennheiser Momentum 4",
-    "Description": "Audiophile-inspired sound and 60-hour battery life.",
-    "Price": 34990,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1524670497267-35d7a81c17e2?q=80&w=800",
+    "Id": 121,
+    "Title": "iPhone 5s",
+    "Description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
+    "Price": 199.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/3.webp"
+    ],
     "Specifications": {
-      "Color": [ "Black", "White" ],
-      "Battery Life": [ "60 Hours" ],
-      "Driver": [ "42mm Transducer" ]
+      "Color": [ "Silver" ],
+      "RAM": [ "1GB" ],
+      "Storage": [ "16GB" ],
+      "Processor": [ "Apple A7" ],
+      "Screen Size": [ "4.0 inches" ]
     }
   },
   {
-    "Id": 29,
-    "Title": "JBL Flip 6",
-    "Description": "Bold sound for every adventure. Waterproof and dustproof.",
-    "Price": 11999,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1589003077984-894e133dabab?q=80&w=800",
+    "Id": 122,
+    "Title": "iPhone 6",
+    "Description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
+    "Price": 299.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/3.webp"
+    ],
     "Specifications": {
-      "Color": [ "Black", "Blue", "Red" ],
-      "Battery Life": [ "12 Hours" ],
-      "Durability": [ "IP67" ]
-    }
-  },
-  {
-    "Id": 30,
-    "Title": "Sonos Era 300",
-    "Description": "Next-level spatial audio that fills the room.",
-    "Price": 44999,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Black", "White" ],
-      "Connectivity": [ "Wi-Fi", "Bluetooth", "Line-in" ]
-    }
-  },
-  {
-    "Id": 31,
-    "Title": "Marshall Emberton II",
-    "Description": "Heavyweight sound in a compact, iconic frame.",
-    "Price": 14999,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1524289286702-f07229da36f5?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Black and Brass", "Cream" ],
-      "Battery Life": [ "30+ Hours" ],
-      "Durability": [ "IP67" ]
-    }
-  },
-  {
-    "Id": 32,
-    "Title": "Samsung Galaxy Buds 2 Pro",
-    "Description": "24-bit Hi-Fi audio for the ultimate listening experience.",
-    "Price": 16999,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=800",
-    "Specifications": {
-      "Color": [ "Graphite", "White", "Bora Purple" ],
-      "Features": [ "Active Noise Canceling" ]
-    }
-  },
-  {
-    "Id": 33,
-    "Title": "KEF LS50 Wireless II",
-    "Description": "The ultimate wireless HiFi speakers.",
-    "Price": 249000,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=800",
-    "Specifications": {
-      "Type": [ "Active Bookshelf" ],
-      "Streaming": [ "AirPlay 2", "Chromecast", "Roon" ]
-    }
-  },
-  {
-    "Id": 34,
-    "Title": "Shure SM7B",
-    "Description": "The legendary vocal microphone for broadcasting and podcasting.",
-    "Price": 38999,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=800",
-    "Specifications": {
-      "Type": [ "Dynamic" ],
-      "Polar Pattern": [ "Cardioid" ],
-      "Connection": [ "XLR" ]
-    }
-  },
-  {
-    "Id": 35,
-    "Title": "Audio-Technica ATH-M50x",
-    "Description": "Professional studio monitor headphones.",
-    "Price": 14500,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=800",
-    "Specifications": {
-      "Type": [ "Closed-Back" ],
-      "Connection": [ "Wired" ],
-      "Driver": [ "45mm" ]
-    }
-  },
-  {
-    "Id": 36,
-    "Title": "Ultimate Ears MEGABOOM 3",
-    "Description": "Super-portable wireless Bluetooth speaker.",
-    "Price": 19990,
-    "CategoryId": 3,
-    "ImageUrl": "https://images.unsplash.com/photo-1589003077984-894e133dabab?q=80&w=800",
-    "Specifications": {
-      "Battery Life": [ "20 Hours" ],
-      "Durability": [ "IP67 Waterproof" ],
-      "Audio": [ "360-degree sound" ]
-    }
-  },
-  {
-    "Id": 37,
-    "Title": "PlayStation 5 Console",
-    "Description": "Experience lightning-fast loading and deeper immersion.",
-    "Price": 54990,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1605901309584-818e25960b8f?q=80&w=800",
-    "Specifications": {
-      "Storage": [ "1TB SSD" ],
-      "Resolution": [ "4K at 120Hz", "8K Support" ],
-      "Drive": [ "Disc Edition" ]
-    }
-  },
-  {
-    "Id": 38,
-    "Title": "Xbox Series X",
-    "Description": "The fastest, most powerful Xbox ever.",
-    "Price": 54990,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1605901309584-818e25960b8f?q=80&w=800",
-    "Specifications": {
-      "Storage": [ "1TB Custom NVMe SSD" ],
-      "Performance": [ "12 Teraflops" ],
-      "Resolution": [ "True 4K Gaming" ]
-    }
-  },
-  {
-    "Id": 39,
-    "Title": "Nintendo Switch OLED",
-    "Description": "Play at home or on the go with a vibrant 7-inch OLED screen.",
-    "Price": 34990,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=800",
-    "Specifications": {
-      "Display": [ "7-inch OLED" ],
+      "Color": [ "Space Gray" ],
+      "RAM": [ "1GB" ],
       "Storage": [ "64GB" ],
-      "Modes": [ "TV", "Tabletop", "Handheld" ]
+      "Processor": [ "Apple A8" ],
+      "Screen Size": [ "4.7 inches" ]
     }
   },
   {
-    "Id": 40,
-    "Title": "Steam Deck OLED",
-    "Description": "PC gaming anywhere, now with an HDR OLED display.",
-    "Price": 58000,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=800",
+    "Id": 123,
+    "Title": "iPhone 13 Pro",
+    "Description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
+    "Price": 1099.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/3.webp"
+    ],
     "Specifications": {
-      "Display": [ "7.4-inch HDR OLED" ],
-      "Storage": [ "512GB NVMe SSD" ],
-      "Refresh Rate": [ "90Hz" ]
+      "Color": [ "Sierra Blue" ],
+      "RAM": [ "6GB" ],
+      "Storage": [ "256GB" ],
+      "Processor": [ "Apple A15 Bionic" ],
+      "Refresh Rate": [ "120Hz ProMotion" ]
     }
   },
   {
-    "Id": 41,
-    "Title": "DualSense Edge Wireless Controller",
-    "Description": "Get an edge in gameplay with customizable controls.",
-    "Price": 18990,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=800",
+    "Id": 124,
+    "Title": "iPhone X",
+    "Description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
+    "Price": 899.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/3.webp"
+    ],
     "Specifications": {
-      "Platform": [ "PS5", "PC" ],
-      "Features": [ "Swappable Stick Modules", "Back Buttons" ]
+      "Color": [ "Silver" ],
+      "RAM": [ "3GB" ],
+      "Storage": [ "64GB" ],
+      "Processor": [ "Apple A11 Bionic" ],
+      "Display": [ "5.8-inch Super Retina OLED" ]
     }
   },
   {
-    "Id": 42,
-    "Title": "Xbox Elite Wireless Controller Series 2",
-    "Description": "Play like a pro with adjustable-tension thumbsticks.",
-    "Price": 15990,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1596041061998-68b759527717?q=80&w=800",
+    "Id": 125,
+    "Title": "Oppo A57",
+    "Description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
+    "Price": 249.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/3.webp"
+    ],
     "Specifications": {
-      "Platform": [ "Xbox", "PC", "Mobile" ],
-      "Battery Life": [ "Up to 40 Hours" ],
-      "Features": [ "Wrap-around rubberized grip" ]
+      "Color": [ "Glowing Green" ],
+      "RAM": [ "4GB" ],
+      "Storage": [ "64GB" ],
+      "Battery": [ "5000 mAh" ],
+      "Camera": [ "13MP Dual Camera" ]
     }
   },
   {
-    "Id": 43,
-    "Title": "Logitech G Pro X Superlight 2",
-    "Description": "Zero opposition. The ultimate esports gaming mouse.",
-    "Price": 14995,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=800",
+    "Id": 126,
+    "Title": "Oppo F19 Pro Plus",
+    "Description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
+    "Price": 399.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/3.webp"
+    ],
     "Specifications": {
-      "Weight": [ "60g" ],
-      "Sensor": [ "HERO 2", "32K DPI" ],
-      "Switches": [ "Lightforce Hybrid" ]
+      "Color": [ "Space Silver" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "128GB" ],
+      "Processor": [ "MediaTek Dimensity 800U" ],
+      "Charging": [ "50W Flash Charge" ]
     }
   },
   {
-    "Id": 44,
-    "Title": "Razer DeathAdder V3 Pro",
-    "Description": "For the Pro. Ergonomic, ultra-lightweight design.",
-    "Price": 13499,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1629429408209-1f912961dbd8?q=80&w=800",
+    "Id": 127,
+    "Title": "Oppo K1",
+    "Description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
+    "Price": 299.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/3.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/4.webp"
+    ],
     "Specifications": {
-      "Weight": [ "63g" ],
-      "Sensor": [ "Focus Pro 30K Optical" ],
-      "Polling Rate": [ "Up to 4000Hz via Dongle" ]
+      "Color": [ "Astral Blue" ],
+      "RAM": [ "4GB" ],
+      "Storage": [ "64GB" ],
+      "Processor": [ "Snapdragon 660" ],
+      "Security": [ "In-Display Fingerprint" ]
     }
   },
   {
-    "Id": 45,
-    "Title": "Wooting 60HE",
-    "Description": "Analog mechanical keyboard with Rapid Trigger technology.",
-    "Price": 18500,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=800",
+    "Id": 128,
+    "Title": "Realme C35",
+    "Description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
+    "Price": 149.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/3.webp"
+    ],
     "Specifications": {
-      "Switches": [ "Lekker Magnetic Switches" ],
-      "Layout": [ "60%" ],
-      "Features": [ "Adjustable Actuation Point" ]
+      "Color": [ "Glowing Black" ],
+      "RAM": [ "4GB" ],
+      "Storage": [ "128GB" ],
+      "Display": [ "6.6-inch FHD+" ],
+      "Camera": [ "50MP AI Triple Camera" ]
     }
   },
   {
-    "Id": 46,
-    "Title": "Corsair K70 MAX RGB",
-    "Description": "Magnetic-Mechanical gaming keyboard.",
-    "Price": 19999,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Id": 129,
+    "Title": "Realme X",
+    "Description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
+    "Price": 299.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/realme-x/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-x/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-x/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-x/3.webp"
+    ],
     "Specifications": {
-      "Switches": [ "Corsair MGX Magnetic" ],
-      "Polling Rate": [ "8000Hz AXON" ],
-      "Layout": [ "Full Size" ]
+      "Color": [ "Polar White" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "128GB" ],
+      "Processor": [ "Snapdragon 710" ],
+      "Camera": [ "Pop-up Selfie Camera" ]
     }
   },
   {
-    "Id": 47,
-    "Title": "SteelSeries Arctis Nova Pro Wireless",
-    "Description": "Almighty Audio experience with Active Noise Cancellation.",
-    "Price": 32999,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1583394838336-acd977730f90?q=80&w=800",
+    "Id": 130,
+    "Title": "Realme XT",
+    "Description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
+    "Price": 349.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/3.webp"
+    ],
     "Specifications": {
-      "Platform": [ "PC", "PS5", "Xbox" ],
-      "Features": [ "Infinity Power System (Hot-swap Batteries)" ]
+      "Color": [ "Pearl Blue" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "128GB" ],
+      "Processor": [ "Snapdragon 712" ],
+      "Camera": [ "64MP Quad Camera" ]
     }
   },
   {
-    "Id": 48,
-    "Title": "Elgato Stream Deck MK.2",
-    "Description": "Studio control at your fingertips with 15 LCD keys.",
-    "Price": 14999,
-    "CategoryId": 4,
-    "ImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800",
+    "Id": 131,
+    "Title": "Samsung Galaxy S7",
+    "Description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
+    "Price": 299.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/3.webp"
+    ],
     "Specifications": {
-      "Keys": [ "15 Customizable LCD Keys" ],
-      "Connection": [ "USB-C" ],
-      "Compatibility": [ "Windows", "macOS" ]
+      "Color": [ "Black Onyx" ],
+      "RAM": [ "4GB" ],
+      "Storage": [ "32GB" ],
+      "Display": [ "5.1-inch Super AMOLED" ],
+      "Durability": [ "IP68 Water Resistant" ]
     }
   },
   {
-    "Id": 49,
-    "Title": "Samsung Odyssey OLED G9",
-    "Description": "49-inch curved super ultrawide gaming monitor.",
-    "Price": 165000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1525598912003-663126343e1f?q=80&w=800",
+    "Id": 132,
+    "Title": "Samsung Galaxy S8",
+    "Description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
+    "Price": 499.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/3.webp"
+    ],
     "Specifications": {
-      "Resolution": [ "5120 x 1440 (DQHD)" ],
-      "Refresh Rate": [ "240Hz" ],
-      "Panel": [ "OLED", "1800R Curve" ]
+      "Color": [ "Midnight Black" ],
+      "RAM": [ "4GB" ],
+      "Storage": [ "64GB" ],
+      "Display": [ "5.8-inch Infinity Display" ],
+      "Security": [ "Iris Scanner" ]
     }
   },
   {
-    "Id": 50,
-    "Title": "Alienware AW3423DWF",
-    "Description": "34-inch QD-OLED curved gaming monitor.",
-    "Price": 105000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800",
+    "Id": 133,
+    "Title": "Samsung Galaxy S10",
+    "Description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
+    "Price": 699.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/3.webp"
+    ],
     "Specifications": {
-      "Resolution": [ "3440 x 1440" ],
-      "Refresh Rate": [ "165Hz" ],
-      "Response Time": [ "0.1ms GtG" ]
+      "Color": [ "Prism White" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "128GB" ],
+      "Display": [ "6.1-inch Dynamic AMOLED" ],
+      "Security": [ "Ultrasonic Fingerprint" ]
     }
   },
   {
-    "Id": 51,
-    "Title": "LG UltraGear 27GR95QE",
-    "Description": "27-inch OLED gaming monitor with 240Hz refresh rate.",
-    "Price": 85000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=800",
+    "Id": 134,
+    "Title": "Vivo S1",
+    "Description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
+    "Price": 249.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/3.webp"
+    ],
     "Specifications": {
-      "Resolution": [ "2560 x 1440 (QHD)" ],
-      "Refresh Rate": [ "240Hz" ],
-      "Response Time": [ "0.03ms" ]
-    }
-  },
-  {
-    "Id": 52,
-    "Title": "ASUS ROG Swift OLED PG27AQDM",
-    "Description": "Endgame 1440p gaming monitor with custom heatsink.",
-    "Price": 95000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "2560 x 1440" ],
-      "Refresh Rate": [ "240Hz" ],
-      "Panel": [ "OLED" ]
-    }
-  },
-  {
-    "Id": 53,
-    "Title": "Dell UltraSharp U3223QE",
-    "Description": "32-inch 4K monitor with IPS Black technology.",
-    "Price": 75000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "3840 x 2160 (4K)" ],
-      "Panel": [ "IPS Black" ],
-      "Color Accuracy": [ "98% DCI-P3" ]
-    }
-  },
-  {
-    "Id": 54,
-    "Title": "Apple Studio Display",
-    "Description": "A sight to be bold. 27-inch 5K Retina display.",
-    "Price": 159900,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "5120 x 2880 (5K)" ],
-      "Brightness": [ "600 nits" ],
-      "Features": [ "12MP Ultra Wide camera" ]
-    }
-  },
-  {
-    "Id": 55,
-    "Title": "BenQ PD3220U",
-    "Description": "DesignVue 32-inch 4K monitor for Mac designers.",
-    "Price": 89990,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "3840 x 2160" ],
-      "Color Space": [ "100% sRGB", "95% P3" ],
-      "Connectivity": [ "Thunderbolt 3" ]
-    }
-  },
-  {
-    "Id": 56,
-    "Title": "Gigabyte M32U",
-    "Description": "32-inch 4K gaming monitor with built-in KVM.",
-    "Price": 65000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1525598912003-663126343e1f?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "3840 x 2160" ],
-      "Refresh Rate": [ "144Hz" ],
-      "Features": [ "KVM Switch" ]
-    }
-  },
-  {
-    "Id": 57,
-    "Title": "MSI MAG 274UPF",
-    "Description": "Esports 4K gaming monitor.",
-    "Price": 48000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "3840 x 2160 (4K)" ],
-      "Refresh Rate": [ "144Hz" ],
-      "Panel": [ "Rapid IPS" ]
-    }
-  },
-  {
-    "Id": 58,
-    "Title": "Samsung Smart Monitor M8",
-    "Description": "Watch, play, live in style without a PC.",
-    "Price": 55000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "4K UHD" ],
-      "Features": [ "Built-in Smart TV Apps", "SlimFit Camera" ]
-    }
-  },
-  {
-    "Id": 59,
-    "Title": "Acer Predator X27U",
-    "Description": "27-inch OLED 240Hz Gaming Monitor.",
-    "Price": 82000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "2560 x 1440" ],
-      "Refresh Rate": [ "240Hz" ],
-      "Panel": [ "OLED" ]
-    }
-  },
-  {
-    "Id": 60,
-    "Title": "AOC Agon PRO PD32M",
-    "Description": "Porsche Design 32-inch Mini-LED Gaming Monitor.",
-    "Price": 125000,
-    "CategoryId": 5,
-    "ImageUrl": "https://images.unsplash.com/photo-1525598912003-663126343e1f?q=80&w=800",
-    "Specifications": {
-      "Resolution": [ "4K UHD" ],
-      "Panel": [ "Mini-LED", "DisplayHDR 1400" ],
-      "Refresh Rate": [ "144Hz" ]
-    }
-  },
-  {
-    "Id": 61,
-    "Title": "Apple Watch Ultra 2",
-    "Description": "The ultimate sports and adventure watch.",
-    "Price": 89900,
-    "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1544006659-f0b21f04cb1d?q=80&w=800",
-    "Specifications": {
-      "Material": [ "Titanium" ],
-      "Display": [ "3000 nits brightness" ],
-      "Battery": [ "Up to 36 hours" ]
-    }
-  },
-  {
-    "Id": 62,
-    "Title": "Samsung Galaxy Watch 6 Classic",
-    "Description": "The iconic rotating bezel is back.",
-    "Price": 36999,
-    "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800",
-    "Specifications": {
-      "Size": [ "43mm", "47mm" ],
-      "Material": [ "Stainless Steel" ],
+      "Color": [ "Skyline Blue" ],
+      "RAM": [ "4GB" ],
+      "Storage": [ "128GB" ],
+      "Battery": [ "4500 mAh" ],
       "Display": [ "Super AMOLED" ]
     }
   },
   {
-    "Id": 63,
-    "Title": "Garmin Fenix 7 Pro",
-    "Description": "Premium multisport GPS smartwatch with solar charging.",
-    "Price": 75000,
-    "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800",
+    "Id": 135,
+    "Title": "Vivo V9",
+    "Description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
+    "Price": 299.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/3.webp"
+    ],
     "Specifications": {
-      "Features": [ "Built-in Flashlight", "Solar Charging" ],
-      "Battery Life": [ "Up to 22 Days" ]
+      "Color": [ "Pearl Black" ],
+      "RAM": [ "4GB" ],
+      "Storage": [ "64GB" ],
+      "Camera": [ "24MP AI Selfie Camera" ],
+      "Display": [ "6.3-inch FHD+" ]
     }
   },
   {
-    "Id": 64,
-    "Title": "Apple Watch Series 9",
-    "Description": "A brighter mind. Double tap gesture support.",
-    "Price": 41900,
-    "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?q=80&w=800",
+    "Id": 136,
+    "Title": "Vivo X21",
+    "Description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
+    "Price": 499.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/thumbnail.webp",
+    "CategoryId": 1,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/3.webp"
+    ],
     "Specifications": {
-      "Size": [ "41mm", "45mm" ],
-      "Connectivity": [ "GPS", "Cellular" ],
-      "Processor": [ "S9 SiP" ]
+      "Color": [ "Black" ],
+      "RAM": [ "6GB" ],
+      "Storage": [ "128GB" ],
+      "Processor": [ "Snapdragon 660" ],
+      "Security": [ "In-Display Fingerprint" ]
     }
   },
   {
-    "Id": 65,
-    "Title": "Google Pixel Watch 2",
-    "Description": "Help by Google. Health by Fitbit.",
-    "Price": 39999,
-    "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800",
+    "Id": 159,
+    "Title": "iPad Mini 2021 Starlight",
+    "Description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience.",
+    "Price": 499.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/thumbnail.webp",
+    "CategoryId": 2,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/4.webp"
+    ],
     "Specifications": {
-      "Material": [ "100% Recycled Aluminum" ],
-      "Sensors": [ "Heart Rate", "Skin Temperature", "cEDA" ]
+      "Color": [ "Starlight" ],
+      "Storage": [ "64GB" ],
+      "Processor": [ "A15 Bionic chip" ],
+      "Display": [ "8.3-inch Liquid Retina" ],
+      "Connectivity": [ "Wi-Fi" ]
     }
   },
   {
-    "Id": 66,
-    "Title": "Oura Ring Gen 3",
-    "Description": "Revolutionary smart ring for health and sleep tracking.",
-    "Price": 28000,
+    "Id": 160,
+    "Title": "Samsung Galaxy Tab S8 Plus Grey",
+    "Description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment.",
+    "Price": 599.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/thumbnail.webp",
+    "CategoryId": 2,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/4.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Graphite Grey" ],
+      "RAM": [ "8GB" ],
+      "Storage": [ "128GB" ],
+      "Display": [ "12.4-inch Super AMOLED" ],
+      "Accessories": [ "S Pen Included" ]
+    }
+  },
+  {
+    "Id": 161,
+    "Title": "Samsung Galaxy Tab White",
+    "Description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks.",
+    "Price": 349.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/thumbnail.webp",
+    "CategoryId": 2,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/4.webp"
+    ],
+    "Specifications": {
+      "Color": [ "White" ],
+      "RAM": [ "3GB" ],
+      "Storage": [ "32GB" ],
+      "Display": [ "10.1-inch TFT" ],
+      "Connectivity": [ "Wi-Fi" ]
+    }
+  },
+  {
+    "Id": 99,
+    "Title": "Amazon Echo Plus",
+    "Description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
+    "Price": 99.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
+    "CategoryId": 4,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/2.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Charcoal" ],
+      "Connectivity": [ "Wi-Fi, Bluetooth" ],
+      "Smart Home Hub": [ "Built-in Zigbee" ],
+      "Audio": [ "Premium Dolby Sound" ]
+    }
+  },
+  {
+    "Id": 100,
+    "Title": "Apple Airpods",
+    "Description": "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
+    "Price": 129.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
+    "CategoryId": 4,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/2.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/3.webp"
+    ],
+    "Specifications": {
+      "Color": [ "White" ],
+      "Connectivity": [ "Bluetooth" ],
+      "Battery Life": [ "Up to 24 hours (with case)" ],
+      "Chip": [ "H1 Headphone Chip" ]
+    }
+  },
+  {
+    "Id": 101,
+    "Title": "Apple AirPods Max Silver",
+    "Description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
+    "Price": 549.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+    "CategoryId": 4,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Silver" ],
+      "Design": [ "Over-Ear" ],
+      "Noise Cancellation": [ "Active Noise Cancellation (ANC)" ],
+      "Battery Life": [ "Up to 20 hours" ]
+    }
+  },
+  {
+    "Id": 102,
+    "Title": "Apple Airpower Wireless Charger",
+    "Description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
+    "Price": 79.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/1.webp"
+    ],
+    "Specifications": {
+      "Color": [ "White" ],
+      "Output": [ "15W Fast Charging" ],
+      "Compatibility": [ "Qi-enabled Apple Devices" ],
+      "Type": [ "Wireless Charging Mat" ]
+    }
+  },
+  {
+    "Id": 103,
+    "Title": "Apple HomePod Mini Cosmic Grey",
+    "Description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
+    "Price": 99.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp",
+    "CategoryId": 4,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/1.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Space Grey" ],
+      "Connectivity": [ "Wi-Fi 802.11n" ],
+      "Audio": [ "360-degree sound" ],
+      "Voice Assistant": [ "Siri built-in" ]
+    }
+  },
+  {
+    "Id": 104,
+    "Title": "Apple iPhone Charger",
+    "Description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
+    "Price": 19.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/2.webp"
+    ],
+    "Specifications": {
+      "Color": [ "White" ],
+      "Output": [ "20W" ],
+      "Interface": [ "USB-C" ],
+      "Type": [ "Power Adapter" ]
+    }
+  },
+  {
+    "Id": 105,
+    "Title": "Apple MagSafe Battery Pack",
+    "Description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
+    "Price": 99.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/2.webp"
+    ],
+    "Specifications": {
+      "Color": [ "White" ],
+      "Capacity": [ "1460 mAh" ],
+      "Compatibility": [ "iPhone 12 and newer" ],
+      "Connection": [ "Magnetic Attachment" ]
+    }
+  },
+  {
+    "Id": 106,
+    "Title": "Apple Watch Series 4 Gold",
+    "Description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
+    "Price": 349.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp",
     "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1544006659-f0b21f04cb1d?q=80&w=800",
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/2.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/3.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Gold" ],
+      "Size": [ "44mm" ],
+      "Connectivity": [ "GPS + Cellular" ],
+      "Material": [ "Aluminum Case" ]
+    }
+  },
+  {
+    "Id": 107,
+    "Title": "Beats Flex Wireless Earphones",
+    "Description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
+    "Price": 49.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/1.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Beats Black" ],
+      "Connectivity": [ "Bluetooth" ],
+      "Battery Life": [ "Up to 12 hours" ],
+      "Charging": [ "USB-C Fast Fuel" ]
+    }
+  },
+  {
+    "Id": 108,
+    "Title": "iPhone 12 Silicone Case with MagSafe Plum",
+    "Description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
+    "Price": 29.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/2.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/3.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/4.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Plum" ],
+      "Material": [ "Silicone" ],
+      "Compatibility": [ "iPhone 12 / 12 Pro" ],
+      "Features": [ "Built-in MagSafe" ]
+    }
+  },
+  {
+    "Id": 109,
+    "Title": "Monopod",
+    "Description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
+    "Price": 19.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/2.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Black" ],
+      "Material": [ "Aluminum" ],
+      "Max Height": [ "60 inches" ],
+      "Mount Type": [ "Standard 1/4-inch screw" ]
+    }
+  },
+  {
+    "Id": 110,
+    "Title": "Selfie Lamp with iPhone",
+    "Description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
+    "Price": 14.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/1.webp"
+    ],
+    "Specifications": {
+      "Color": [ "White" ],
+      "Light Levels": [ "3 Brightness Levels" ],
+      "Connection": [ "Clip-on" ],
+      "Power": [ "Rechargeable USB" ]
+    }
+  },
+  {
+    "Id": 111,
+    "Title": "Selfie Stick Monopod",
+    "Description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
+    "Price": 12.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/1.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Black" ],
+      "Connectivity": [ "Bluetooth Remote" ],
+      "Folded Length": [ "7.5 inches" ],
+      "Compatibility": [ "iOS & Android" ]
+    }
+  },
+  {
+    "Id": 112,
+    "Title": "TV Studio Camera Pedestal",
+    "Description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
+    "Price": 499.99,
+    "ImageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/thumbnail.webp",
+    "CategoryId": 3,
+    "Images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/1.webp"
+    ],
+    "Specifications": {
+      "Color": [ "Black" ],
+      "Material": [ "Heavy-duty Aluminum" ],
+      "Max Load": [ "66 lbs (30 kg)" ],
+      "Mobility": [ "Locking Casters" ]
+    }
+  },
+
+
+
+
+
+  {
+    "Id": 9,
+    "Title": "WD 2TB Elements Portable Hard Drive",
+    "Description": "USB 3.0 and USB 2.0 compatibility for fast data transfers and high capacity storage on the go.",
+    "Price": 64.00,
+    "ImageUrl": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+    "CategoryId": 5,
+    "Images": [
+      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png"
+    ],
+    "Specifications": {
+      "Capacity": [ "2TB" ],
+      "Interface": [ "USB 3.0", "USB 2.0" ],
+      "Type": [ "HDD" ],
+      "Color": [ "Black" ]
+    }
+  },
+  {
+    "Id": 10,
+    "Title": "SanDisk SSD PLUS 1TB Internal SSD",
+    "Description": "Reliable and fast internal SSD for upgrading your PC performance and boot times.",
+    "Price": 109.00,
+    "ImageUrl": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
+    "CategoryId": 5,
+    "Images": [
+      "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png"
+    ],
+    "Specifications": {
+      "Capacity": [ "1TB" ],
+      "Interface": [ "SATA III 6 Gb/s" ],
+      "Read Speed": [ "535MB/s" ],
+      "Write Speed": [ "450MB/s" ]
+    }
+  },
+  {
+    "Id": 11,
+    "Title": "Silicon Power 256GB SSD 3D NAND",
+    "Description": "Remarkable transfer speeds that enable faster bootup and improved overall system performance.",
+    "Price": 109.00,
+    "ImageUrl": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+    "CategoryId": 5,
+    "Images": [
+      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png"
+    ],
+    "Specifications": {
+      "Capacity": [ "256GB" ],
+      "Technology": [ "3D NAND" ],
+      "Form Factor": [ "2.5 inch" ],
+      "Interface": [ "SATA III" ]
+    }
+  },
+  {
+    "Id": 12,
+    "Title": "WD 4TB Gaming Drive for PS4",
+    "Description": "High-capacity portable storage specifically designed for a seamless PlayStation 4 gaming experience.",
+    "Price": 114.00,
+    "ImageUrl": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
+    "CategoryId": 5,
+    "Images": [
+      "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png"
+    ],
+    "Specifications": {
+      "Capacity": [ "4TB" ],
+      "Compatibility": [ "PS4", "PS4 Pro" ],
+      "Warranty": [ "3 Years" ]
+    }
+  },
+  {
+    "Id": 13,
+    "Title": "Acer SB220Q 21.5-inch IPS Monitor",
+    "Description": "Ultra-thin widescreen IPS display with Radeon FreeSync technology for smooth visuals.",
+    "Price": 599.00,
+    "ImageUrl": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    "CategoryId": 7,
+    "Images": [
+      "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png"
+    ],
+    "Specifications": {
+      "Screen Size": [ "21.5 inches" ],
+      "Resolution": [ "1920 x 1080" ],
+      "Panel Type": [ "IPS" ],
+      "Refresh Rate": [ "75Hz" ]
+    }
+  },
+  {
+    "Id": 14,
+    "Title": "Samsung 49-Inch Curved Gaming Monitor",
+    "Description": "Super Ultrawide 32:9 curved gaming monitor with QLED technology and HDR support.",
+    "Price": 999.99,
+    "ImageUrl": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
+    "CategoryId": 7,
+    "Images": [
+      "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png"
+    ],
+    "Specifications": {
+      "Size": [ "49 Inch" ],
+      "Refresh Rate": [ "144Hz" ],
+      "Display Type": [ "QLED" ],
+      "Response Time": [ "1ms" ]
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "Id": 20,
+    "Title": "Apple Watch Ultra 2 GPS + Cellular",
+    "Description": "The most rugged and capable Apple Watch. Featuring a robust titanium case and dual-frequency GPS.",
+    "Price": 799.00,
+    "ImageUrl": "https://m.media-amazon.com/images/I/81Scp0aak9L._SX679_.jpg",
+    "CategoryId": 6,
+    "Images": [ "https://m.media-amazon.com/images/I/81Scp0aak9L._SX679_.jpg" ],
     "Specifications": {
       "Material": [ "Titanium" ],
-      "Battery Life": [ "Up to 7 Days" ],
-      "Tracking": [ "Sleep", "Activity", "Readiness" ]
+      "Size": [ "49mm" ],
+      "Battery": [ "Up to 36 hours" ],
+      "Water Resistance": [ "100m" ]
     }
   },
   {
-    "Id": 67,
-    "Title": "Fitbit Charge 6",
-    "Description": "Advanced fitness tracker with Google apps.",
-    "Price": 14999,
+    "Id": 21,
+    "Title": "Samsung Galaxy Watch Ultra",
+    "Description": "The pinnacle of Samsung wearables with advanced AI-driven health tracking and extreme durability.",
+    "Price": 649.99,
+    "ImageUrl": "https://m.media-amazon.com/images/I/81acmzia3+L._SL1500_.jpg",
     "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?q=80&w=800",
+    "Images": [ "https://m.media-amazon.com/images/I/81acmzia3+L._SL1500_.jpg" ],
     "Specifications": {
-      "Display": [ "AMOLED Color Touchscreen" ],
-      "Battery Life": [ "Up to 7 Days" ],
-      "Sensors": [ "ECG", "GPS" ]
+      "OS": [ "Wear OS 5" ],
+      "Processor": [ "Exynos W1000" ],
+      "Display": [ "Sapphire Crystal" ],
+      "Sensors": [ "BioActive Sensor" ]
     }
   },
   {
-    "Id": 68,
-    "Title": "Whoop 4.0",
-    "Description": "24/7 fitness and health coach. Screen-free design.",
-    "Price": 25000,
+    "Id": 22,
+    "Title": "Garmin Fenix 7X Pro Solar",
+    "Description": "Multisport GPS watch with solar charging lens and built-in LED flashlight for athletes.",
+    "Price": 899.99,
+    "ImageUrl": "https://m.media-amazon.com/images/I/31j27NoU-vL._SY300_SX300_QL70_FMwebp_.jpg",
     "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1544006659-f0b21f04cb1d?q=80&w=800",
+    "Images": [ "https://m.media-amazon.com/images/I/31j27NoU-vL._SY300_SX300_QL70_FMwebp_.jpg" ],
     "Specifications": {
-      "Form Factor": [ "Wristband", "Apparel Integrations" ],
-      "Battery": [ "Wireless Battery Pack" ]
+      "Charging": [ "Solar Powered" ],
+      "Maps": [ "Preloaded TopoActive" ],
+      "Flashlight": [ "Built-in LED" ],
+      "Battery": [ "Up to 37 days (Smartwatch mode)" ]
     }
   },
   {
-    "Id": 69,
-    "Title": "Amazfit GTR 4",
-    "Description": "Business-styled smartwatch with dual-band GPS.",
-    "Price": 16999,
+    "Id": 23,
+    "Title": "Google Pixel Watch 3",
+    "Description": "The best of Google and Fitbit combined. Sleek circular design with deep integration into the Pixel ecosystem.",
+    "Price": 349.00,
+    "ImageUrl": "https://m.media-amazon.com/images/I/51i+zh+rQ0L._SX522_.jpg",
     "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800",
+    "Images": [ "https://m.media-amazon.com/images/I/51i+zh+rQ0L._SX522_.jpg" ],
     "Specifications": {
-      "Display": [ "1.43-inch AMOLED" ],
-      "Battery Life": [ "Up to 14 Days" ],
-      "GPS": [ "Dual-band Circularly-polarized" ]
+      "Display": [ "Actua Display" ],
+      "Health": [ "Daily Readiness Score" ],
+      "Safety": [ "Fall Detection" ],
+      "Connectivity": [ "Bluetooth/Wi-Fi" ]
     }
   },
   {
-    "Id": 70,
-    "Title": "Suunto 9 Peak Pro",
-    "Description": "Ultra-thin, tough GPS multisport watch.",
-    "Price": 45000,
+    "Id": 24,
+    "Title": "Amazfit GTR 4 Smart Watch",
+    "Description": "Classic look with industry-first dual-band circularly-polarized GPS antenna technology.",
+    "Price": 199.99,
+    "ImageUrl": "https://m.media-amazon.com/images/I/41Y9uYdxzjL._SY300_SX300_QL70_FMwebp_.jpg",
     "CategoryId": 6,
-    "ImageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800",
+    "Images": [ "https://m.media-amazon.com/images/I/41Y9uYdxzjL._SY300_SX300_QL70_FMwebp_.jpg" ],
     "Specifications": {
-      "Durability": [ "Military Grade", "Titanium Option" ],
-      "Water Resistance": [ "100m" ],
-      "Battery": [ "40h in best GPS mode" ]
+      "Battery": [ "14 Days" ],
+      "Sports Modes": [ "150+" ],
+      "Display": [ "1.43\" AMOLED" ],
+      "Assistant": [ "Alexa Built-in" ]
+    }
+  },
+  {
+    "Id": 25,
+    "Title": "ASUS ROG Swift 32\" 4K OLED",
+    "Description": "The world's first 32-inch 4K OLED gaming monitor with a stunning 240Hz refresh rate.",
+    "Price": 1299.00,
+    "ImageUrl": "https://m.media-amazon.com/images/I/81djcVFS+rL._SL1500_.jpg",
+    "CategoryId": 7,
+    "Images": [ "https://m.media-amazon.com/images/I/81djcVFS+rL._SL1500_.jpg" ],
+    "Specifications": {
+      "Resolution": [ "3840 x 2160" ],
+      "Refresh Rate": [ "240Hz" ],
+      "Panel": [ "OLED" ],
+      "Response Time": [ "0.03ms" ]
+    }
+  },
+  {
+    "Id": 26,
+    "Title": "Gigabyte M27Q 27\" QHD",
+    "Description": "High-performance gaming monitor with a built-in KVM switch to control multiple devices.",
+    "Price": 299.99,
+    "ImageUrl": "https://m.media-amazon.com/images/I/81oosCN47KL._SL1500_.jpg",
+    "CategoryId": 7,
+    "Images": [ "https://m.media-amazon.com/images/I/81oosCN47KL._SL1500_.jpg" ],
+    "Specifications": {
+      "Panel": [ "IPS" ],
+      "Refresh Rate": [ "170Hz" ],
+      "Resolution": [ "2560 x 1440" ],
+      "Special Feature": [ "KVM Switch" ]
+    }
+  },
+  {
+    "Id": 27,
+    "Title": "MSI Optix 34\" Curved Ultrawide",
+    "Description": "Immerse yourself in the action with a 1500R curvature and a 21:9 ultra-wide aspect ratio.",
+    "Price": 450.00,
+    "ImageUrl": "https://m.media-amazon.com/images/I/71YsSgR-KpL._SL1500_.jpg",
+    "CategoryId": 7,
+    "Images": [ "https://m.media-amazon.com/images/I/71YsSgR-KpL._SL1500_.jpg" ],
+    "Specifications": {
+      "Curvature": [ "1500R" ],
+      "Aspect Ratio": [ "21:9" ],
+      "Resolution": [ "UWQHD" ],
+      "Panel": [ "VA" ]
+    }
+  },
+  {
+    "Id": 28,
+    "Title": "BenQ PD3220U 32\" Designer Monitor",
+    "Description": "Tailor-made for creative professionals with Mac-ready color precision and Thunderbolt 3.",
+    "Price": 1099.00,
+    "ImageUrl": "https://m.media-amazon.com/images/I/41G+WEORaDL._SX300_SY300_QL70_FMwebp_.jpg",
+    "CategoryId": 7,
+    "Images": [ "https://m.media-amazon.com/images/I/41G+WEORaDL._SX300_SY300_QL70_FMwebp_.jpg" ],
+    "Specifications": {
+      "Color Space": [ "100% sRGB", "95% P3" ],
+      "Connectivity": [ "Thunderbolt 3", "USB-C" ],
+      "Display": [ "4K UHD IPS" ],
+      "Feature": [ "Hotkey Puck G2" ]
+    }
+  },
+  {
+    "Id": 29,
+    "Title": "ViewSonic ELITE 24\" 1080p",
+    "Description": "Competitive esports monitor with ultra-fast 1ms response and G-Sync compatibility.",
+    "Price": 229.00,
+    "ImageUrl": "https://m.media-amazon.com/images/I/71LiIjEK06L._SL1500_.jpg",
+    "CategoryId": 7,
+    "Images": [ "https://m.media-amazon.com/images/I/71LiIjEK06L._SL1500_.jpg" ],
+    "Specifications": {
+      "Size": [ "24 inch" ],
+      "Refresh Rate": [ "144Hz" ],
+      "Sync": [ "NVIDIA G-Sync" ],
+      "Resolution": [ "1080p FHD" ]
     }
   }
+  
 ]

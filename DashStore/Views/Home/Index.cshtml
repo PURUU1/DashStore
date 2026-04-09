@@ -93,7 +93,8 @@
                 <!-- Carousel Content -->
                 @* <div class="product-carousel" id="carousel"> *@
                 <div class=" row">
-
+                    
+                    
                     @foreach (var Product in Model.Products)
                     {
 
@@ -132,6 +133,7 @@
 
 
                     }
+                    
                 </div>
             </div>
         </div>
@@ -186,7 +188,7 @@
                             </svg>
 
 
-                            Smartphones
+                            Laptops & Pc's
                         </div>
                     </div>
 
@@ -206,7 +208,7 @@
                                 </defs>
                             </svg>
 
-                        Smartphones
+                        Audio & Sound
                         </div>
                     </div>
 
@@ -226,7 +228,7 @@
                                 </defs>
                             </svg>
 
-                            Smartphones
+                            Gaming
                         </div>
                     </div>
 
@@ -243,15 +245,23 @@
 
     <h5 class="text-center  display-6">@category.Name</h5>
     <div class=" d-flex ">
-
+                @{
+                    var safeCategoryName = category.Name.Replace(" ", "").Replace("&", "");
+                }
 
         <div class="carousel-wrapper" id="@category.Name">
             <!-- Navigation -->
-            <button class="nav-btn prev-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
-            <button class="nav-btn next-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+            @* <button class="nav-btn prev-btn" id="#-Crousel-@safeCategoryName"><i class="bi bi-chevron-left"></i></button>
+                    <button class="nav-btn next-btn" id="@safeCategoryName"><i class="bi bi-chevron-right"></i></button> *@
+                    <button class="nav-btn prev-btn" data-target="#carousel-@safeCategoryName">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next-btn" data-target="#carousel-@safeCategoryName">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
 
             <!-- Carousel Content -->
-            <div class="product-carousel" id="carousel">
+                    <div class="product-carousel" id="carousel-@safeCategoryName">
                 @foreach (var Product in category.ProductsByCategory)
                 {
 
@@ -304,3 +314,34 @@
 <div class="">
     <img src="~/assets/Banner2.png" width="100%" alt="Alternate Text" />
 </div>
+
+
+
+    @section Scripts{
+
+        <script>
+
+                            $(document).ready(function() {
+                    const scrollAmount = 360; 
+
+                    $('.next-btn').click(function() {
+                        
+                        var targetId = $(this).data('target');
+                        var $carousel = $(targetId);
+
+                        $carousel.animate({
+                            scrollLeft: $carousel.scrollLeft() + scrollAmount
+                        }, 200);
+                    });
+
+                    $('.prev-btn').click(function() {
+                        var targetId = $(this).data('target');
+                        var $carousel = $(targetId);
+
+                        $carousel.animate({
+                            scrollLeft: $carousel.scrollLeft() - scrollAmount
+                        }, 400);
+                    });
+                });
+        </script>
+}

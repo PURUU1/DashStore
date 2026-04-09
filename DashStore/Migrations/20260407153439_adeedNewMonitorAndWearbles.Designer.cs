@@ -4,6 +4,7 @@ using DashStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DashStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260407153439_adeedNewMonitorAndWearbles")]
+    partial class adeedNewMonitorAndWearbles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -829,8 +832,8 @@ namespace DashStore.Migrations
                             Id = 20,
                             CategoryId = 6,
                             Description = "The most rugged and capable Apple Watch. Featuring a robust titanium case and dual-frequency GPS.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/81Scp0aak9L._SX679_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81Scp0aak9L._SX679_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/71Fu7m3Y3iL._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71Fu7m3Y3iL._AC_SL1500_.jpg\"]",
                             Price = 799.0,
                             SpecificationsJson = "{\"Material\":[\"Titanium\"],\"Size\":[\"49mm\"],\"Battery\":[\"Up to 36 hours\"],\"Water Resistance\":[\"100m\"]}",
                             Title = "Apple Watch Ultra 2 GPS + Cellular"
@@ -840,8 +843,8 @@ namespace DashStore.Migrations
                             Id = 21,
                             CategoryId = 6,
                             Description = "The pinnacle of Samsung wearables with advanced AI-driven health tracking and extreme durability.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/81acmzia3+L._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81acmzia3\\u002BL._SL1500_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/61N8qWInS0L._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/61N8qWInS0L._AC_SL1500_.jpg\"]",
                             Price = 649.99000000000001,
                             SpecificationsJson = "{\"OS\":[\"Wear OS 5\"],\"Processor\":[\"Exynos W1000\"],\"Display\":[\"Sapphire Crystal\"],\"Sensors\":[\"BioActive Sensor\"]}",
                             Title = "Samsung Galaxy Watch Ultra"
@@ -851,8 +854,8 @@ namespace DashStore.Migrations
                             Id = 22,
                             CategoryId = 6,
                             Description = "Multisport GPS watch with solar charging lens and built-in LED flashlight for athletes.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/31j27NoU-vL._SY300_SX300_QL70_FMwebp_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/31j27NoU-vL._SY300_SX300_QL70_FMwebp_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/61mZ5Yt-TfL._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/61mZ5Yt-TfL._AC_SL1500_.jpg\"]",
                             Price = 899.99000000000001,
                             SpecificationsJson = "{\"Charging\":[\"Solar Powered\"],\"Maps\":[\"Preloaded TopoActive\"],\"Flashlight\":[\"Built-in LED\"],\"Battery\":[\"Up to 37 days (Smartwatch mode)\"]}",
                             Title = "Garmin Fenix 7X Pro Solar"
@@ -862,8 +865,8 @@ namespace DashStore.Migrations
                             Id = 23,
                             CategoryId = 6,
                             Description = "The best of Google and Fitbit combined. Sleek circular design with deep integration into the Pixel ecosystem.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/51i+zh+rQ0L._SX522_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/51i\\u002Bzh\\u002BrQ0L._SX522_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/61D5N40S-3L._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/61D5N40S-3L._AC_SL1500_.jpg\"]",
                             Price = 349.0,
                             SpecificationsJson = "{\"Display\":[\"Actua Display\"],\"Health\":[\"Daily Readiness Score\"],\"Safety\":[\"Fall Detection\"],\"Connectivity\":[\"Bluetooth/Wi-Fi\"]}",
                             Title = "Google Pixel Watch 3"
@@ -873,8 +876,8 @@ namespace DashStore.Migrations
                             Id = 24,
                             CategoryId = 6,
                             Description = "Classic look with industry-first dual-band circularly-polarized GPS antenna technology.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/41Y9uYdxzjL._SY300_SX300_QL70_FMwebp_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/41Y9uYdxzjL._SY300_SX300_QL70_FMwebp_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/61Yp7f1FpML._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/61Yp7f1FpML._AC_SL1500_.jpg\"]",
                             Price = 199.99000000000001,
                             SpecificationsJson = "{\"Battery\":[\"14 Days\"],\"Sports Modes\":[\"150\\u002B\"],\"Display\":[\"1.43\\u0022 AMOLED\"],\"Assistant\":[\"Alexa Built-in\"]}",
                             Title = "Amazfit GTR 4 Smart Watch"
@@ -884,8 +887,8 @@ namespace DashStore.Migrations
                             Id = 25,
                             CategoryId = 7,
                             Description = "The world's first 32-inch 4K OLED gaming monitor with a stunning 240Hz refresh rate.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/81djcVFS+rL._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81djcVFS\\u002BrL._SL1500_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/81mD-mI7HlL._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81mD-mI7HlL._AC_SL1500_.jpg\"]",
                             Price = 1299.0,
                             SpecificationsJson = "{\"Resolution\":[\"3840 x 2160\"],\"Refresh Rate\":[\"240Hz\"],\"Panel\":[\"OLED\"],\"Response Time\":[\"0.03ms\"]}",
                             Title = "ASUS ROG Swift 32\" 4K OLED"
@@ -895,8 +898,8 @@ namespace DashStore.Migrations
                             Id = 26,
                             CategoryId = 7,
                             Description = "High-performance gaming monitor with a built-in KVM switch to control multiple devices.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/81oosCN47KL._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/81oosCN47KL._SL1500_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/71Y88f7R8sL._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71Y88f7R8sL._AC_SL1500_.jpg\"]",
                             Price = 299.99000000000001,
                             SpecificationsJson = "{\"Panel\":[\"IPS\"],\"Refresh Rate\":[\"170Hz\"],\"Resolution\":[\"2560 x 1440\"],\"Special Feature\":[\"KVM Switch\"]}",
                             Title = "Gigabyte M27Q 27\" QHD"
@@ -906,8 +909,8 @@ namespace DashStore.Migrations
                             Id = 27,
                             CategoryId = 7,
                             Description = "Immerse yourself in the action with a 1500R curvature and a 21:9 ultra-wide aspect ratio.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/71YsSgR-KpL._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71YsSgR-KpL._SL1500_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/71H2l28m3BL._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71H2l28m3BL._AC_SL1500_.jpg\"]",
                             Price = 450.0,
                             SpecificationsJson = "{\"Curvature\":[\"1500R\"],\"Aspect Ratio\":[\"21:9\"],\"Resolution\":[\"UWQHD\"],\"Panel\":[\"VA\"]}",
                             Title = "MSI Optix 34\" Curved Ultrawide"
@@ -917,8 +920,8 @@ namespace DashStore.Migrations
                             Id = 28,
                             CategoryId = 7,
                             Description = "Tailor-made for creative professionals with Mac-ready color precision and Thunderbolt 3.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/41G+WEORaDL._SX300_SY300_QL70_FMwebp_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/41G\\u002BWEORaDL._SX300_SY300_QL70_FMwebp_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/71vW8o-lD0L._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71vW8o-lD0L._AC_SL1500_.jpg\"]",
                             Price = 1099.0,
                             SpecificationsJson = "{\"Color Space\":[\"100% sRGB\",\"95% P3\"],\"Connectivity\":[\"Thunderbolt 3\",\"USB-C\"],\"Display\":[\"4K UHD IPS\"],\"Feature\":[\"Hotkey Puck G2\"]}",
                             Title = "BenQ PD3220U 32\" Designer Monitor"
@@ -928,8 +931,8 @@ namespace DashStore.Migrations
                             Id = 29,
                             CategoryId = 7,
                             Description = "Competitive esports monitor with ultra-fast 1ms response and G-Sync compatibility.",
-                            ImageUrl = "https://m.media-amazon.com/images/I/71LiIjEK06L._SL1500_.jpg",
-                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71LiIjEK06L._SL1500_.jpg\"]",
+                            ImageUrl = "https://m.media-amazon.com/images/I/71YyK8p6KGL._AC_SL1500_.jpg",
+                            ImagesJson = "[\"https://m.media-amazon.com/images/I/71YyK8p6KGL._AC_SL1500_.jpg\"]",
                             Price = 229.0,
                             SpecificationsJson = "{\"Size\":[\"24 inch\"],\"Refresh Rate\":[\"144Hz\"],\"Sync\":[\"NVIDIA G-Sync\"],\"Resolution\":[\"1080p FHD\"]}",
                             Title = "ViewSonic ELITE 24\" 1080p"
