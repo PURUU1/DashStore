@@ -1,0 +1,60 @@
+﻿@model DashStore.ViewModels.CartViewModel
+
+
+<div class="success-container d-flex">
+    <!-- Success Icon Animation -->
+    <div class="checkmark-wrapper">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+    </div>
+
+    <div class="fade-in-up">
+        <h2 class="fw-bold">Payment Successful!</h2>
+        <p class="text-muted">Your order is being prepared and will be shipped soon.</p>
+
+        <!-- Receipt Slip -->
+        <div class="receipt-card">
+            <div class="receipt-header">
+                <h5 class="receipt-title">Order Receipt</h5>
+                <span class="order-id">#DS-992144</span>
+            </div>
+
+            <div class="item-list">
+                <div class="item-row">
+                    <span class="item-name">iPhone 14 Pro Max × 1</span>
+                    <span class="item-price">$1,399.00</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-name">AirPods Max × 1</span>
+                    <span class="item-price">$549.00</span>
+                </div>
+                <div class="item-row text-muted" style="font-size: 0.85rem;">
+                    <span>Shipping</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="item-row text-muted" style="font-size: 0.85rem;">
+                    <span>Tax (GST)</span>
+                    <span>$50.00</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="total-row">
+                <span>Total Amount</span>
+                <span>$1,998.00</span>
+            </div>
+
+            <div class="mt-4" style="font-size: 0.85rem; color: #7a7a7a;">
+                <strong>Deliver to:</strong><br>
+                John Doe<br>
+                1131 Dusty Townline, Jacksonville, TX
+            </div>
+        </div>
+
+        <button class="btn btn-home" onclick="window.location.href='/'">Back to Shopping</button>
+        <button class="btn-print" onclick="window.print()">Download Receipt</button>
+    </div>
+</div>

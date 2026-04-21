@@ -1,0 +1,178 @@
+﻿
+@model DashStore.ViewModels.CartViewModel
+<form id="paymentForm" method="post" asp-action="Index" asp-controller="Payment">
+<div class="container checkout-container pt-3 pb-3">
+    <div class="row g-5">
+
+        <!-- Left Column: Summary -->
+        <div class="col-lg-5 col-md-12">
+            <div class="summary-card">
+                <h4 class="summary-title">Summary</h4>
+
+                <div class="product-list">
+                 
+                  
+                    @foreach (var CartItem in Model.CartItems)
+                    {
+                        <div class="product-item">
+                            <img src="@CartItem.ImageUrl" alt="AirPods">
+                            <p class="product-name">@CartItem.ProductName</p>
+                            <span class="product-price">$@CartItem.Price</span>
+                        </div>
+                        
+                    }
+                </div>
+
+                <div class="summary-details">
+                    <p class="summary-label">Address</p>
+                    <p class="summary-value">@Model.adreess.StreetAddress, @Model.adreess.City, @Model.adreess.State @Model.adreess.PostalCode</p>
+
+                </div>
+
+                <div class="pricing-breakdown mt-4">
+                    <div class="line-item">
+                        <span>Subtotal</span>
+                        <span>$@Model.SubTotal</span>
+                            <input type="hidden" name="SubTotal" value="@Model.SubTotal" />
+                    </div>
+                    <div class="line-item label-gray">
+                        <span>Estimated Tax</span>
+                        <span>$@Model.EstimatedTax</span>
+                            <input type="hidden" name="EstimatedTax" value="@Model.EstimatedTax" />
+                    </div>
+                    <div class="line-item label-gray">
+                        <span>Estimated shipping & Handling</span>
+                        <span>$@Model.EstimatedShippingAndHandling</span>
+                            <input type="hidden" name="EstimatedShippingAndHandling" value="@Model.EstimatedShippingAndHandling" />
+                    </div>
+                    <div class="total-item">
+                        <span>Total</span>
+                        <span>$@Model.Total</span>
+                            <input type="hidden" name="Total" value="@Model.Total" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Payment -->
+        <div class="col-lg-7 col-md-12 ps-lg-5">
+            <h4 class="payment-title">Payment</h4>
+
+            <ul class="nav nav-tabs" id="paymentTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Credit Card</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">PayPal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">PayPal Credit</a>
+                </li>
+            </ul>
+
+            <div class="card-preview">
+                <div class="chip-icon"></div>
+                <i class="bi bi-wifi contactless"></i>
+                <div class="card-number">4085 9536 8475 9530</div>
+                <div class="card-info">
+                    <div class="card-holder-label">Cardholder</div>
+                    <div class="card-holder-name" id="preview-name">John Doe</div>
+                </div>
+                <div class="mastercard-logo">
+                    <div class="mc-circle mc-red"></div>
+                    <div class="mc-circle mc-orange"></div>
+                </div>
+            </div>
+
+            
+                <div class="mb-3">
+                    
+                    <input type="text" class="form-control" id="cardName" placeholder="Cardholder Name" asp-for="Card.CardHolderName" >
+                    <span asp-validation-for="Card.CardHolderName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="cardNumber" placeholder="Card Number" asp-for="Card.CardNumber" >
+                    <span asp-validation-for="@Model.Card.CardNumber" class="text-danger"></span>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control"  id="expDate" placeholder="MM/YY" maxlength="5" asp-for="Card.ExpirationDate">
+                        <span asp-validation-for="@Model.Card.ExpirationDate" class="text-danger"></span>
+                    </div>
+                    @* <div class="col-md-6">
+                        <input type="text" class="form-control" id="expMonth" placeholder="Exp. Month 1-12" asp-for="@Model.Card.ExpirationMonth" >
+                        <span asp-validation-for="@Model.Card.ExpirationMonth" class="text-danger"></span>
+                    </div> *@
+                </div>
+                    <div class="col-md-12">
+                    <input type="text" class="form-control" id="Card.CVV" placeholder="CVV" asp-for="@Model.Card.CVV" >
+                    <span asp-validation-for="@Model.Card.CVV" class="text-danger"></span>
+                    </div>
+
+                <div class="form-check mt-3 mb-5">
+                    <input class="form-check-input" type="checkbox" id="billingCheck" checked>
+                    <label class="form-check-label ms-2" for="billingCheck">
+                        Same as billing address
+                    </label>
+                </div>
+
+                <div class="d-flex gap-3 btn-group-custom">
+                    <button type="button" class="btn btn-action btn-back">Back</button>
+                    <input type="hidden" name="adreess.StreetAddress" value="@Model.adreess.StreetAddress" />
+                    <input type="hidden" name="adreess.City" value="@Model.adreess.City" />
+                    <input type="hidden" name="adreess.PostalCode" value="@Model.adreess.PostalCode" />
+
+                    <input type="hidden" name="CartItems" value="@Model.CartItems" />
+                    <button type="submit" class="btn btn-action btn-pay" asp-controller="Payment" asp-action="Index">Pay</button>
+
+
+                    @* ProcessPayment *@
+                </div>
+            
+        </div>
+    </div>
+</div>
+</form>
+
+
+                    @section Scripts{
+                        <script>
+                              
+        const nameInput = document.getElementById('cardName');
+        const namePreview = document.getElementById('preview-name');
+
+        nameInput.addEventListener('input', (e) => {
+            namePreview.textContent = e.target.value || "Cardholder Name";
+        });
+
+        // Formatting for card number (adding spaces)
+        const numberInput = document.getElementById('cardNumber');
+        const numberPreview = document.querySelector('.card-number');
+
+        numberInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '').substring(0, 16);
+            let formatted = value.match(/.{1,4}/g)?.join(' ') || "";
+            e.target.value = formatted;
+            numberPreview.textContent = formatted || "0000 0000 0000 0000";
+        });
+
+        // Simple Tab Switching logic
+        // document.querySelectorAll('.nav-link').forEach(link => {
+        //     link.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        //         link.classList.add('active');
+        //     });
+        // });
+
+
+
+
+                $('.btn-back').click(function(){
+                            window.history.back()
+
+                        })
+            
+            
+            </script>
+                    }

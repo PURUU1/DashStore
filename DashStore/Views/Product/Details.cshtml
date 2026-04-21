@@ -10,108 +10,106 @@
     <div class="row container align-items-center m-5 w-100 d-flex ">
 
         <!-- LEFT COLUMN: Image Gallery -->
-        <div class="col-lg-6 mb-5 mb-lg-0">
-            @* <div class="d-flex gap-4">
-                <!-- Thumbnails -->
-                 <div class="thumbnail-list">
-                     @foreach(var images in Model.product.ImageList)
-                    {
-                        
-                    <div class="thumbnail-box active">
-                        <img src="@images.ToString()" alt="Thumb 1">
-                    </div>
-                   
-                    } 
-                </div> 
+            <div class="col-lg-6 mb-5 mb-lg-0 placeholder-glow">
+       
 
-                <!-- Main Image -->
-                <div class="main-image-container">
-                    <img src="@Model.product.ImageUrl" class="img-fluid" alt="iPhone 14 Pro Max">
-                </div>
-            </div> *@
+       
+            
 
 
-            <div class="container">
-                <div class="gallery-container">
-                    <!-- Thumbnails (Vertical) -->
-                    <div class="thumbnail-column">
-                        @foreach (var images in Model.product.ImageList)
-                        {
-                            <div class="thumb-item active" onclick="changeImage(this, '@images.ToString()')">
-                                <img src="@images.ToString()" alt="View 1">
-                            </div>
+                <div class="container">
+                    <div class="gallery-container">
+                        <!-- Thumbnails (Vertical) -->
+                        <div class="thumbnail-column">
+                            @foreach (var images in Model.product.ImageList)
+                            {
+                                <div class="thumb-item active" onclick="changeImage(this, '@images.ToString()')">
+                                    <img src="@images.ToString()" alt="View 1">
+                                </div>
 
-                        }
-                            </div>
+                            }
+                        </div>
                         <!-- Main Display -->
-                    <div class="main-display">
-                        <img id="mainImage" src="@Model.product.ImageUrl" class="main-img" alt="Product Main View">
+                        <div class="main-display">
+                            <img id="mainImage" src="@Model.product.ImageUrl" class="main-img" alt="Product Main View">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+       
+       
 
         <!-- RIGHT COLUMN: Product Details -->
+
+
         <div class="col-lg-6 ps-lg-5">
-            <!-- Title & Pricing -->
-            <h1 class="fw-bold mb-3">@Model.product.Title</h1>
-            <div class="d-flex align-items-end gap-3 mb-4">
-                <h2 class="fw-bold mb-0" style="font-size: 2rem;"> $ @Model.product.Price</h2>
-                @{
-                    var unDiscount = @Model.product.Price + 100;
-                }
-                <h4 class="text-muted text-decoration-line-through mb-1">$ @unDiscount</h4>
-            </div>
-            @if (@Model.product.Specifications.ContainsKey("Color"))
-            {
-                
+
+
+            @{
+                var unDiscount = @Model.product.Price + 100;
+            }
+        
+
+        <div id="real-content" style=";">
+        <!-- Title & Pricing -->
+        <h1 class="fw-bold mb-3">@Model.product.Title</h1>
+        <div class="d-flex align-items-end gap-3 mb-4">
+            <h2 class="fw-bold mb-0" style="font-size: 2rem;"> $ @Model.product.Price</h2>
+            @{
+                 unDiscount = @Model.product.Price + 100;
+            }
+            <h4 class="text-muted text-decoration-line-through mb-1">$ @unDiscount</h4>
+        </div>
+        @if (@Model.product.Specifications.ContainsKey("Color"))
+        {
+
             <!-- Color Selector -->
             <div class="d-flex align-items-center gap-3 mb-4">
                 <div class="d-flex">
-                        @foreach (var specs in @Model.product.Specifications)
+                    @foreach (var specs in @Model.product.Specifications)
+                    {
+                        @* <span class="badge bg-primary me-1">@specs.Key</span> *@
+                        @if (specs.Key.Equals("Color"))
                         {
-                            @* <span class="badge bg-primary me-1">@specs.Key</span> *@
-                            @if (specs.Key.Equals("Color"))
-                            {
-                <span class="text-secondary p-1  fw-medium"> Color :</span>
-                                
+                            <span class="text-secondary p-1  fw-medium"> Color :</span>
+
                             @foreach (var val in specs.Value)
                             {
-                                
+
                                 @* <span class="badge bg-secondary me-1">@val</span> *@
-                    <div class="color-circle " style="background-color: @val;"> </div>
+                                <div class="color-circle " style="background-color: @val;"> </div>
 
                             }
-                                
-                            }
-                            
+
                         }
+
+                    }
                     @* <div class="color-circle" style="background-color: #5b21b6;"></div>
                     <div class="color-circle" style="background-color: #dc2626;"></div>
                     <div class="color-circle" style="background-color: #eab308;"></div>
                     <div class="color-circle border" style="background-color: #e5e5e5;"></div> *@
                 </div>
             </div>
-            }
+        }
 
-            <!-- Storage Variants -->
-             @if (@Model.product.Specifications.ContainsKey("RAM"))
-            {
+        <!-- Storage Variants -->
+        @if (@Model.product.Specifications.ContainsKey("RAM"))
+        {
 
-                
-               <div class="row g-2 mb-4">
+
+            <div class="row g-2 mb-4">
 
                 @foreach (var specs in @Model.product.Specifications)
                 {
                     @if (specs.Key.Equals("RAM"))
                     {
-                     @* <span class="badge bg-primary me-1">@specs.Key</span>  *@
+                        @* <span class="badge bg-primary me-1">@specs.Key</span>  *@
                         @foreach (var val in specs.Value)
                         {
 
-                                <div class="col-3">
-                                    <div class="storage-btn">@val</div>
-                                </div>
+                            <div class="col-3">
+                                <div class="storage-btn">@val</div>
+                            </div>
                             @* <span class="badge bg-secondary me-1">@val</span>
                             <div class="color-circle " style="background-color: @val;"></div> *@
 
@@ -121,119 +119,140 @@
 
                 }
             </div>
-              
-            }
-            <!-- Specifications Grid -->
-            <div class="row g-3 mb-4">
-                <!-- Spec 1 -->
-                @foreach (var specs in @Model.product.Specifications)
-                {
-                    @if (!specs.Key.Equals("RAM") && !specs.Key.Equals("Color"))
-                    {
-                        @* <span class="badge bg-primary me-1">@specs.Key</span>   *@
-                        <div class="col-4">
-                            <div class="spec-box">
-                                @if (specs.Key.Equals("Processor"))
-                                {
-                                    <i class="bi bi-cpu spec-icon"></i>
-                                }
-                                else if(specs.Key.Equals("GPU")){
-                                <i class="bi bi-motherboard spec-icon"></i>
-                                }
-                                
-                                <div class="spec-text">
-                                        <p class="spec-label">@specs.Key</p>
-                        @foreach (var val in specs.Value)
-                        {
 
-                                        <p class="spec-value m-2">@val</p>
-                            @* <div class="col-3">
+        }
+        <!-- Specifications Grid -->
+        <div class="row g-3 mb-4">
+            <!-- Spec 1 -->
+            @foreach (var specs in @Model.product.Specifications)
+            {
+                @if (!specs.Key.Equals("RAM") && !specs.Key.Equals("Color"))
+                {
+                    @* <span class="badge bg-primary me-1">@specs.Key</span>   *@
+                    <div class="col-4">
+                        <div class="spec-box">
+                            @if (specs.Key.Equals("Processor"))
+                            {
+                                <i class="bi bi-cpu spec-icon"></i>
+                            }
+                            else if (specs.Key.Equals("GPU"))
+                            {
+                                <i class="bi bi-motherboard spec-icon"></i>
+                            }
+
+                            <div class="spec-text">
+                                <p class="spec-label">@specs.Key</p>
+                                @foreach (var val in specs.Value)
+                                {
+
+                                    <p class="spec-value m-2">@val</p>
+                                    @* <div class="col-3">
                                 <div class="storage-btn">@val</div>
                             </div> *@
-                            @* <span class="badge bg-secondary me-1">@val</span>
+                                    @* <span class="badge bg-secondary me-1">@val</span>
                             <div class="color-circle " style="background-color: @val;"></div> *@
 
-                        }
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            }
+
+        </div>
+
+
+
+        <!-- Description -->
+        <p class="text-secondary small lh-lg mb-4">
+            @Model.product.Description
+            <a href="#" class="text-dark fw-bold text-decoration-none">more...</a>
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="row g-3 mb-4 pb-2">
+
+            <div class="d-flex p-3    align-items-center" style="    justify-content: space-around;">
+
+                <button id="Minus" class="btn btn-outline-dark  py-3 fw-medium rounded-3">-</button>
+                <button class="btn btn-dark w-50 py-3 m-2 fw-medium rounded-3 Quatity" id="">
+                    1
+
+                </button>
+                <button id="Add" class="btn  btn-outline-dark py-3 fw-medium rounded-3">+</button>
+            </div>
+            <div class="col-sm-6">
+                <button class="btn btn-outline-dark w-100 py-3 fw-medium rounded-3 BuyNow " data-buyNow="true" id="@Model.product.Id">Buy Now</button>
+            </div>
+            <div class="col-sm-6">
+
+
+                        <!-- Toast Container -->
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="cartToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        Item's successfully added to your cart!
+                                    </div>
+                                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                                 </div>
                             </div>
                         </div>
 
-                    }
+                        <!-- Trigger Button -->
+                        <button type="button" class="btn btn-dark w-100 py-3 fw-medium rounded-3 BuyNow addToCartBtn" data-buyNow="false" id="@Model.product.Id">Add to Cart</button>
 
-                }
-                
+                @* <button class="btn btn-dark w-100 py-3 fw-medium rounded-3 BuyNow " data-buyNow="false" id="@Model.product.Id">Add to Cart</button> *@
             </div>
 
 
 
-            <!-- Description -->
-            <p class="text-secondary small lh-lg mb-4">
-                @Model.product.Description
-                <a href="#" class="text-dark fw-bold text-decoration-none">more...</a>
-            </p>
-
-            <!-- Action Buttons -->
-            <div class="row g-3 mb-4 pb-2">
-
-                <div class="d-flex p-3    align-items-center" style="    justify-content: space-around;">
-
-                    <button id="Minus" class="btn btn-outline-dark  py-3 fw-medium rounded-3">-</button>
-                    <button class="btn btn-dark w-50 py-3 m-2 fw-medium rounded-3 Quatity" id="">
-                    Quatity
-                </button>
-                    <button id="Add" class="btn  btn-outline-dark py-3 fw-medium rounded-3">+</button>
-                </div>
-                <div class="col-sm-6">
-                    <button class="btn btn-outline-dark w-100 py-3 fw-medium rounded-3 BuyNow " data-buyNow="true" id="@Model.product.Id">Buy Now</button>
-                </div>
-                <div class="col-sm-6">
-                    <button class="btn btn-dark w-100 py-3 fw-medium rounded-3 BuyNow " data-buyNow="false" id="@Model.product.Id">Add to Cart</button>
-                </div>
 
 
 
-
-
-             
-                @* <button class="btn btn-primary BuyNow" data-buyNow="false" id="@Model.product.Id">
+            @* <button class="btn btn-primary BuyNow" data-buyNow="false" id="@Model.product.Id">
                     Add To Cart
                 </button>
                 <button class="btn btn-primary BuyNow" data-buyNow="True" id="@Model.product.Id">
                     Buy Now
                 </button> *@
+        </div>
+
+        <!-- Trust Features -->
+        <div class="d-flex justify-content-between pt-3">
+
+            <div class="trust-badge">
+                <div class="trust-icon-box"><i class="bi bi-truck"></i></div>
+                <div class="trust-text">
+                    <p class="spec-label">Free Delivery</p>
+                    <p class="spec-value">1-2 day</p>
+                </div>
             </div>
 
-            <!-- Trust Features -->
-            <div class="d-flex justify-content-between pt-3">
-
-                <div class="trust-badge">
-                    <div class="trust-icon-box"><i class="bi bi-truck"></i></div>
-                    <div class="trust-text">
-                        <p class="spec-label">Free Delivery</p>
-                        <p class="spec-value">1-2 day</p>
-                    </div>
+            <div class="trust-badge">
+                <div class="trust-icon-box"><i class="bi bi-shop"></i></div>
+                <div class="trust-text">
+                    <p class="spec-label">In Stock</p>
+                    <p class="spec-value">Today</p>
                 </div>
+            </div>
 
-                <div class="trust-badge">
-                    <div class="trust-icon-box"><i class="bi bi-shop"></i></div>
-                    <div class="trust-text">
-                        <p class="spec-label">In Stock</p>
-                        <p class="spec-value">Today</p>
-                    </div>
+            <div class="trust-badge">
+                <div class="trust-icon-box"><i class="bi bi-patch-check"></i></div>
+                <div class="trust-text">
+                    <p class="spec-label">Guaranteed</p>
+                    <p class="spec-value">1 year</p>
                 </div>
-
-                <div class="trust-badge">
-                    <div class="trust-icon-box"><i class="bi bi-patch-check"></i></div>
-                    <div class="trust-text">
-                        <p class="spec-label">Guaranteed</p>
-                        <p class="spec-value">1 year</p>
-                    </div>
-                </div>
-
             </div>
 
         </div>
+
     </div>
+</div>
+        </div>
+        
 </div>
 
 
@@ -292,7 +311,7 @@
  @section Scripts {
     <script>
 
-
+        
         $(document).ready(function () {
 
                     $('.goto').click(function () {
@@ -308,8 +327,9 @@
                     window.location.href = `/Cart`;
                     })
 
-            var quatity = 0;
+            var quatity = 1;
                     $('#Add').click(function () {
+
                         var quatityDiv = $(".Quatity");
                         if(quatity < 5){
                             quatity++;
@@ -363,7 +383,7 @@
                                 window.location.href = '/Cart/Index';
                     }else{
 
-                    window.location.reload()
+                    // window.location.reload()
                     }
                         },
                         error: function (xhr, status, error) {
@@ -394,5 +414,15 @@
             thumbnails.forEach(thumb => thumb.classList.remove('active'));
             element.classList.add('active');
         }
+           const toastTrigger = document.querySelector('.addToCartBtn');
+        const toastLiveExample = document.getElementById('cartToast');
+
+        if (toastTrigger) {
+          const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+          toastTrigger.addEventListener('click', () => {
+            toastBootstrap.show(); // Displays the toast
+          });
+        }
+
     </script>
 } 

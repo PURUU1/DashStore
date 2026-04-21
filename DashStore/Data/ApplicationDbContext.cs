@@ -72,6 +72,7 @@ namespace DashStore.Data
         // --- Core E-Commerce Tables ---
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Address> Address { get; set; }
 
 
         // Optional: If you want to seed some default data when the database is created

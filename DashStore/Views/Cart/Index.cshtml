@@ -1,11 +1,11 @@
-﻿@model DashStore.ViewModels.CartViewModel
+﻿@model DashStore.ViewModels.CartViewModel 
 
 
 
 
 
 
-<div class="container cart-section">
+<div class="container cart-section " style="height:100%">
     <div class="row gx-lg-5">
 
         <!-- LEFT COLUMN: Cart Items -->
@@ -28,7 +28,7 @@
                     <div class="qty-price-group d-flex align-items-center">
                         <div class="qty-wrapper me-4">
                             <button class="qty-btn Remove" id="@CartItem.ProductId" onclick="updateQty(this, -1)"><i class="bi bi-dash"></i></button>
-                            <input type="number" class="qty-input" value="@CartItem.Count" min="1">
+                            <input type="number" class="qty-input" value="@CartItem.Count" min="1" id="@CartItem.ProductId">
                             <button class="qty-btn Add" id="@CartItem.ProductId" onclick="updateQty(this, 1) "><i class="bi bi-plus"></i></button>
                         </div>
                         <div class="item-price">$@CartItem.Price</div>
@@ -55,7 +55,7 @@
         <div class="col-lg-5 summary-column">
             <h4 class="summary-title pt-1">Order Summary</h4>
 
-            <!-- Promo Code -->
+            @* <!-- Promo Code -->
             <div class="mb-4">
                 <label class="summary-label">Discount code / Promo code</label>
                 <input type="text" class="form-control custom-input" placeholder="Code">
@@ -68,7 +68,7 @@
                     <input type="text" class="form-control custom-input pe-5" placeholder="Enter Card Number">
                     <button class="apply-btn">Apply</button>
                 </div>
-            </div>
+            </div> *@
 
             <!-- Cost Breakdown -->
             <div class="summary-row">
@@ -92,8 +92,74 @@
                 <span>$@Model.Total</span>
             </div>
 
-            <!-- Checkout Button -->
-            <button class="checkout-btn">Checkout</button>
+            <form >
+
+                    @if(Model.adreess != null)
+                    {
+                        
+                    <h4 class="summary-title pt-1">Address</h4>
+
+                    <div class=" container">
+                        
+                        <div class="address-card active">
+                            <div class="action-icons">
+                                @{
+                                    var adress = Model.adreess;
+                                }
+                                @* <i class="bi bi-pencil" data-bs-toggle="modal"  data-bs-target="#addAddressModal"></i> *@
+                                @* <i class="bi bi-pencil edit-address"
+                                   data-title="@adress.Title"
+                                   data-street="@adress.StreetAddress"
+                                   data-city="@adress.City"
+                                   data-state="@adress.State"
+                                   data-zip="@adress.PostalCode"
+                                   data-phone="@adress.PhoneNumber"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#addAddressModal">
+                                </i> *@
+                                
+                                    <button class="bi outline-none  bi-pencil edit-address a" asp-controller="Address" asp-action="Index" 
+                               style="border:none; background-color:transparent"    >
+                                </button>
+                                    
+                                <i class="bi bi-x-lg remove" id="@adress.AddressId"></i>
+                            </div>
+                            <div class="form-check">
+                                @* <input class="form-check-input" type="radio" name="addressSelect" id="addr1" checked> *@
+                                    <label class="form-check-label w-100" for="addr1">
+                                        <div class="address-header">
+
+                                            @Model.adreess.StreetAddress <span class="type-badge">@Model.adreess.PostalCode</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="address-details">
+                                    @Model.adreess.City ,
+                                    @Model.adreess.State<br>
+                                    @* @Model.user.Address.City<br> *@
+                                    @Model.adreess.PhoneNumber
+                                </div>
+                        </div>
+
+
+
+                    </div>
+                        <!-- Checkout Button -->
+                        <button class="checkout-btn"
+                                asp-controller="Payment" asp-action="index">
+                            Do Payment
+                        </button>
+                    }
+                    else
+                    {
+                        
+                    <!-- Checkout Button -->
+            <button class="checkout-btn"
+                            asp-controller="Cart" asp-action="Checkout">
+                        Checkout
+                    </button>
+                    }
+                </form>
 
         </div>
         }
@@ -110,7 +176,62 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-            // Your jQuery code goes here
+            
+
+            var qtyInput = document.querySelector(".qty-input");
+                   var typingTimer;                
+        var doneTypingInterval = 1000;
+
+        
+        $(".qty-input").on("input", function(e) {
+            e.preventDefault();
+
+            
+            var btn = $(this);
+            var id = btn.attr("id");
+            var count = btn.val();
+            var Update = 1;
+
+            
+            clearTimeout(typingTimer);
+
+            
+            typingTimer = setTimeout(function() {
+
+                
+
+                $.ajax({
+                    url: `/Cart/AddToCart/${id}`,
+                    type: 'Post',
+                    data: {
+                        id: id,
+                        quatity: count, 
+                        Update: Update
+                    },
+                    success: function (response) {
+                        console.log(response);
+                        if (response.removeFromCartUi) {
+                            btn.closest('.cart-item').fadeOut(300, function() {
+                                $(this).remove();
+                            });
+                        }
+                        // alert("Success: " + response.message);
+
+                        var card = btn.closest('.card');
+                        card.find(".count").html(response.count);
+                        $("#Item-Count").html(response.count);
+
+
+                        window.location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error occurred: " + error);
+                    }
+                });
+
+            }, doneTypingInterval);
+        });
+        
                 $('.cut').click(function () {
                 var btn = $(this)
                     var id = btn.attr("id")
@@ -177,6 +298,7 @@
 
 
             });
+             
                 $('.Add').click(function () {
                     var btn = $(this)
                     var id = btn.attr("id")
@@ -229,5 +351,111 @@
                 }
             }
         }
+   
+
+        $(document).ready(function () {
+
+            $('.btn-back').click(function(){
+                window.history.back()
+
+            })
+                         // alert("hi")
+                     $('.AddADD').click(function (e) {
+                         e.preventDefault();
+                    var btn = $(this)
+
+                                    var addressData = {
+            Title: $('#Title').val(),      // Matches public string Title
+            StreetAddress: $('#StreetAddress').val(),
+            City: $('#City').val(),
+            State: $('#State').val(),
+            PostalCode: $('#PostalCode').val(),
+            PhoneNumber: $('#PhoneNumber').val(),
+        };
+
+                   $.ajax({
+                        url: `/Address/AddAddress`,
+                        contentType: 'application/json; charset=utf-8',
+                        type: 'Post',
+                        data: JSON.stringify(addressData),
+                        success: function (response) {
+
+                            // alert("Success: ");
+                            console.log(response)
+
+                    window.location.reload()
+
+                        },
+                        error: function (xhr, status, error) {
+
+                            console.error("Error occurred: " + error);
+                        }
+                    });
+
+
+            });
+        });
+         $('.remove').click(function (e) {
+                         e.preventDefault();
+                    var btn = $(this)
+
+
+                    var Id = btn.attr("id")
+                   $.ajax({
+                        url: `/Address/Remove/${Id}`,
+                        contentType: 'application/json; charset=utf-8',
+                        type: 'Post',
+
+                        success: function (response) {
+
+                            // alert("Success: ");
+                            console.log(response)
+
+
+
+                    window.location.reload()
+
+                        },
+                        error: function (xhr, status, error) {
+
+                            console.error("Error occurred: " + error);
+                        }
+                    });
+
+
+            });
+
+
+
+        -$('.edit-address').click(function() {
+                // 1. Get data from the clicked pencil's attributes
+                var title = $(this).data('title');
+                var street = $(this).data('street');
+                var city = $(this).data('city');
+                var state = $(this).data('state');
+                var zip = $(this).data('zip');
+                var phone = $(this).data('phone');
+
+                // 2. Set the values in the Modal inputs
+                $('#Title').val(title);
+                $('#StreetAddress').val(street);
+                $('#City').val(city);
+                $('#State').val(state);
+                $('#PostalCode').val(zip);
+                $('#PhoneNumber').val(phone);
+
+                // 3. Optional: Change Modal Title to "Edit Address"
+                $('#addAddressModalLabel').text("Edit Address");
+
+                // 4. Important: Change button text to "Update"
+                $('.btn-next[form="addressForm"]').text("Update Address");
+            });
+
+                    window.onload = function () {
+                    // window.location.reload()
+        };
+
+                
+
     </script>
 }

@@ -9,5 +9,9 @@ namespace DashStore.ViewModels
         public double? EstimatedTax { get; set; }
         public double? EstimatedShippingAndHandling { get; set; }
         public double? Total { get; set; }
+        public Address? adreess { get; set; }
+        public CreditCardModel? Card { get; set; }
+
+
     }
 }

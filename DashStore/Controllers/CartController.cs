@@ -1,6 +1,7 @@
 ﻿using DashStore.Data;
 using DashStore.Models;
 using DashStore.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using System.Text.Json;
@@ -10,9 +11,11 @@ namespace DashStore.Controllers
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _db;
-
-        public CartController(ApplicationDbContext db) { _db = db; }
-        public IActionResult Index()
+        private readonly UserManager< IdentityUser >_user;
+        private CartViewModel cartVm = new CartViewModel();
+        public CartViewModel CartViewModel = new CartViewModel();
+        public CartController(ApplicationDbContext db, UserManager<IdentityUser> user) { _db = db; _user = user; }
+        public async Task<IActionResult> Index()
         {
             // Retrieve cart from session
             var cartJson = HttpContext.Session.GetString("SessionCart");
@@ -33,28 +36,71 @@ namespace DashStore.Controllers
 
                 }
             }
-
+            decimal baseTotal = (decimal)Total;
+            decimal calculatedTotal = Math.Round(baseTotal + 50 + 29, 2, MidpointRounding.AwayFromZero);
 
             var cart = new CartViewModel()
             {
                 CartItems = cartItems,
-                SubTotal = Math.Floor(Total),
-                EstimatedTax = 50,
-                EstimatedShippingAndHandling = 29,
-                Total = Math.Floor(Total + 50 + 29)
 
+                // Convert the rounded decimals directly to formatted strings
+                SubTotal = double.Parse( Math.Round(baseTotal, 2, MidpointRounding.AwayFromZero).ToString("F2")),
+
+                EstimatedTax = 50.00,
+                EstimatedShippingAndHandling = 29.00,
+
+                Total = double.Parse( calculatedTotal.ToString("F2"))
             };
 
+            //var cart = new CartViewModel()
+            //{
+            //    CartItems = cartItems,
+            //    SubTotal = Math.Round(Total),
+            //    EstimatedTax = 50,
+            //    EstimatedShippingAndHandling = 29,
+            //    Total = Math.Round(Total + 50 + 29)
+
+            //};
+            
+            ///Address is avalible or not
+             var currentUser = await _user.GetUserAsync(User);
+            User user = new User();
+            user.Email = currentUser.Email;
+            var address = new  Address();
+            var savedAddress = _db.Address.FirstOrDefault(x => x.UserEmail.Equals(user.Email));
+            if (savedAddress != null)
+            {
+               address =  savedAddress;
+                cart.adreess = address;
+            }
+            cartVm = cart;
+            TempData["CartData"] = JsonSerializer.Serialize<CartViewModel>(cart);
 
             return View(cart);
         }
 
+    
+        public IActionResult Checkout()
+        {
 
-        [HttpPost]
+           
+
+            //Console.WriteLine(CartViewModel);
+            return RedirectToAction("Index", "Address");
+        }
+
+        //[HttpPost]
         public IActionResult AddToCart(int Id)
         {
             var ProductId = Id;
             int quatity = int.Parse(Request.Form["quatity"]);
+            int Update = 0;
+            if (Request.Form.ContainsKey("Update"))
+            {
+            Update = int.Parse(Request.Form["Update"]);
+
+            }
+            
             var success = false;
             var product = _db.Products.FirstOrDefault(x => x.Id.Equals(ProductId));
             if (product == null)
@@ -79,7 +125,15 @@ namespace DashStore.Controllers
             }
             var existingItem = cart.FirstOrDefault(u => u.ProductId == ProductId);
 
-            if (existingItem != null)
+            if (Update.Equals(1))
+            {
+                if (quatity != 0)
+                {
+                    existingItem.Count = quatity;
+
+                }
+            }
+            else if (existingItem != null)
             {
 
                 if (quatity != 0)
@@ -163,7 +217,7 @@ namespace DashStore.Controllers
             HttpContext.Session.SetString("SessionCart", JsonSerializer.Serialize(cart));
 
 
-
+            
 
             return Json(new { success, RemoveFromCartUi, count = existingItem.Count });
         }

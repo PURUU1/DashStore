@@ -1,0 +1,251 @@
+﻿@model DashStore.ViewModels.CheckoutViewModel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" style="max-width: 900px;">
+    <h4 class="section-title">Select Address</h4>
+
+@if(Model.user.Address.City != null)
+{
+
+        <div class="address-card active">
+            <div class="action-icons">
+                @{
+                    var adress = Model.user.Address;
+                }
+                @* <i class="bi bi-pencil" data-bs-toggle="modal"  data-bs-target="#addAddressModal"></i> *@
+                <i class="bi bi-pencil edit-address"
+                   data-title="@adress.Title"
+                   data-street="@adress.StreetAddress"
+                   data-city="@adress.City"
+                   data-state="@adress.State"
+                   data-zip="@adress.PostalCode"
+                   data-phone="@adress.PhoneNumber"
+                   data-bs-toggle="modal"
+                   data-bs-target="#addAddressModal">
+                </i>
+                <i class="bi bi-x-lg remove" id="@adress.AddressId"></i>
+            </div>
+            <div class="form-check">
+                @* <input class="form-check-input" type="radio" name="addressSelect" id="addr1" checked> *@
+                <label class="form-check-label w-100" for="addr1">
+                    <div class="address-header">
+                        
+                        @Model.user.Address.StreetAddress <span class="type-badge">@Model.user.Address.PostalCode</span>
+                    </div>
+                </label>
+            </div>
+            <div class="address-details">
+                @Model.user.Address.City ,
+                @Model.user.Address.State<br>
+                @* @Model.user.Address.City<br> *@
+                @Model.user.Address.PhoneNumber
+            </div>
+        </div>
+
+
+}
+
+@* <div class="add-address-divider">
+        <a href="#" class="add-address-btn " style="background-color:transparent">
+            <div class="mb-1"><i class="bi bi-plus-circle-fill fs-4"></i></div>
+            Add New Address
+        </a>
+    </div> *@
+    @if(Model.user.Address.City == null){
+    <div class="add-address-divider" style="background-color:transparent;border:none">
+        <button type="button" class="add-address-btn" data-bs-toggle="modal" data-bs-target="#addAddressModal" style="border:none; background-color:transparent">
+            <div class="mb-1">
+                <i class="bi bi-plus-circle-fill fs-4"></i>
+                </div>
+            Add New Address
+        </button>
+        </div>
+    }
+   
+
+
+    <div class="modal fade" id="addAddressModal" tabindex="-1" aria-labelledby="addAddressModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="addAddressModalLabel">Add New Address</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-8">
+                                <label class="form-label">Address Title</label>
+                                <input type="text" class="form-control" id="Title" placeholder="e.g. My Home" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Street Address</label>
+                                <input type="text" class="form-control" id="StreetAddress" placeholder="Enter street name and house number" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" id="City" placeholder="City" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">State / Province</label>
+                                <input type="text" class="form-control" id="State" placeholder="State" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Postal Code</label>
+                                <input type="text" class="form-control" id="PostalCode" placeholder="Zip code" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="PhoneNumber" placeholder="(000) 000-0000" required>
+                            </div>
+                            @* <div class="col-12 mt-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="setDefault" style="width: 18px; height: 18px;">
+                                    <label class="form-check-label ms-2" for="setDefault">
+                                        Set as default address
+                                    </label>
+                                </div>
+                            </div> *@
+                            <button class="btn btn-checkout AddADD">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+                </div>
+
+                </div>
+    @if (Model.user.Address.City != null)
+            {
+                <div class="checkout-footer">
+                    @* <button class="btn btn-checkout btn-back">Back</button> *@
+                    <a href="/cart/index" class="btn-checkout btn-back d-flex align-items-center justify-content-center" style="text-decoration:none"> Back</a>
+
+            @*         <form >
+            <button class="btn btn-checkout btn-next" asp-controller="Payment" asp-action="Index">Next</button>
+                        </form>
+             *@
+                </div>
+            }
+            </div>
+
+
+              
+
+
+@section Scripts{
+                <script>
+
+                    $(document).ready(function () {
+
+                        $('.btn-back').click(function(){
+                            window.history.back()
+                        
+                        })
+                                     // alert("hi")
+                                 $('.AddADD').click(function (e) {
+                                     e.preventDefault();
+                                var btn = $(this)
+
+                                                var addressData = {
+                        Title: $('#Title').val(),      // Matches public string Title
+                        StreetAddress: $('#StreetAddress').val(),
+                        City: $('#City').val(),
+                        State: $('#State').val(),
+                        PostalCode: $('#PostalCode').val(),
+                        PhoneNumber: $('#PhoneNumber').val(),
+                    };
+
+                               $.ajax({
+                                    url: `/Address/AddAddress`,
+                                    contentType: 'application/json; charset=utf-8',
+                                    type: 'Post',
+                                    data: JSON.stringify(addressData),
+                                    success: function (response) {
+
+                                        // alert("Success: ");
+                                        console.log(response)
+
+                                window.location.reload()
+
+                                    },
+                                    error: function (xhr, status, error) {
+
+                                        console.error("Error occurred: " + error);
+                                    }
+                                });
+
+
+                        });
+                    });
+                     $('.remove').click(function (e) {
+                                     e.preventDefault();
+                                var btn = $(this)
+
+                                     
+                                var Id = btn.attr("id")
+                               $.ajax({
+                                    url: `/Address/Remove/${Id}`,
+                                    contentType: 'application/json; charset=utf-8',
+                                    type: 'Post',
+                                    
+                                    success: function (response) {
+
+                                        // alert("Success: ");
+                                        console.log(response)
+
+                                window.location.reload()
+
+                                    },
+                                    error: function (xhr, status, error) {
+
+                                        console.error("Error occurred: " + error);
+                                    }
+                                });
+
+
+                        });
+
+
+
+                    -$('.edit-address').click(function() {
+                            // 1. Get data from the clicked pencil's attributes
+                            var title = $(this).data('title');
+                            var street = $(this).data('street');
+                            var city = $(this).data('city');
+                            var state = $(this).data('state');
+                            var zip = $(this).data('zip');
+                            var phone = $(this).data('phone');
+
+                            // 2. Set the values in the Modal inputs
+                            $('#Title').val(title);
+                            $('#StreetAddress').val(street);
+                            $('#City').val(city);
+                            $('#State').val(state);
+                            $('#PostalCode').val(zip);
+                            $('#PhoneNumber').val(phone);
+
+                            // 3. Optional: Change Modal Title to "Edit Address"
+                            $('#addAddressModalLabel').text("Edit Address");
+
+                            // 4. Important: Change button text to "Update"
+                            $('.btn-next[form="addressForm"]').text("Update Address");
+                        });
+
+                </script>
+}

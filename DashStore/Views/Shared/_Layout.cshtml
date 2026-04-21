@@ -16,15 +16,16 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DashStore.styles.css" asp-append-version="true" />
-
+    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="p-0">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow p-0 ">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     @* <img src="assets/DarkLogo.png" alt="Alternate Text" width="50%" /> *@
@@ -38,17 +39,17 @@
                 </div>
 
                 <div class="d-none d-md-flex flex-grow-1 mx-4">
-                    <form class="input-group" action="/Home/Index" method="get">
+                    <form class="input-group " action="/Home/Index" method="get">
 
 
                         
 
 
-                        <input type="text" class="form-control  " id="Search" placeholder="Search products..." aria-label="Search">
+                        <input type="text" class="form-control m-1  " id="Search" placeholder="Search products..." aria-label="Search" style="border-radius:12px">
                         <button class="btn btn-outline-secondary  bg-white text-muted " id="Sbtn" type="submit">
                             <i class="bi bi-search"></i>
-                        </button>
-                        <div id="search-results">
+                         </button> 
+                         <div id="search-results" style="height:auto">
                             <!-- Items will be injected here via JS -->
                         </div>
                     </form>
@@ -125,30 +126,31 @@
 
         </nav>
 
+
+    </header>
+
         @if (ViewData["ShowSubNav"] != null && (bool)ViewData["ShowSubNav"])
         {
 
-            <div class="category-nav shadow-sm">
-                <div class="container text-center">
-
-                    
-
-
+        <div class="category-nav shadow-sm bg-white sticky-top" style="z-index: 1020;">
+            <div class="container">
+                <div class="category-nav-sub">
                     <a href="#All" class="category-link active">All Products</a>
                     <a href="#Smartphones" class="category-link">Smartphones</a>
-                    <a href="#Laptops & PCs" class="category-link">Laptops</a>
-                    <a href="#carousel-MobileAccesory" class="category-link">Mobile Accesory</a>
+                    <a href="#Laptops" class="category-link">Laptops</a> <a href="#carousel-MobileAccesory" class="category-link">Mobile Accessory</a>
                     <a href="#carousel-AudioSound" class="category-link">Audio & Sound</a>
                     <a href="#carousel-Storage" class="category-link">Storage</a>
                     <a href="#carousel-Wearables" class="category-link">Wearables</a>
                     <a href="#carousel-Monitors" class="category-link">Monitors</a>
                 </div>
             </div>
+        </div>
+        <button type="button" class="btn btn-dark btn-lg position-fixed shadow" id="btn-back-to-top">
+            &uarr;
+        </button>
+        
 
         }
-
-
-    </header>
 
 
 
@@ -255,8 +257,6 @@
 
 
 
-
-
             const carousel = $('#carousel');
             const scrollAmount = 320; // width of card + gap
 
@@ -283,10 +283,19 @@
 
 
         });
+                // Grab the button
+        const backToTopBtn = document.getElementById("btn-back-to-top");
+
+        // Show or hide the button when scrolling
+      
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+
+
 
 
 

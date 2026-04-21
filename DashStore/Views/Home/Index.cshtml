@@ -2,176 +2,217 @@
 
 @{
     ViewData["Title"] = "Home Page";
-
 }
 
 
+<style>
+    /* MAGIC FIX 1: Prevent horizontal white space completely */
+    body, html {
+        /* overflow-x: hidden !important; */
+        max-width: 100vw;
+    }
 
+    /* MAGIC FIX 2: Hide ugly scrollbar on carousels but keep scroll functionality */
+    .product-carousel {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        scroll-behavior: smooth;
+    }
 
-
-
-
-
-
+        .product-carousel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+        }
+</style>
 
 <div class="text-center">
+    <!-- Added overflow-hidden and w-100 to the main wrapper -->
+    <main class="my-1 overflow-hidden w-100">
 
-    <main class=" my-1">
-
-        <div class="text-center banner1 d-flex justify-content-center align-items-center">
-            <div class="text-White text-start" style="width:50%; height:100%">
-                <p>Pro.Beyond.</p>
-                <h6 class="display-1">IPhone 14 Pro</h6>
-                <p>Created to change everything for the better. For everyone</p>
-                <button class="btn btnMain">Shop Now</button>
+        <div id="skeleton-container">
+            <div class="text-center banner1 d-flex flex-column flex-md-row justify-content-center align-items-center w-100 p-3
+p-md-0" aria-hidden="true">
+                <div class="text-White text-center text-md-start placeholder-glow w-100 w-md-50 d-flex flex-column justify-content-center">
+                    <p>Pro.Beyond.</p>
+                    <h6 class="display-1 placeholder col-10 mx-auto mx-md-0">IPhone 14 Pro</h6>
+                    <p class="placeholder col-12">Created to change everything for the better. For everyone</p>
+                    <button class="btn btnMain placeholder col-6 mx-auto mx-md-0">Shop Now</button>
+                </div>
+                <img src="~/assets/IphoneImage.png" class="placeholder-waveS img-fluid w-75 w-md-50 mt-4 mt-md-0" alt="Alternate Text" />
             </div>
-            <img src="~/assets\IphoneImage.png" alt="Alternate Text" />
-
         </div>
+
+        <div id="real-content" style="display: none;">
+            <div class="text-center banner1 d-flex flex-column flex-md-row justify-content-center align-items-center w-100  p-md-0" aria-hidden="true">
+                <div class="text-White text-center text-md-start w-100 w-md-50 d-flex flex-column  p-4 justify-content-center">
+                    <p>Pro.Beyond.</p>
+                    <h6 class="display-1">IPhone 14 Pro</h6>
+                    <p>Created to change everything for the better. For everyone</p>
+                    <button class="btn btnMain w-50 mx-auto mx-md-0">Shop Now</button>
+                </div>
+                <img src="~/assets/IphoneImage.png" class="img-fluid w-75 w-md-50 mt-4 mt-md-0" alt="Alternate Text" />
+            </div>
+        </div>
+
+
+
+       
+
+
+
+
+
+
 
         <div class="container-fluid px-0">
+
             <div class="row g-0">
+
                 <div class="col-md-6">
+
                     <div class="row g-0">
 
-                        <div class="col-12 bg-white d-flex align-items-center " style="min-height: 300px;">
+
+
+                        <div class="col-12 bg-white d-flex align-items-end" style="min-height: 300px;">
+
                             <img src="~/assets/PlayStation.png" class="img-fluid w-50" alt="PS5">
+
                             <div class="ms-4">
+
                                 <h2 class="fw-bold">Playstation 5</h2>
+
                                 <p class="text-muted small w-75">Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O...</p>
+
                             </div>
+
                         </div>
+
+
 
                         <div class="col-12">
+
                             <div class="row g-0">
+
                                 <div class="col-6  d-flex align-items-center " style="min-height: 250px;background-color:rgb(237, 237, 237)">
+
                                     <img src="~/assets/hero__gnfk5g59t0qe_xlarge_2x 1.png" class="img-fluid w-50" alt="AirPods">
+
                                     <div class="ms-3">
+
                                         <h4 class="fw-bold mb-0">Apple AirPods</h4>
+
                                         <p class="fw-bold">Max</p>
+
                                         <p class="small text-muted">Computational audio. Listen, it's powerful.</p>
+
                                     </div>
+
                                 </div>
+
                                 <div class="col-6  text-white d-flex align-items-center " style="min-height: 250px;background-color:rgb(53, 53, 53)">
+
                                     <img src="~/assets/image 36.png" class="img-fluid w-50" alt="Vision Pro">
+
                                     <div class="ms-3">
+
                                         <h4 class="fw-bold mb-0">Apple</h4>
+
                                         <p class="fw-bold">Vision Pro</p>
+
                                         <p class="small text-secondary">An immersive way to experience entertainment.</p>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
 
+
+
                     </div>
+
                 </div>
+
+
 
                 <div class="col-md-6  d-flex flex-column justify-content-center p-5 position-relative" style="min-height: 550px;background-color:rgb(237, 237, 237)">
+
                     <div class="z-1">
+
                         <h1 class="display-4 fw-light">Macbook <br><strong>Air</strong></h1>
-                        <p class="text-muted w-50">The new 15-inch Macbook Air makes room for more of what you love...</p>
+
+                        <strong>    <p class="">The new 15-inch Macbook Air makes room for more of what you love...</p></strong>
+
                         <button class="btn btn-outline-dark px-4 py-2">Shop Now</button>
+
                     </div>
+
                     <img src="~/assets\MacBook Pro 14.png" class="position-absolute end-0 bottom-0 img-fluid " width="300px" alt="Macbook">
+
                 </div>
 
+
+
             </div>
+
         </div>
 
-        <h5>@ViewBag.Name</h5>
-
-        @* <h5 class="text-center  display-6">All Products</h5> *@
-        <div class=" d-flex justify-content-center mb-5" id="All">
 
 
-            @* <div class="carousel-wrapper"> *@
-            <div class="d-flex justify-content-center">
-                <!-- Navigation -->
-                @* <button class="nav-btn prev-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
-                <button class="nav-btn next-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></button> *@
+        <h5 class="mt-4">@ViewBag.Name</h5>
 
-                <!-- Carousel Content -->
-                @* <div class="product-carousel" id="carousel"> *@
-                <div class=" row">
-                    
-                    
-                    @foreach (var Product in Model.Products)
-                    {
-
-
-
-
-
-                        <!-- Product Card HTML -->
-                        <div class="product-card m-2 col-3" style="background-color:">
-                            <!-- Wishlist Icon -->
-                            @* <div class="wishlist-btn">
-                            <i class="bi bi-heart"></i>
-                        </div> *@
-
-                            <!-- Image -->
-                            <div class="product-img-container">
-                                <img src="@Product.ImageUrl" alt="@Product.Title">
+        <!-- Container fixes the horizontal row blowout here -->
+        <div class="container mb-5 d-none d-md-block" id="All">
+            <div class="row justify-content-center g-3">
+                @foreach (var Product in Model.Products)
+                {
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="product-card p-3 h-100 d-flex flex-column border" style="background-color: #fafafa; border-radius: 12px;">
+                            <div class="product-img-container mb-3" style="flex-grow: 1;">
+                                <img src="@Product.ImageUrl" class="img-fluid" style="max-height: 200px; object-fit: contain;" alt="@Product.Title">
                             </div>
-
-                            <!-- Content -->
-                            <div class="text-center">
-                                <h5 class="product-title">
-                                    @Product.Title
-                                </h5>
-
-                                <div class="price-tag">@Product.Price</div>
+                            <div class="text-center mt-auto">
+                                <h5 class="product-title fs-6">@Product.Title</h5>
+                                <div class="price-tag fw-bold mb-2">@Product.Price</div>
                                 <form method="get">
-                                    <button class="btn-buy  buyBtn BuyNow " asp-controller="Product"
-                                            asp-action="Details"
-                                            asp-route-id="@Product.Id" id="@Product.Id">
+                                    <button class="btn-buy buyBtn BuyNow w-100" asp-controller="Product" asp-action="Details" asp-route-id="@Product.Id" id="@Product.Id">
                                         Buy Now
                                     </button>
                                 </form>
                             </div>
                         </div>
-
-
-                    }
-                    
-                </div>
+                    </div>
+                }
             </div>
         </div>
 
-
-
-
-
         <div class="container">
-            <div class="text-center container mb-5 ">
+            <div class="text-center mb-5">
                 <h6 class="display-5">Browse By Category</h6>
-
             </div>
             <div class="container mb-5">
-                <div class="row  gx-0">
+                <!-- Row-cols makes it 2 per line on mobile, 4 on desktop -->
+                <div class="row g-3 row-cols-2 row-cols-md-4 justify-content-center">
 
-                    <div class="col d-flex  justify-content-center alighn-items-center" >
-                        <div class="  p-3 d-flex  justify-content-center align-items-center " style="background-color:rgb(165, 166, 168) ; flex-direction:column;border-radius:12px" >
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_2603_1946)">
-                                <path d="M33.375 5.25H14.625C13.3306 5.25 12.2812 6.29933 12.2812 7.59375V40.4062C12.2812 41.7007 13.3306 42.75 14.625 42.75H33.375C34.6694 42.75 35.7188 41.7007 35.7188 40.4062V7.59375C35.7188 6.29933 34.6694 5.25 33.375 5.25Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M22 6H26.6875" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M24 37.7188V37.7404" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <line x1="13" y1="34" x2="35" y2="34" stroke="black" stroke-width="2" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_2603_1946">
-                                    <rect width="48" height="48" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-
-                        Smartphones
+                    <div class="col d-flex justify-content-center align-items-center mb-3">
+                        <div class="p-3 d-flex justify-content-center align-items-center w-100 text-center" style="background-color:rgb(165, 166, 168); flex-direction:column; border-radius:12px">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_2603_1946)">
+                                    <path d="M33.375 5.25H14.625C13.3306 5.25 12.2812 6.29933 12.2812 7.59375V40.4062C12.2812 41.7007 13.3306 42.75 14.625 42.75H33.375C34.6694 42.75 35.7188 41.7007 35.7188 40.4062V7.59375C35.7188 6.29933 34.6694 5.25 33.375 5.25Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M22 6H26.6875" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M24 37.7188V37.7404" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <line x1="13" y1="34" x2="35" y2="34" stroke="black" stroke-width="2" />
+                                </g>
+                                <defs><clipPath id="clip0_2603_1946"><rect width="48" height="48" fill="white" /></clipPath></defs>
+                            </svg>
+                            <span class="mt-2 fw-medium">Smartphones</span>
                         </div>
                     </div>
 
-                    <div class="col d-flex  justify-content-center alighn-items-center">
-                        <div class="  p-3 d-flex  justify-content-center align-items-center " style="background-color:rgb(165, 166, 168) ; flex-direction:column;border-radius:12px">
+                    <div class="col d-flex justify-content-center align-items-center mb-3">
+                        <div class="p-3 d-flex justify-content-center align-items-center w-100 text-center" style="background-color:rgb(165, 166, 168); flex-direction:column; border-radius:12px">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_2603_1934)">
                                     <path d="M40 8H8C6.89543 8 6 8.89543 6 10V30C6 31.1046 6.89543 32 8 32H40C41.1046 32 42 31.1046 42 30V10C42 8.89543 41.1046 8 40 8Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -180,40 +221,28 @@
                                     <path d="M30 32V40" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M6.85718 27.4286H41.1429" stroke="black" stroke-width="2" stroke-linecap="round" />
                                 </g>
-                                <defs>
-                                    <clipPath id="clip0_2603_1934">
-                                        <rect width="48" height="48" fill="white" />
-                                    </clipPath>
-                                </defs>
+                                <defs><clipPath id="clip0_2603_1934"><rect width="48" height="48" fill="white" /></clipPath></defs>
                             </svg>
-
-
-                            Laptops & Pc's
+                            <span class="mt-2 fw-medium">Laptops & PCs</span>
                         </div>
                     </div>
 
-
-                    <div class="col d-flex  justify-content-center alighn-items-center" >
-                        <div class="  p-3 d-flex  justify-content-center align-items-center " style="background-color:rgb(165, 166, 168) ; flex-direction:column;border-radius:12px" >
+                    <div class="col d-flex justify-content-center align-items-center mb-3">
+                        <div class="p-3 d-flex justify-content-center align-items-center w-100 text-center" style="background-color:rgb(165, 166, 168); flex-direction:column; border-radius:12px">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_2603_1943)">
                                     <path d="M14 26H12C9.79086 26 8 27.7909 8 30V36C8 38.2091 9.79086 40 12 40H14C16.2091 40 18 38.2091 18 36V30C18 27.7909 16.2091 26 14 26Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M36 26H34C31.7909 26 30 27.7909 30 30V36C30 38.2091 31.7909 40 34 40H36C38.2091 40 40 38.2091 40 36V30C40 27.7909 38.2091 26 36 26Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M8 30V24C8 19.7565 9.68571 15.6869 12.6863 12.6863C15.6869 9.68571 19.7565 8 24 8C28.2435 8 32.3131 9.68571 35.3137 12.6863C38.3143 15.6869 40 19.7565 40 24V30" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </g>
-                                <defs>
-                                    <clipPath id="clip0_2603_1943">
-                                        <rect width="48" height="48" fill="white" />
-                                    </clipPath>
-                                </defs>
+                                <defs><clipPath id="clip0_2603_1943"><rect width="48" height="48" fill="white" /></clipPath></defs>
                             </svg>
-
-                        Audio & Sound
+                            <span class="mt-2 fw-medium">Audio & Sound</span>
                         </div>
                     </div>
 
-                    <div class="col d-flex  justify-content-center alighn-items-center">
-                        <div class="  p-3 d-flex  justify-content-center align-items-center " style="background-color:rgb(165, 166, 168) ; flex-direction:column;border-radius:12px">
+                    <div class="col d-flex justify-content-center align-items-center mb-3">
+                        <div class="p-3 d-flex justify-content-center align-items-center w-100 text-center" style="background-color:rgb(165, 166, 168); flex-direction:column; border-radius:12px">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_2603_1931)">
                                     <path d="M40 12H8C5.79086 12 4 13.7909 4 16V32C4 34.2091 5.79086 36 8 36H40C42.2091 36 44 34.2091 44 32V16C44 13.7909 42.2091 12 40 12Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -221,127 +250,150 @@
                                     <path d="M30 22V22.0207" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M36 25.9999V26.0206" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                                 </g>
-                                <defs>
-                                    <clipPath id="clip0_2603_1931">
-                                        <rect width="48" height="48" fill="white" />
-                                    </clipPath>
-                                </defs>
+                                <defs><clipPath id="clip0_2603_1931"><rect width="48" height="48" fill="white" /></clipPath></defs>
                             </svg>
-
-                            Gaming
+                            <span class="mt-2 fw-medium">Gaming</span>
                         </div>
                     </div>
 
-                  
-
-
+                </div>
             </div>
         </div>
-</div>
 
-
-@foreach (var category in Model.ProductsInCategory)
-{
-
-    <h5 class="text-center  display-6">@category.Name</h5>
-    <div class=" d-flex ">
-                @{
+        @foreach (var category in Model.ProductsInCategory)
+        {
+             
+            
                     var safeCategoryName = category.Name.Replace(" ", "").Replace("&", "");
-                }
+            
+            <h5 class="text-center display-6 mt-5 mb-3" id="carousel-@safeCategoryName">@category.Name</h5>
 
-        <div class="carousel-wrapper" id="@category.Name">
-            <!-- Navigation -->
-            @* <button class="nav-btn prev-btn" id="#-Crousel-@safeCategoryName"><i class="bi bi-chevron-left"></i></button>
-                    <button class="nav-btn next-btn" id="@safeCategoryName"><i class="bi bi-chevron-right"></i></button> *@
-                    <button class="nav-btn prev-btn" data-target="#carousel-@safeCategoryName">
+            <!-- MAGIC FIX 3: Removed outer d-flex, changed to container-fluid, added w-100 -->
+            <div class="container-fluid px-2 px-md-5 w-100">
+
+                <div class="carousel-wrapper position-relative w-100" id="@category.Name">
+                    <!-- Navigation -->
+                    <button class="nav-btn prev-btn position-absolute start-0 top-50 translate-middle-y z-3" data-target="#carousel-@safeCategoryName">
                         <i class="bi bi-chevron-left"></i>
                     </button>
-                    <button class="nav-btn next-btn" data-target="#carousel-@safeCategoryName">
+                    <button class="nav-btn next-btn position-absolute end-0 top-50 translate-middle-y z-3" data-target="#carousel-@safeCategoryName">
                         <i class="bi bi-chevron-right"></i>
                     </button>
 
-            <!-- Carousel Content -->
-                    <div class="product-carousel" id="carousel-@safeCategoryName">
-                @foreach (var Product in category.ProductsByCategory)
-                {
+                    <!-- MAGIC FIX 4: overflow-x-auto ensures the flex-nowrap row scrolls INSIDE the container, not across the page -->
+                    <div class="product-carousel d-flex flex-nowrap overflow-x-auto w-100">
+                        @foreach (var Product in category.ProductsByCategory)
+                        {
+                            <div class="product-card flex-shrink-0 m-2 border" style="width: 250px; background-color:rgb(250, 250, 250); border-radius: 12px; padding: 15px;">
+                                <!-- Image -->
+                                <div class="product-img-container text-center mb-3" style="height: 150px;">
+                                    <img src="@Product.ImageUrl" alt="@Product.Title" class="img-fluid h-100" style="object-fit: contain;">
+                                </div>
 
+                                <!-- Content -->
+                                <form method="get">
+                                    <div class="text-center">
+                                        <h5 class="product-title text-truncate BuyNow buyBtn" asp-controller="Product" asp-action="Details" asp-route-id="@Product.Id" id="@Product.Id" style="cursor:pointer; font-size: 1rem;">
+                                            @Product.Title
+                                        </h5>
 
-
-
-                    <!-- Product Card HTML -->
-                            <div class="product-card m-2" style="background-color:rgb(250, 250, 250)">
-                        <!-- Wishlist Icon -->
-                        @* <div class="wishlist-btn">
-                            <i class="bi bi-heart"></i>
-                        </div> *@
-
-                        <!-- Image -->
-                        <div class="product-img-container">
-                            <img src="@Product.ImageUrl" alt="@Product.Title">
-                        </div>
-
-                        <!-- Content -->
-                            <form method="get">
-                        <div class="text-center">
-                                    <h5 class="product-title  BuyNow buyBtn" asp-controller="Product"
-                                        asp-action="Details"
-                                        asp-route-id="@Product.Id" id="@Product.Id">
-                                @Product.Title
-                            </h5>
-
-                            <div class="price-tag"  >@Product.Price</div>
-                                <button class="btn-buy BuyNow buyBtn" asp-controller="Product"
-                                        asp-action="Details"
-                                        asp-route-id="@Product.Id" id="@Product.Id">
-                                    Buy Now
-                                </button>
-                        </div>
-                            </form>
+                                        <div class="price-tag fw-bold mb-2">@Product.Price</div>
+                                        <button class="btn-buy w-100 BuyNow buyBtn" asp-controller="Product" asp-action="Details" asp-route-id="@Product.Id" id="@Product.Id">
+                                            Buy Now
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        }
                     </div>
-
-                }
-
+                </div>
             </div>
+        }
+
+        <div class="w-100 mt-5">
+            <img src="~/assets/Banner2.png" class="img-fluid w-100" alt="Alternate Text" />
         </div>
-    </div>
 
-
-}
-
-
-
-
-<div class="">
-    <img src="~/assets/Banner2.png" width="100%" alt="Alternate Text" />
+    </main>
 </div>
 
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Keep your existing exact logic
+        //     const scrollAmount = 360;
 
+        //     $('.next-btn').click(function() {
+        //         var targetId = $(this).data('target');
+        //         var $carousel = $(targetId);
+        //         $carousel.animate({
+        //             scrollLeft: $carousel.scrollLeft() + scrollAmount
+        //         }, 200);
+        //     });
 
-    @section Scripts{
+        //     $('.prev-btn').click(function() {
+        //         var targetId = $(this).data('target');
+        //         var $carousel = $(targetId);
+        //         $carousel.animate({
+        //             scrollLeft: $carousel.scrollLeft() - scrollAmount
+        //         }, 400);
+        //     });
 
-        <script>
+                $(document).ready(function() {
+            // This amount just needs to be enough to push the scroll into the "next" card's territory.
+            // The CSS scroll-snap will automatically correct it to the exact perfect pixel!
+            const scrollAmount = 360;
 
-                            $(document).ready(function() {
-                    const scrollAmount = 360; 
+            $('.next-btn').click(function() {
+                var targetId = $(this).data('target');
 
-                    $('.next-btn').click(function() {
-                        
-                        var targetId = $(this).data('target');
-                        var $carousel = $(targetId);
-
-                        $carousel.animate({
-                            scrollLeft: $carousel.scrollLeft() + scrollAmount
-                        }, 200);
-                    });
-
-                    $('.prev-btn').click(function() {
-                        var targetId = $(this).data('target');
-                        var $carousel = $(targetId);
-
-                        $carousel.animate({
-                            scrollLeft: $carousel.scrollLeft() - scrollAmount
-                        }, 400);
-                    });
+                // [0] gets the raw HTML element out of the jQuery object so we can use native scrollBy
+                $(targetId)[0].scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
                 });
-        </script>
+            });
+
+            $('.prev-btn').click(function() {
+                var targetId = $(this).data('target');
+
+                $(targetId)[0].scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        });
+
+
+
+
+
+        window.onload = function() {
+            // Hide skeleton
+            document.getElementById('skeleton-container').style.display = 'none';
+            // Show content
+            document.getElementById('real-content').style.display = 'block';
+        };
+
+
+                window.addEventListener("scroll", function () {
+              if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = "block";
+              } else {
+                backToTopBtn.style.display = "none";
+              }
+            });
+
+            // Smoothly scroll to the top when clicked
+            backToTopBtn.addEventListener("click", function () {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+              });
+            });
+    </script>
 }
+
+
+

@@ -14,9 +14,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-// Add this line to register your service
+// Add 
 builder.Services.AddScoped<DashStore.Services.ProductServices>();
-
+builder.Services.AddScoped<EmailServices>();
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options => {
