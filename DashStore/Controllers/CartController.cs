@@ -1,6 +1,7 @@
 ﻿using DashStore.Data;
 using DashStore.Models;
 using DashStore.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
@@ -15,6 +16,7 @@ namespace DashStore.Controllers
         private CartViewModel cartVm = new CartViewModel();
         public CartViewModel CartViewModel = new CartViewModel();
         public CartController(ApplicationDbContext db, UserManager<IdentityUser> user) { _db = db; _user = user; }
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             // Retrieve cart from session
