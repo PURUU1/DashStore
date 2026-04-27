@@ -1,124 +1,151 @@
-﻿@model DashStore.ViewModels.HomeViewModel
+﻿            @model DashStore.ViewModels.HomeViewModel
 
-
-
-<div class="container-fluid px-4 py-5">
-    <div class="row">
-        <!-- Sidebar Filter -->
-        <div class="col-lg-3 pe-lg-5 mb-5 mb-lg-0">
-                    @foreach(var Category in Model.Categories)
-                    {
-                <div class="filter-section">
-                    @{
-                        
-                        var name = Category.Name.Replace(" & ", "And").Replace(" ", "");
-                        
-                    }
-                    <div class="filter-section-title" data-bs-toggle="collapse" href="#@name">
-
-
-                        <form >
-                        <button asp-controller="category" asp-action="index" asp-route-id="@Category.Id" class="ShowCategories" style="background-color:transparent;border:none">
-                 @Category.Name    <i class="bi bi-chevron-right"></i>
-
-                        </button>
-                            </form>
-                </div>
-                    <div class="collapse  mt-3" id="@name">
-                    @* <input type="text" class="form-control filter-search" placeholder="Search"> *@
-                    @*     
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" checked id="apple">
-                        <label class="form-check-label w-100" for="apple">
-                             <span class="count-text"></span>
-                        </label>
-                    </div> *@
-                  
-                </div>
-
-          
-            </div>
-                    }
-        </div>
-        @if (Model.Products != null)
-        {
-            <!-- Main Product Grid -->
-            <div class="col-lg-9">
-                <!-- Grid Header -->
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <div class="results-count">
-                    Selected Products: <span>@Model.Products.Count()</span>
-                </div>
-                <div>
-                    <select class="form-select sort-select">
-                        <option selected>By rating</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Newest Arrivals</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Products row -->
-            <div class="row g-4">
-
-
-                    @foreach(var Product in Model.Products)
-                    {
-                        
-                <!-- Product 1 -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="product-card">
-                        <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
-                        <div class="product-img-container">
-                            <img src="@Product.ImageUrl" class="product-img" alt="iPhone 14 Pro">
-                        </div>
-                        <div class="product-title">@Product.Title</div>
-                                <div class="product-price">@Product.Price</div>
-                        <button class="buy-now-btn">Buy Now</button>
-                    </div>
-                </div>
-                    }
-
-                
-           
-            </div>
-        </div>
-        }
-    </div>
-</div>
-
-@* @section Scripts {
-    <script>
-        $(document).ready(function () {
-            // Your jQuery code goes here
-                $('.ShowCategories').click(function () {
-                    var btn = $(this)
-                    var id = btn.attr("id")
-                    console.log(id)
-                   $.ajax({
-                        url: `/category/${id}`,
-                        type: 'Post',
-                        data: {
-                            id: id,
-
-                        },
-                        success: function (response) {
-
-                            // alert("Success: " + response.message);
-                            console.log(response);
-                        },
-                        error: function (xhr, status, error) {
-
-                            console.error("Error occurred: " + error);
+            <div class="container-fluid px-4 py-5">
+                <div class="row">
+                    <!-- Sidebar Filter -->
+                    <div class="col-lg-3 pe-lg-5 mb-5 mb-lg-0" style="width: 250px; position: sticky;top: 0;height: 100vh; overflow-y: auto;">
+                        @foreach(var Category in Model.Categories)
+                        {
+                            <div class="filter-section">
+                                @{
+                                    var name = Category.Name.Replace(" & ", "And").Replace(" ", "");
+                                }
+                                <div class="filter-section-title" data-bs-toggle="collapse" href="#@name">
+                                    <form>
+                                        <button asp-controller="category" asp-action="index" asp-route-id="@Category.Id" class="ShowCategories" style="background-color:transparent;border:none">
+                                            @Category.Name <i class="bi bi-chevron-right"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="collapse mt-3" id="@name">
+                                </div>
+                            </div>
                         }
+                    </div>
+                    @if (Model.Products != null)
+                    {
+                        <!-- Main Product Grid -->
+                        <div class="col-lg-9">
+                            <!-- Grid Header -->
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="results-count">
+                                    Selected Products: <span>@Model.Products.Count()</span>
+                                </div>
+                                <div>
+                                    <select class="form-select sort-select">
+                                        <option selected>By rating</option>
+                                        <option>Price: Low to High</option>
+                                        <option>Price: High to Low</option>
+                                        <option>Newest Arrivals</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <!-- Toast Container -->
+                                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                    <div id="cartToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                        <div class="d-flex">
+                                            <div class="toast-body">
+                                                Item's successfully added to your Wishlist!
+                                            </div>
+                                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="toast-container-2 position-fixed bottom-0 end-0 p-3">
+                                    <div id="cartToast-2" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                        <div class="d-flex">
+                                            <div class="toast-body text-danger">
+                                                Item's Removed!
+                                            </div>
+                                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @foreach(var Product in Model.Products)
+                                {
+                                    <!-- Product Card -->
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="product-card">
+                                            @{
+                                                var isInWishlist = Model.Wishlist != null && Model.Wishlist.Any(x => x.ProductId == Product.Id);
+                                            }
+                                            <button class="btn wishlist-btn position-absolute top-0 end-0 m-2 border-0 bg-transparent addToCartBtn" data-id="@Product.Id" style="z-index: 10;">
+                                                @if (isInWishlist)
+                                                {
+                                                    <i class="bi bi-heart-fill fs-5 text-danger"></i>
+                                                }
+                                                else
+                                                {
+                                                    <i class="bi bi-heart fs-5 text-danger"></i>
+                                                }
+                                            </button>
+
+                                            <div class="product-img-container">
+                                                <img src="@Product.ImageUrl" class="product-img" alt="@Product.Title">
+                                            </div>
+                                            <div class="product-title">@Product.Title</div>
+                                            <div class="product-price">@Product.Price</div>
+                                            <form method="get">
+                                                <button class="btn-buy buyBtn" asp-controller="Product" asp-action="Details" asp-route-id="@Product.Id" id="@Product.Id">
+                                                    Buy Now
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @section Scripts {
+                <script>
+                    $(document).ready(function () {
+                        $('.wishlist-btn').click(function (e) {
+                            e.preventDefault();
+
+                            var button = $(this);
+                            var icon = button.find('i');
+                            var productId = button.data('id');
+
+                            $.ajax({
+                                url: '/Wishlist/ToggleWishlist',
+                                type: 'POST',
+                                data: { productId: productId },
+                                success: function (response) {
+                                    if (response.success) {
+                                        if (response.isAdded) {
+                                            const toastLiveExample = document.getElementById('cartToast');
+                                            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                                            toastBootstrap.show();
+                                            icon.removeClass('bi-heart').addClass('bi-heart-fill');
+                                        }
+                                        else {
+                                            const toastLiveExample = document.getElementById('cartToast-2');
+                                            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                                            toastBootstrap.show();
+                                            icon.removeClass('bi-heart-fill').addClass('bi-heart');
+                                        }
+                                    }
+                                },
+                                error: function (xhr) {
+                                    if (xhr.status === 401) {
+                                        alert("Please log in to save items to your wishlist!");
+                                        window.location.href = '/Identity/Account/Login';
+                                    } else {
+                                        console.error("Failed to toggle wishlist.");
+                                    }
+                                }
+                            });
+                        });
                     });
-
-
-            });
-        });
-    </script>
-} *@
+                </script>
+            }
 
 
 

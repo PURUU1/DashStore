@@ -3,7 +3,27 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="cartToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Item's successfully added to your Wishlist!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
 
+<div class="toast-container-2 position-fixed bottom-0 end-0 p-3">
+    <div id="cartToast-2" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body text-danger">
+                Item's Removed!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
 
 <style>
     /* MAGIC FIX 1: Prevent horizontal white space completely */
@@ -137,7 +157,7 @@ p-md-0" aria-hidden="true">
 
 
 
-                <div class="col-md-6  d-flex flex-column justify-content-center p-5 position-relative" style="min-height: 550px;background-color:rgb(237, 237, 237)">
+                <div class="col-md-6  d-flex flex-column justify-content-center p-5 position-relative" style="min-height: 650px;background-color:rgb(237, 237, 237)">
 
                     <div class="z-1">
 
@@ -284,13 +304,30 @@ p-md-0" aria-hidden="true">
                     <div class="product-carousel d-flex flex-nowrap overflow-x-auto w-100" id="carousel-@safeCategoryName-1">
                         @foreach (var Product in category.ProductsByCategory)
                         {
+                        
+                         
                             <div class="product-card flex-shrink-0 m-2 border" style="width: 250px; background-color:rgb(250, 250, 250); border-radius: 12px; padding: 15px;">
                                 <!-- Image -->
+
                                 <div class="product-img-container text-center mb-3" style="height: 150px;">
                                     <img src="@Product.ImageUrl" alt="@Product.Title" class="img-fluid h-100" style="object-fit: contain;">
                                 </div>
+                                @{
 
-                                <!-- Content -->
+                                var isInWishlist = Model.Wishlist != null && Model.Wishlist.Any(x => x.ProductId == Product.Id);
+                                }
+
+
+                                <button class="btn wishlist-btn position-absolute top-0 end-0 m-2 border-0 bg-transparent addToCartBtn" data-id="@Product.Id" style="z-index: 10;">
+                                    @if (isInWishlist)
+                                    {
+                                        <i class="bi bi-heart-fill fs-5 text-danger"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="bi bi-heart fs-5 text-danger"></i>
+                                    }
+                                </button>
                                 <form method="get">
                                     <div class="text-center">
                                         <h5 class="product-title text-truncate BuyNow buyBtn" asp-controller="Product" asp-action="Details" asp-route-id="@Product.Id" id="@Product.Id" style="cursor:pointer; font-size: 1rem;">
@@ -317,9 +354,92 @@ p-md-0" aria-hidden="true">
     </main>
 </div>
 
+<footer class="custom-footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-12 mb-5 mb-lg-0">
+                <div class="footer-logo">DashStore</div>
+                <p class="footer-text">
+                    We are a residential interior design firm located in Portland. Our boutique-studio offers more than
+                </p>
+
+                <div class="social-icons d-flex gap-4 mt-5">
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-tiktok"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="footer-heading">Services</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><a href="#" class="footer-link">Bonus program</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Gift cards</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Credit and payment</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Service contracts</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Non-cash account</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Payment</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5 class="footer-heading">Assistance to the buyer</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><a href="#" class="footer-link">Find an order</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Terms of delivery</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Exchange and return of goods</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Guarantee</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Frequently asked questions</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Terms of use of the site</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
 @section Scripts {
     <script>
         $(document).ready(function() {
+            $('.wishlist-btn').click(function (e) {
+                            e.preventDefault();
+
+                            var button = $(this);
+                            var icon = button.find('i');
+                            var productId = button.data('id');
+
+                            $.ajax({
+                                url: '/Wishlist/ToggleWishlist',
+                                type: 'POST',
+                                data: { productId: productId },
+                                success: function (response) {
+                                    if (response.success) {
+                                        if (response.isAdded) {
+                                            const toastLiveExample = document.getElementById('cartToast');
+                                            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                                            toastBootstrap.show();
+                                            icon.removeClass('bi-heart').addClass('bi-heart-fill');
+                                        }
+                                        else {
+                                            const toastLiveExample = document.getElementById('cartToast-2');
+                                            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                                            toastBootstrap.show();
+                                            icon.removeClass('bi-heart-fill').addClass('bi-heart');
+                                        }
+                                    }
+                                },
+                                error: function (xhr) {
+                                    if (xhr.status === 401) {
+                                        alert("Please log in to save items to your wishlist!");
+                                        window.location.href = '/Identity/Account/Login';
+                                    } else {
+                                        console.error("Failed to toggle wishlist.");
+                                    }
+                                }
+                            });
+                        });
             // Keep your existing exact logic
         //     const scrollAmount = 360;
 

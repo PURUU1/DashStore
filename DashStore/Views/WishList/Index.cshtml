@@ -1,0 +1,204 @@
+﻿@model IEnumerable<WishlistItem>
+
+@{
+    ViewData["Title"] = "My Wishlist";
+}
+
+<style>
+    /* Premium UI Customizations */
+    body {
+        background-color: #fcfcfc; /* Very light gray background for contrast */
+    }
+
+    .wishlist-header {
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .wishlist-card {
+        background: #ffffff;
+        border-radius: 16px;
+        border: 1px solid #eaeaea;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+    }
+
+        /* Hover effect makes the card float up slightly */
+        .wishlist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+
+    .product-img-wrapper {
+        height: 200px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+    }
+
+        .product-img-wrapper img {
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+    .wishlist-card:hover .product-img-wrapper img {
+        transform: scale(1.05); /* Slight zoom on image hover */
+    }
+
+    /* Circular Floating Trash Button */
+    .btn-remove-circle {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #dc3545; /* Bootstrap Danger Red */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.2s ease;
+        z-index: 10;
+    }
+
+        .btn-remove-circle:hover {
+            background-color: #dc3545;
+            color: #ffffff;
+            border-color: #dc3545;
+        }
+
+    /* Add to Cart Button Styling */
+    .btn-wishlist-cart {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        border-radius: 50px; /* Pill shape */
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+
+        .btn-wishlist-cart:hover {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+    /* Empty State Styling */
+    .empty-state-card {
+        border: 2px dashed #dcdcdc;
+        border-radius: 20px;
+        background-color: #ffffff;
+        padding: 60px 20px;
+    }
+</style>
+
+<div class="container my-5" style="min-height: 65vh;">
+
+    <div class="d-flex justify-content-between align-items-end mb-4">
+        <h2 class="wishlist-header mb-0">My Wishlist</h2>
+        <span class="badge bg-dark rounded-pill px-3 py-2 fs-6">
+            @Model.Count() Items
+        </span>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="empty-state-card text-center mt-5 shadow-sm">
+            <div class="mb-4">
+                <span class="d-inline-flex align-items-center justify-content-center bg-danger bg-opacity-10 text-danger rounded-circle" style="width: 80px; height: 80px;">
+                    <i class="bi bi-heart fs-1 mt-2"></i>
+                </span>
+            </div>
+            <h3 class="fw-bold text-dark">Your wishlist is empty</h3>
+            <p class="text-muted mb-4 fs-5">Explore our store and save your favorite electronics for later.</p>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-dark btn-lg rounded-pill px-5">Continue Shopping</a>
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="wishlist-grid">
+
+            @foreach (var item in Model)
+            {
+                <div class="col wishlist-item-container" id="wishlist-item-@item.ProductId">
+                    <div class="wishlist-card h-100 d-flex flex-column position-relative">
+
+                        <button class="btn-remove-circle remove-wishlist-btn" data-id="@item.ProductId" title="Remove from wishlist">
+                            <i class="bi bi-trash3-fill"></i>
+                        </button>
+
+                        <div class="product-img-wrapper border-bottom border-light">
+                            <img src="@item.Product.ImageUrl" alt="@item.Product.Title">
+                        </div>
+
+                        <div class="p-4 d-flex flex-column flex-grow-1 text-center">
+                            <h5 class="fw-bold mb-2 text-truncate" style="font-size: 1.1rem;">
+                                @item.Product.Title
+                            </h5>
+                            <p class="text-success fw-bold fs-5 mb-4">$@item.Product.Price</p>
+
+                            <div class="mt-auto">
+                                <a asp-controller="Product" asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-wishlist-cart w-100 py-2">
+                                    <i class="bi bi-bag me-2"></i> View Product
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            // Handle the Trash Can Click with Smooth Animation
+            $('.remove-wishlist-btn').click(function () {
+                var btn = $(this);
+                var productId = btn.data('id');
+                var cardContainer = $('#wishlist-item-' + productId);
+
+                // Change icon to a spinner while loading
+                btn.html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+
+                $.ajax({
+                    url: '/Wishlist/ToggleWishlist',
+                    type: 'POST',
+                    data: { productId: productId },
+                    success: function (response) {
+                        if (response.success && response.isAdded === false) {
+
+                            // 1. Shrink the card out of existence smoothly
+                            cardContainer.animate({ opacity: 0, transform: 'scale(0.8)' }, 300, function() {
+                                $(this).remove();
+
+                                // 2. Update the Item Count Badge
+                                var currentCount = $('.wishlist-item-container').length;
+                                $('.badge.bg-dark').text(currentCount + ' Items');
+
+                                // 3. If zero items left, refresh page to show Empty State
+                                if (currentCount === 0) {
+                                    location.reload();
+                                }
+                            });
+                        }
+                    },
+                    error: function () {
+                        // Revert back to trash can if server fails
+                        btn.html('<i class="bi bi-trash3-fill"></i>');
+                        alert("Could not remove the item. Please try again.");
+                    }
+                });
+            });
+
+        });
+    </script>
+}

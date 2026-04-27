@@ -1806,3 +1806,214 @@ body {
         color: #ffffff;
     }
 
+
+
+
+
+
+.reviews-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+/*    background-color: #ffffff;*/
+    border-radius: 12px;
+    padding: 40px;
+/*    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);*/
+}
+
+/* Summary Section Styles */
+.rating-box {
+    
+    border-radius: 12px;
+    padding: 30px 20px;
+    height: 100%;
+}
+
+.rating-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.star-color {
+    color: #ffb400; /* Matching the exact yellow/orange from the image */
+}
+
+.progress {
+    height: 6px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: visible;
+}
+
+.progress-bar {
+    background-color: #ffb400;
+    border-radius: 10px;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.rating-label {
+    width: 110px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.rating-count {
+    width: 40px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.leave-comment {
+    border-top: 1px solid #ebebeb;
+    padding-top: 15px;
+    margin-top: 25px;
+    color: #adb5bd;
+    font-size: 0.9rem;
+    cursor: text;
+}
+
+/* Review List Styles */
+.review-item {
+    padding: 30px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+    .review-item:last-of-type {
+        border-bottom: none;
+    }
+
+.avatar-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+
+.reviewer-name {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 1rem;
+}
+
+.review-date {
+    color: #a0a0a0;
+    font-size: 0.85rem;
+}
+
+.review-text {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.review-attached-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    transition: opacity 0.2s;
+}
+
+    .review-attached-img:hover {
+        opacity: 0.8;
+    }
+
+/* Button Styles */
+.btn-view-more {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 30px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+    .btn-view-more:hover {
+        background-color: #f8f9fa;
+        border-color: #b3b3b3;
+    }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .reviews-wrapper {
+        padding: 20px;
+    }
+
+    .rating-box {
+        margin-bottom: 30px;
+    }
+
+    .review-item {
+        flex-direction: column;
+    }
+
+    .avatar-container {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+
+.custom-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 60px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.footer-logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-text {
+    color: #a0a0a0; /* Muted gray for the paragraph */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 350px;
+}
+
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.footer-link {
+    color: #a0a0a0; /* Muted gray for links */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease-in-out;
+}
+
+    .footer-link:hover {
+        color: #ffffff; /* Turns white on hover */
+    }
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: opacity 0.2s ease-in-out;
+}
+
+    .social-icons a:hover {
+        opacity: 0.7;
+    }

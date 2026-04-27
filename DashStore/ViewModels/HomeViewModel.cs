@@ -13,6 +13,8 @@ namespace DashStore.ViewModels
         public IEnumerable<Category>? Categories { get; set; }
 
         public IEnumerable<CategoryList>? ProductsInCategory { get; set; }
+        public IEnumerable<WishlistItem>? Wishlist { get; set; }
+
 
 
     }

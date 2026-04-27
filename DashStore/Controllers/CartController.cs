@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using System.Text.Json;
 
+
 namespace DashStore.Controllers
 {
     public class CartController : Controller
@@ -29,7 +30,7 @@ namespace DashStore.Controllers
             {
                 if (ItemInCart.Count > 1)
                 {
-                    Total += ItemInCart.Price * ItemInCart.Count - 1;
+                    Total += ItemInCart.Price * ItemInCart.Count ;
 
                 }
                 else

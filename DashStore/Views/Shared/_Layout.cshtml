@@ -26,19 +26,35 @@
 <body class="p-0">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow p-0 ">
+            <div class="container  d-md-none text-center p-3">
+                <div class=" d-flex justify-content-center align-items-center">
+
+                 <div class="me-lg-4 ">
+                    <a href="/" class="text-decoration-none d-flex align-items-center">
+                        <span class="h3 mb-0 fw-bolder text-primary tracking-tighter">DASH</span>
+                        <span class="h3 mb-0 fw-bolder text-dark tracking-tighter">STORE</span>
+                    </a>
+                </div>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     @* <img src="assets/DarkLogo.png" alt="Alternate Text" width="50%" /> *@
 
                 </a>
-                <div class="me-lg-4">
+                <div class="me-lg-4 d-none d-md-flex">
                     <a href="/" class="text-decoration-none d-flex align-items-center">
                         <span class="h3 mb-0 fw-bolder text-primary tracking-tighter">DASH</span>
                         <span class="h3 mb-0 fw-bolder text-dark tracking-tighter">STORE</span>
                     </a>
                 </div>
 
-                <div class="d-none d-md-flex flex-grow-1 mx-4">
+                 <div class="d-none d-md-flex flex-grow-1 mx-4">
                     <form class="input-group " action="/Home/Index" method="get">
 
 
@@ -66,11 +82,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        </li> *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Wishlist" asp-action="Index">Wishlist</a>
                         </li>
                         @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="cart" asp-action="Index">Cart</a>
@@ -82,13 +101,37 @@
                 </div>
                 <div class="d-flex align-items-center gap-1 gap-md-2">
                     <!-- Mobile Search Icon -->
-                    <a href="#" class="nav-icon-btn d-md-none">
+                    
+                    <div class="Mobile-Search-Input d-md-none flex-grow-1 mx-4">
+                        <form class="input-group " action="/Home/Index" method="get">
+
+
+
+
+
+                            <input type="text" class="form-control m-1  " id="Search-m" placeholder="Search products..." aria-label="Search" style="border-radius:12px">
+                            <button class="btn btn-outline-secondary  bg-white text-muted d-none" id="Sbtn-m" type="submit" >
+                                <i class="bi bi-search"></i>
+                            </button>
+                            
+                        </form>
+
+
+
+
+
+                    </div>
+                    <a href="#" class="nav-icon-btn d-md-none" id="Mobile-Search">
                         <i class="bi bi-search"></i>
                     </a>
 
                     <a href="#" class="nav-icon-btn" onclick="location.href='/Identity/Account/Manage'">
                         <i class="bi bi-person"></i>
                         @* <partial name="_LoginPartial" />  *@
+                    </a>
+                    <a href="#" class="" >
+                        
+                        <partial name="_LoginPartial" /> 
                     </a>
 
                     @* <a href="#" class="nav-icon-btn d-none d-sm-flex">
@@ -116,7 +159,7 @@
                 </div>
 
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler d-none " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -132,12 +175,12 @@
         @if (ViewData["ShowSubNav"] != null && (bool)ViewData["ShowSubNav"])
         {
 
-        <div class="category-nav shadow-sm bg-white sticky-top" style="z-index: 1020;">
+        <div class="category-nav shadow-sm bg-white sticky-top " style="z-index: 1020;">
             <div class="container">
-                <div class="category-nav-sub">
-                    <a href="#All" class="category-link active">All Products</a>
+                <div class="category-nav-sub ">
+                    <a href="#All" class="category-link active all">All Products</a>
                     <a href="#Smartphones" class="category-link">Smartphones</a>
-                    <a href="#Laptops" class="category-link">Laptops</a> <a href="#carousel-MobileAccesory" class="category-link">Mobile Accessory</a>
+                    <a href="#carousel-LaptopsPCs" class="category-link">Laptops</a> <a href="#carousel-MobileAccesory" class="category-link">Mobile Accessory</a>
                     <a href="#carousel-AudioSound" class="category-link">Audio & Sound</a>
                     <a href="#carousel-Storage" class="category-link">Storage</a>
                     <a href="#carousel-Wearables" class="category-link">Wearables</a>
@@ -155,7 +198,9 @@
 
 
     <div class="">
-
+        <div id="search-results-m" style="height:50% ;overflow-y:scroll;">
+            <!-- Items will be injected here via JS -->
+        </div>
         <main role="main" class="">
 
             @RenderBody()
@@ -174,8 +219,17 @@
 
 
         $(document).ready(function() {
-            
+            $(".category-link").click(function(e){
+                // e.preventDefault();
+                $(".category-nav-sub").children().removeClass("active");
+                $(this).addClass("active");
+            })
+            // $(".Mobile-Search-Input").hide()
+            $("#Mobile-Search").click(function(){
+                // $(".Mobile-Search-Input").toggle()
+            })
         $("#Sbtn").hide()
+        $('#search-results-m').hide()
             // Simulate Add to Cart / Buy Now logic
             $('.buy-btn').click(function() {
                 let badge = $('#cartCount');
@@ -187,10 +241,13 @@
             });
             $('#Search').click(function() {
                 $("#Sbtn").toggle()
+                $('#search-results-m').toggle()
 
             });
               $('body').click(function() {
                   $('#search-results').css("display","None")
+                  $('#search-results-m').css("display","None")
+                  // $('#Search-m').css("display","None")
               })
 
                 $("#Sbtn").click(function(e){
@@ -232,6 +289,60 @@
                             });
                             $resultsDiv.show();
                         } else {
+                                    
+                            $resultsDiv.html('<div class="p-3  text-center small bg-dark text-white">No items found</div>').show();
+                        }
+
+
+                        },
+                        error: function (xhr, status, error) {
+
+                            console.error("Error occurred: " + error);
+                        }
+                    });
+
+                })
+                $(".bi-search").click(function(e){
+                    e.preventDefault()
+                            $("#search-results-m").attr("style", "height: 30vh; overflow-y: scroll;");
+                    var txt =  $('#Search-m').val()
+                      $.ajax({
+                        url: `/Product/Search/`,
+                        type: 'Get',
+                        data: {
+                        text: txt
+
+                        },
+                        success: function (response) {
+
+                            console.log(response);
+
+                            if(response.succ == false){
+         $('#search-results-m').css("display","None")
+                            }
+
+                             var results = response.searchResult;
+                        var $resultsDiv = $('#search-results-m');
+                        $resultsDiv.empty();
+
+                        if (results && results.length > 0) {
+                            $.each(results, function(i, item) {
+                                // Extract first image if it's a comma-separated string
+                                var imgUrl = item.imageUrl ? item.imageUrl.split(',')[0] : '/images/no-image.png';
+
+                                var html = `
+                                    <a href="/Product/Details/${item.id}" class="result-item">
+                                        <img src="${imgUrl}" class="result-img">
+                                        <div class="result-info">
+                                            <p class="result-title">${item.title}</p>
+                                            <span class="result-price">$${item.price}</span>
+                                        </div>
+                                    </a>`;
+                                $resultsDiv.append(html);
+                            });
+                            $resultsDiv.show();
+                        } else {
+                                    $("#search-results-m").attr("style", "height: 5vh; overflow-y: scroll;");
                             $resultsDiv.html('<div class="p-3  text-center small bg-dark text-white">No items found</div>').show();
                         }
 
@@ -251,13 +362,10 @@
             //     $('.category-link').removeClass('active');
             //     $(this).addClass('active');
             // });
+;
 
 
-
-
-
-
-            const carousel = $('#carousel');
+        const carousel = $('#carousel');
             const scrollAmount = 320; // width of card + gap
 
             $('#nextBtn').click(function() {
@@ -287,7 +395,7 @@
         const backToTopBtn = document.getElementById("btn-back-to-top");
 
         // Show or hide the button when scrolling
-      
+        // 
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -5,6 +5,7 @@ using DashStore.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace DashStore.Controllers
@@ -40,12 +41,20 @@ namespace DashStore.Controllers
             {
                 //ViewBag.Name = currentUser.Email;
             }
+            var userId = _userManager.GetUserId(User);
+
+            // 2. Fetch their wishlist from the database AND include the actual Product data
+            var userWishlist = await _Db.WishlistItems
+                .Include(w => w.Product) // This is crucial! It joins the Product table.
+                .Where(w => w.UserId == userId)
+                .ToListAsync();
             var HomeViewModel = new HomeViewModel()
             {
                 User = currentUser,
                 Products = products,
                 Categories = categoryList ,
-                ProductsInCategory = _productServices.GetProductsInCategory().Cast<CategoryList>()
+                ProductsInCategory = _productServices.GetProductsInCategory().Cast<CategoryList>(),
+                Wishlist = userWishlist
             };
 
             

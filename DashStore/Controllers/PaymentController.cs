@@ -106,6 +106,7 @@ namespace DashStore.Controllers
 
 
             var CartVm = new CartViewModel();
+            HttpContext.Session.Clear();
             return View("Fail",CartVm);
         }
         public IActionResult Success(CartViewModel cartvm)
